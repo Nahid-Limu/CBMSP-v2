@@ -11,13 +11,11 @@ use Validator;
 
 class MemberController extends Controller
 {
-    /**
-     * Display Member list.
-     */
+    //---Display Member list.
     public function showMemberList()
     {
         // dd(121);
-        $Members = Member::where('status', 1)->get(['id','name','photo','nid','dob','tea_garden_address','amount_of_tea_garden']);
+        $Members = Member::where('status', 1)->get(['id','name','photo','phone','tea_board_registration_number','tea_garden_address','amount_of_tea_garden']);
         // dd($Members);
         if(request()->ajax())
         {
@@ -50,9 +48,7 @@ class MemberController extends Controller
         return view('admin.member.memberList');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    //---Store a newly created Member.
     public function store(Request $request)
     {
         // dd($request->all());
@@ -73,14 +69,13 @@ class MemberController extends Controller
             'tea_garden_address' => 'nullable|string',
             'dag_number' => 'nullable|string',
             'mouja_name' => 'nullable|string',
+            'tea_board_registration_number' => 'nullable|string',
         ]);
         
         $data = $request->all();
         
         if ($request->hasFile('photo')) {
-            // $photoPath = $request->file('photo')->store('photos', 'public');
-            // $data['photo'] = $photoPath;
-
+            
             $image = $request->file('photo');
             
             $filename = $request->name.'.'.$image->getClientOriginalExtension();
@@ -95,9 +90,7 @@ class MemberController extends Controller
         return redirect()->back()->with('success', 'Member Registration successfully.');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    //---Display the specified Member.
     public function viewMember($id)
     {
         // dd($id);
@@ -105,13 +98,11 @@ class MemberController extends Controller
         return response()->json($Member);
     }
 
-    /**
-     * Display the Pending Members.
-     */
+    //---Display the Pending Member list.
     public function showPendingMember(Member $member)
     {
         // dd(121);
-        $PendingMember = Member::where('status', 0)->get(['id','name','photo','nid','dob','tea_garden_address','amount_of_tea_garden']);
+        $PendingMember = Member::where('status', 0)->get(['id','name','photo','phone','tea_board_registration_number','tea_garden_address','amount_of_tea_garden']);
         // dd($PendingMember);
         if(request()->ajax())
         {
@@ -144,9 +135,7 @@ class MemberController extends Controller
         return view('admin.member.pendingMemberList');
     }
 
-    /**
-     * Update the Member approve
-     */
+    //---Update the Member status.
     public function approveMember (Request $request, Member $member)
     {
         // dd($request->all());
@@ -162,39 +151,14 @@ class MemberController extends Controller
         }
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    //---Update the Member in storage.
     public function updateMember (Request $request, Member $member)
     {
-        
-        // dd($request->all());
-        // $Member = Member::find($request->id);
-
-        // // Update text fields
-        // $Member->name = $request->name;
-        // $Member->nid = $request->nid;
-        // $Member->dob = $request->dob;
-        // $Member->father_name = $request->father_name;
-        // $Member->mother_name = $request->mother_name;
-        // $Member->village = $request->village;
-        // $Member->union_parishad = $request->union_parishad;
-        // $Member->upazila = $request->upazila;
-        // $Member->zila = $request->zila;
-        // $Member->phone = $request->phone;
-        // $Member->email = $request->email;
-        // $Member->amount_of_tea_garden = $request->amount_of_tea_garden;
-        // $Member->tea_garden_address = $request->tea_garden_address;
-        // $Member->dag_number = $request->dag_number;
-        // $Member->mouja_name = $request->mouja_name;
-       
-        // $Member->save();
 
         $Member = Member::find($request->id);
         $Member->update($request->all());
 
         if ($Member) {
-            // $member->update($request->validated());
             return response()->json(['success' => 'Data Update Successfully.']);
         } else {
             return response()->json(['failed' => 'Update failed.']);
@@ -202,9 +166,7 @@ class MemberController extends Controller
         
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    //---Remove the Member from storage.
     public function deleteMember($id)
     {
         // dd(121);

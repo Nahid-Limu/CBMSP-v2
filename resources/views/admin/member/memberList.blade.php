@@ -45,10 +45,10 @@
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
                       <th scope="col">Photo</th>
-                      <th scope="col">NID</th>
-                      <th scope="col">DOB</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Tea Board Registration</th>
                       <th scope="col">Garden Address</th>
-                      <th scope="col">Garden Amount (in acres)</th>
+                      <th scope="col">Garden Amount-(in acres)</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -98,12 +98,12 @@
               name: 'photo'
           },
           {
-              data: 'nid',
-              name: 'nid'
+              data: 'phone',
+              name: 'phone'
           },
           {
-              data: 'dob',
-              name: 'dob'
+              data: 'tea_board_registration_number',
+              name: 'tea_board_registration_number'
           },
           {
               data: 'tea_garden_address',
@@ -153,19 +153,10 @@
         url: "{{url('viewMember')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
-            // console.log(response);
+            // console.log(response.);
             if (response) {
-              
-              // $('#edit_name').val(response.id);
-              // $('#edit_name').val(response.name);
-              // $('#edit_designation').val(response.designation);
-              // $('#edit_teachers_words').val(response.teachers_words);
-              // $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
-              // response. ? "The div is visible." : "The div is hidden.";
 
               $('#edit_data_id').val(response.id);
-
-              // $("#photo").attr("src", "assets/img/Members/"+ response.photo);
 
               $('#edit_name').val(response.name);
               $("#edit_photo").attr("src", "assets/img/Members/"+ response.photo);
@@ -185,6 +176,7 @@
               $('#edit_amount_of_tea_garden').val(response.amount_of_tea_garden);
               $('#edit_dag_number').val(response.dag_number);
               $('#edit_mouja').val(response.mouja_name);
+              $('#edit_tea_board_registration_number').val(response.tea_board_registration_number);
               
             }
 
@@ -259,12 +251,9 @@
               $('#amount_of_tea_garden').text(response.amount_of_tea_garden);
               $('#dag_number').text(response.dag_number);
               $('#mouja_name').text(response.mouja_name);
+              $('#tea_board_registration_number').text(response.tea_board_registration_number);
 
               response.status == 1 ? $('#member_status').text(" Active").addClass("text-success") && $("#accept_btn").attr("hidden", true) : $('#member_status').text(" Pending").addClass("text-danger");
-              
-              // $('#edit_designation').val(response.designation);
-              // $('#edit_teachers_words').val(response.teachers_words);
-              // $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
               
             }
 

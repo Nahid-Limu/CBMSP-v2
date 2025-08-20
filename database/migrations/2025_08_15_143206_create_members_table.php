@@ -29,6 +29,7 @@ return new class extends Migration
             $table->string("tea_garden_address")->nullable();
             $table->string("dag_number")->nullable();
             $table->string("mouja_name")->nullable();
+            $table->string("tea_board_registration_number")->nullable();
             $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });

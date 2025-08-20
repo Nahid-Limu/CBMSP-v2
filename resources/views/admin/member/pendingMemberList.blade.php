@@ -45,8 +45,8 @@
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
                       <th scope="col">Photo</th>
-                      <th scope="col">NID</th>
-                      <th scope="col">DOB</th>
+                      <th scope="col">Phone</th>
+                      <th scope="col">Tea Board Registration</th>
                       <th scope="col">Garden Address</th>
                       <th scope="col">Garden Amount (in acres)</th>
                       <th scope="col">Action</th>
@@ -97,12 +97,12 @@
               name: 'photo'
           },
           {
-              data: 'nid',
-              name: 'nid'
+              data: 'phone',
+              name: 'phone'
           },
           {
-              data: 'dob',
-              name: 'dob'
+              data: 'tea_board_registration_number',
+              name: 'tea_board_registration_number'
           },
           {
               data: 'tea_garden_address',
@@ -177,13 +177,10 @@
               $('#amount_of_tea_garden').text(response.amount_of_tea_garden);
               $('#dag_number').text(response.dag_number);
               $('#mouja_name').text(response.mouja_name);
+              $('#tea_board_registration_number').text(response.tea_board_registration_number);
 
               response.status == 1 ? $('#member_status').text(" Active").addClass("text-success") : $('#member_status').text(" Pending").addClass("text-danger");
 
-              // $('#edit_designation').val(response.designation);
-              // $('#edit_teachers_words').val(response.teachers_words);
-              // $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
-              
             }
 
         },error:function(){ 

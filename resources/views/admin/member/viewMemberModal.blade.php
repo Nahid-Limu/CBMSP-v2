@@ -49,6 +49,7 @@
               <p><strong>Amount of Tea Garden (in acres):</strong> <span id="amount_of_tea_garden"></p>
               <p><strong>Dag Number:</strong> <span id="dag_number"></p>
               <p><strong>Mouja Name:</strong> <span id="mouja_name"></p>
+              <p><strong>Tea Board Registration No:</strong> <span id="tea_board_registration_number"></p>
             </div>
           </div>
         </div>

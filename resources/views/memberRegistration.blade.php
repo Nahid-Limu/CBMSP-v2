@@ -145,6 +145,10 @@
                     <label for="mouja" class="form-label">Mouja Name</label>
                     <input type="text" class="form-control" id="mouja" name="mouja_name">
                   </div>
+                  <div class="col-md-6">
+                    <label for="tea_board_registration_number" class="form-label">Tea Board Registration Number( if registered )</label>
+                    <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
+                  </div>
                 </div>
               </div>
 

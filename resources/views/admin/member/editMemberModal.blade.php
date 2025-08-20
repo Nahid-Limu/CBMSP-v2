@@ -80,6 +80,10 @@
                 <label for="edit_mouja" class="form-label">Mouja Name</label>
                 <input type="text" id="edit_mouja" name="mouja_name" class="form-control" required>
               </div>
+              <div class="col-md-6">
+                <label for="edit_tea_board_registration_number" class="form-label">Tea Board Registration</label>
+                <input type="text" id="edit_tea_board_registration_number" name="tea_board_registration_number" class="form-control" required>
+              </div>
             </div>
           </div>
         </form>
