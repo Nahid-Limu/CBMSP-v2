@@ -24,18 +24,63 @@
           <div class="row">
 
             <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card bg-info">
+            <div class="col-xxl-6 col-md-6">
+              <div class="card info-card sales-card bg-success">
                 
                 <div class="card-body">
-                  <h5 class="card-title">Teacher</h5>
+                  <h5 class="card-title">Total Member</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                       <i class='bx bx-user-circle bx-tada' ></i>
                     </div>
                     <div class="ps-3">
-                      <h6 >{{ $ToatalTeacher }}</h6>
+                      <h6 >{{ $TotalMember }}</h6>
+                      {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-6 col-md-6">
+              <div class="card info-card sales-card bg-danger">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Pending Member</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class='bx bx-user-circle bx-tada' ></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 >{{ $PendingMember }}</h6>
+                      {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <hr>
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card sales-card bg-info">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Other</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class='bx bx-user-circle bx-tada' ></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 >{{ $TotalTeacher }}</h6>
                       {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
                     </div>
@@ -57,7 +102,7 @@
                       <i class='bx bx-calendar-event bx-tada' ></i>
                     </div>
                     <div class="ps-3">
-                      <h6 >{{ $ToatalEvent }}</h6>
+                      <h6 >{{ $TotalEvent }}</h6>
                       {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
                     </div>
@@ -79,7 +124,7 @@
                       <i class='bx bx-bell bx-tada' ></i>
                     </div>
                     <div class="ps-3">
-                      <h6 >{{ $ToatalNotice }}</h6>
+                      <h6 >{{ $TotalNotice }}</h6>
                       {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
                     </div>

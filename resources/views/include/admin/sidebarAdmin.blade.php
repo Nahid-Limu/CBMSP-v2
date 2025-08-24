@@ -15,7 +15,7 @@
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
           <i class="bx bxs-user-detail"></i>
-          <span>Teacher</span>
+          <span>Test</span>
         </a>
       </li><!-- End Teacher Page Nav -->
 

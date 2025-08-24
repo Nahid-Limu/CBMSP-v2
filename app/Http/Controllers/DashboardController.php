@@ -14,11 +14,13 @@ class DashboardController extends Controller
 {
     public function dashboard()
     {
-        $ToatalTeacher = Teacher::all()->Count();
-        $ToatalEvent = Event::all()->Count();
-        $ToatalNotice = Notice::all()->Count();
+        $TotalTeacher = Teacher::all()->Count();
+        $TotalEvent = Event::all()->Count();
+        $TotalNotice = Notice::all()->Count();
 
+        $TotalMember = Member::where('status', 1)->Count();
+        
         $PendingMember = Member::where('status', 0)->Count();
-        return view('admin.dashboard', compact('PendingMember','ToatalTeacher','ToatalEvent','ToatalNotice') );
+        return view('admin.dashboard', compact('TotalMember','PendingMember','TotalTeacher','TotalEvent','TotalNotice') );
     }
 }
