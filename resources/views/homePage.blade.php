@@ -18,11 +18,11 @@
                         বৈশিষ্ঠ্যসমূহঃ-
                     </p>
                     <ul>
-                        <li><i class="bi bi-check-circle"></i> বিষয়ভিত্তিক অভিজ্ঞ, দক্ষ ও প্রশিক্ষণপ্রাপ্ত শিক্ষক দ্বারা পাঠদান.</li>
-                        <li><i class="bi bi-check-circle"></i> মাল্টিমিডিয়া এবং বিষয়ভিত্তিক ল্যাব ক্লাসের ব্যবস্থা।.</li>
-                        <li><i class="bi bi-check-circle"></i> ধর্মীয় ও নৈতিক শিক্ষার প্রতি গুরুত্ব প্রদান.</li>
-                        <li><i class="bi bi-check-circle"></i> শিক্ষার্থীদের কোন প্রাইভেট পড়তে হয় না.</li>
-                        <li><i class="bi bi-check-circle"></i> আবাসিক, অনাবাসিক, ডে-কেয়ার সুবিধা..........</li>  
+                        <li><i class="bi bi-check-circle"></i> পঞ্চগড় জেলার চা চাষী / বাগান মালিকদের যেকোনো সমস্যায় নিরলসভাবে সমাধানের চেষ্টা করা.</li>
+                        <li><i class="bi bi-check-circle"></i> ভালো মানের চা উৎপাদনের লক্ষ্যে চা চাষীদের প্রশিক্ষণসহ যাবতীয় পদক্ষেপ গ্রহণ করা.</li>
+                        <li><i class="bi bi-check-circle"></i> পঞ্চগড় জেলার তথা বাংলাদেশের উন্নয়নে চা চাষীদের একতাবদ্ধ কার্যক্রম পরিচালনা করা............</li>
+                        {{-- <li><i class="bi bi-check-circle"></i> চা চাষী / চা শ্রমিকদের স্বাস্থ্য সুরক্ষার জন্য যাবতীয় পদক্ষেপ গ্রহন করা...........</li> --}}
+                        {{-- <li><i class="bi bi-check-circle"></i> আবাসিক, অনাবাসিক, ডে-কেয়ার সুবিধা..........</li>   --}}
                     </ul>
                     <a class="btn btn-sm btn-outline-primary" href="{{ route('about') }}">View Details</a>
         
@@ -40,7 +40,7 @@
             <div class="row counters">
 
             <div class="col-lg-3 col-6 text-center">
-                <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+                <span data-purecounter-start="0" data-purecounter-end="{{ $ToatalMember }}" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Member</p>
             </div>
 
@@ -91,31 +91,31 @@
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
                         <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
-                            <img src="assets/img/Residential.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/We Unity.jpg" class="img-fluid" alt="">
                         </i>
                         
-                        <h4>Residential</h4>
-                        {{-- <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p> --}}
+                        <h4>Unity</h4>
+                        <p>Working together to resolve any problems of tea farmers in Panchagarh district and implement their reasonable demands</p>
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
                         {{-- <i class="bx bx-cube-alt"></i> --}}
                         <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
-                            <img src="assets/img/DayCare.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/We Care.jpg" class="img-fluid" alt="">
                         </i>
-                        <h4>Day Care</h4>
-                        {{-- <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p> --}}
+                        <h4>Care</h4>
+                        <p>Take all steps to protect the health of tea farmers/tea workers.</p>
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
                     <div class="icon-box mt-4 mt-xl-0">
                         {{-- <i class="bx bx-images"></i> --}}
                         <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
-                            <img src="assets/img/Non-Resident.jpg" class="img-fluid" alt="">
+                            <img src="assets/img/We Learn.jpg" class="img-fluid" alt="">
                         </i>
-                        <h4>Non Resident</h4>
-                        {{-- <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p> --}}
+                        <h4>Learn </h4>
+                        <p>Taking all steps, including training, for tea farmers to produce good quality tea</p>
                     </div>
                     </div>
                 </div>
@@ -310,62 +310,81 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                <img src="assets/img/instituteAdmin/General Secretary.jpg" class="img-fluid" alt="">
-                <div class="member-content">
-                    <h4> Manik Khan </h4>
-                    <span>General Secretary</span>
-                    <p>
-                    Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="assets/img/instituteAdmin/General Secretary.jpg" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4> Manik Khan </h4>
+                        <span>General Secretary</span>
+                        {{-- <p>
+                        Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                        </p> --}}
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                <img src="assets/img/instituteAdmin/President.jpg" class="img-fluid" alt="">
-                <div class="member-content">
-                    <h4>MD Didarul Alam</h4>
-                    <span>President</span>
-                    <p>
-                    Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
-                    </p>
-                    <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="assets/img/instituteAdmin/President.jpg" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>MD Didarul Alam</h4>
+                        <span>President</span>
+                        {{-- <p>
+                        Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
+                        </p> --}}
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
 
-            <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                <div class="member">
-                <img src="assets/img/instituteAdmin/Official And IT Support.jpg" class="img-fluid" alt="">
-                <div class="member-content">
-                    <h4>Nahid Hasan Limu </h4>
-                    <span>Official And IT Support</span>
-                    <p>
-                    Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-                    </p>
-                    <div class="social">
-                    <a href=""><i class="bi bi-twitter"></i></a>
-                    <a href=""><i class="bi bi-facebook"></i></a>
-                    <a href=""><i class="bi bi-instagram"></i></a>
-                    <a href=""><i class="bi bi-linkedin"></i></a>
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="assets/img/instituteAdmin/Official And IT Support.jpg" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>Nahid Hasan Limu </h4>
+                        <span>Official And IT Support</span>
+                        {{-- <p>
+                        Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                        </p> --}}
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
                     </div>
                 </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="assets/img/instituteAdmin/Group Admin.jpg" class="img-fluid" alt="">
+                    <div class="member-content">
+                        <h4>Nazmul Hasan Hridoy </h4>
+                        <span>Group Admin</span>
+                        {{-- <p>
+                        Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                        </p> --}}
+                        <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    </div>
                 </div>
-            </div>
 
             </div>
 

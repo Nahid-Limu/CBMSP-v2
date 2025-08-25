@@ -23,25 +23,20 @@
             <img src="assets/img/about.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
-            <h3> পঞ্চগড় রেসিডেন্সিয়াল স্কুল অ্যান্ড কলেজ </h3>
+            <h3> চা বাগান মালিক সমিতি, পঞ্চগড় </h3>
             <p class="fst-italic">
               প্রতিষ্ঠানের বৈশিষ্ঠ্যসমূহঃ-
             </p>
             <ul>
-              <li><i class="bi bi-check-circle"></i> বিষয়ভিত্তিক অভিজ্ঞ, দক্ষ ও প্রশিক্ষণপ্রাপ্ত শিক্ষক দ্বারা পাঠদান.</li>
-              <li><i class="bi bi-check-circle"></i> বালক-বালিকা পৃথক শাখায় পাঠদান.</li>
-              <li><i class="bi bi-check-circle"></i> প্রতি শাখায় সর্বোচ্চ ৪০ জন শিক্ষার্থী.</li>
-              <li><i class="bi bi-check-circle"></i> মাল্টিমিডিয়া এবং বিষয়ভিত্তিক ল্যাব ক্লাসের ব্যবস্থা।.</li>
-              <li><i class="bi bi-check-circle"></i> ইংরেজি ও গণিত বিষয়ে বিশেষ গুরুত্ব প্রদান.</li>
-              <li><i class="bi bi-check-circle"></i> ধর্মীয় ও নৈতিক শিক্ষার প্রতি গুরুত্ব প্রদান.</li>
-              <li><i class="bi bi-check-circle"></i> শিক্ষার্থীর মানসিক ও সৃজনশীল মেধা বিকাশের জন্য সাধারণ জ্ঞান, বিতর্ক ও এক্সট্রা কালিকুলাম চর্চা.</li>
-              <li><i class="bi bi-check-circle"></i> খেলাধূলা ও চিত্তবিনোদনের সু-ব্যবস্থা.</li>
-              <li><i class="bi bi-check-circle"></i> শিক্ষার্থীদের কোন প্রাইভেট পড়তে হয় না.</li>
-              <li><i class="bi bi-check-circle"></i> আবাসিক, অনাবাসিক, ডে-কেয়ার সুবিধা.</li>
-              <li><i class="bi bi-check-circle"></i> পাঠদান সহ সকল একাডেমিক কার্যক্রম সিসি ক্যামেরার আওতাভূক্ত.</li>
-              <li><i class="bi bi-check-circle"></i> আবাসিক ছাত্রীদের জন্য মহিলা কেয়ারটেকারের ব্যবস্থা.</li>
-              <li><i class="bi bi-check-circle"></i> আবাসিক ছাত্রদের জন্য পুরুষ কেয়ারটেকারের ব্যবস্থা.</li>
-              <li><i class="bi bi-check-circle"></i> আবাসিক, অনাবাসিক, ডে কেয়ার এর সকল ছাত্র ছাত্রী টিফিনের আওতাভূক্ত হবে.</li>
+              <li><i class="bi bi-check-circle"></i> পঞ্চগড় জেলার চা চাষী / বাগান মালিকদের যেকোনো সমস্যায় নিরলসভাবে সমাধানের চেষ্টা করা.</li>
+              <li><i class="bi bi-check-circle"></i> ভালো মানের চা উৎপাদনের লক্ষ্যে চা চাষীদের প্রশিক্ষণসহ যাবতীয় পদক্ষেপ গ্রহণ করা.</li>
+              <li><i class="bi bi-check-circle"></i> চা চাষী / বাগান মালিকদের যুক্তিযুক্ত দাবিদাওয়া গুলোর বাস্তবায়নের জন্য বাংলাদেশ চা বোর্ড, পঞ্চগড় জেলা প্রশাসন এবং চা কারখানার মালিকদের সাথে সমন্বয়ের মাধ্যমে সুষ্ঠু সমাধানের চেষ্টা করা.</li>
+              <li><i class="bi bi-check-circle"></i> পঞ্চগড় জেলার তথা বাংলাদেশের উন্নয়নে চা চাষীদের একতাবদ্ধ কার্যক্রম পরিচালনা করা.</li>
+              <li><i class="bi bi-check-circle"></i> চা চাষী / চা শ্রমিকদের স্বাস্থ্য সুরক্ষার জন্য যাবতীয় পদক্ষেপ গ্রহন করা.</li>
+              <li><i class="bi bi-check-circle"></i> ভালো মানের চা উৎপাদনের লক্ষ্যে অঞ্চল ভিত্তিক সরকারী বিএস নিযুক্তের জন্য কাজ করা.</li>
+              <li><i class="bi bi-check-circle"></i> আধুনিক প্রযুক্তি, সঠিক সার / কিটনাশক প্রয়োগের পরামর্শ ও ব্যবস্থার জন্য কাজ করা.</li>
+              <li><i class="bi bi-check-circle"></i> সমিতির সেমিনার কক্ষে সদস্যদের বিভিন্ন মতামত, মরামর্শ ও যাবতীয় সমস্যা নিয়ে আলোচনার মাধ্যমে সঠিক সিদ্ধান্তে পৌছানো এবং ব্যবস্থা গ্রহন করা.</li>
+              <li><i class="bi bi-check-circle"></i> চা চাষী / বাগান মালিকদের বিনোদন এবং একতা বাড়ানোর লক্ষ্যে প্রতি বছর পিকনিকের আয়োজন করা.</li>
             </ul>
             {{-- <p>
               Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
@@ -55,7 +50,7 @@
     <!-- End About প্রতিষ্ঠান Section -->
 
     <!-- ======= start সময় সূচি Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -86,11 +81,11 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
     <!-- End সময় সূচি Section -->
 
     <!-- ======= start পোশাক Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -112,12 +107,7 @@
             <p class="fst-italic">
               আবাসিক:-
             </p>
-            <ul>
-              {{-- <li><i class="bi bi-check-circle"></i> ছাত্র-ছাত্রীদের জন্য সকাল ৮.৩০ মিনিট হতে দুপুর ২.৩০ মিনিট পর্যন্ত.</li>
-              <li><i class="bi bi-check-circle"></i>  ছাত্র-ছাত্রীদের জন্য বিকাল ৩.০০ মিনিট হতে বিকাল ৫.০০ মিনিট পর্যন্ত.</li>
-              <li><i class="bi bi-check-circle"></i> আসর থেকে মাগরীব পর্যন্ত-খেলাধূলা.</li>
-              <li><i class="bi bi-check-circle"></i> এছাড়া আবাসিক ও ডে-কেয়ারের ছাত্র-ছাত্রীরা সন্ধ্যা হতে রাত ৯.০০ মিনিট পর্যন্ত স্টাডি সেন্টারে প্রতিষ্ঠানের শিক্ষকদের তত্ত্বাবধানে অধ্যায়নরত থাকবে.</li> --}}
-            </ul>
+
             <p>
               আবাসিক ছাত্র/ছাত্রীগণ দুটি বেডসিট, দুটি বালিশের কাভার, একটি কাঁথা/কম্বল ২২*১২ মাপের বক্স/ট্রাংক, স্টাডি সেন্টারে অধ্যয়নের জন্য প্রয়োজনীয় কাপড় চোপড় সঙ্গে আনতে হবে .
             </p>
@@ -126,11 +116,11 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
     <!-- End পোশাক Section -->
 
     <!-- ======= start ছাত্রদের প্রাত্যহিক রুটিন Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -244,11 +234,11 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
     <!-- End  ছাত্রদের প্রাত্যহিক রুটিন Section -->
 
     <!-- ======= start খাবারের তালিকা Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -325,10 +315,11 @@
         </div>
 
       </div>
-    </section><!-- End খাবারের তালিকা Section -->
+    </section> --}}
+    <!-- End খাবারের তালিকা Section -->
     
     <!-- ======= start আবাসিক ছাত্র-ছাত্রীরা প্রতিদিন Section ======= -->
-    <section id="about" class="about">
+    {{-- <section id="about" class="about">
       <div class="container" data-aos="fade-up">
 
         <div class="row">
@@ -351,11 +342,11 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
     <!-- End আবাসিক ছাত্র-ছাত্রীরা প্রতিদিন Section -->
 
     <!-- ======= Counts Section ======= -->
-    <section id="counts" class="counts section-bg">
+    {{-- <section id="counts" class="counts section-bg">
       <div class="container">
 
         <div class="row counters">
@@ -383,15 +374,15 @@
         </div>
 
       </div>
-    </section>
+    </section> --}}
     <!-- End Counts Section -->
 
-    <!-- ======= Testimonials Section ======= -->
+    <!-- ======= Founding Member Section ======= -->
     <section id="testimonials" class="testimonials">
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>Chairman & Directors</h2>
+          <h2>Founding Members</h2>
           <p>What are they saying</p>
         </div>
 
@@ -401,9 +392,9 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/ChairmanAndDirectors/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
+                  <img src="assets/img/FoundingMembers/Manik Khan.jpg" class="testimonial-img" alt="">
+                  <h3>Manik Khan</h3>
+                  <h4>General Secretary &amp; Founder</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -416,9 +407,9 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/ChairmanAndDirectors/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
+                  <img src="assets/img/FoundingMembers/Muhammad Habibur Rahman.jpg" class="testimonial-img" alt="">
+                  <h3>Muhammad Habibur Rahman</h3>
+                  <h4>Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -431,9 +422,9 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/ChairmanAndDirectors/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
+                  <img src="assets/img/FoundingMembers/Md Siddiqur Rahman.jpg" class="testimonial-img" alt="">
+                  <h3>Md Siddiqur Rahman</h3>
+                  <h4>Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -446,9 +437,9 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/ChairmanAndDirectors/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
+                  <img src="assets/img/FoundingMembers/Nahid Hasan Limu.jpg" class="testimonial-img" alt="">
+                  <h3>Nahid Hasan Limu</h3>
+                  <h4>IT Support &amp; Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -461,9 +452,9 @@
             <div class="swiper-slide">
               <div class="testimonial-wrap">
                 <div class="testimonial-item">
-                  <img src="assets/img/ChairmanAndDirectors/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
+                  <img src="assets/img/FoundingMembers/Nazmul Hasan Hridoy.jpg" class="testimonial-img" alt="">
+                  <h3>Nazmul Hasan Hridoy</h3>
+                  <h4>Group Admin &amp; Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
@@ -479,7 +470,7 @@
 
       </div>
     </section>
-    <!-- End Testimonials Section -->
+    <!-- End Founding Member Section -->
 
   </main>
   <!-- End #main -->

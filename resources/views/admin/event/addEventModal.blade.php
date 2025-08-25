@@ -50,10 +50,6 @@
                   </div>
                 </div>
 
-                
-
-                
-
                 <div class="text-center">
                   <button type="button" onclick="addData()" class="btn btn-outline-success btn-sm">Add</button>
                   <button type="reset" onclick="onCloseModal('AddEventForm')" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>

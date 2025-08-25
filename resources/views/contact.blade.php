@@ -30,23 +30,23 @@
                 <i class="bi bi-geo-alt"></i>
                 <h4>Location:</h4>
                 <p>
-                  উত্তর মিঠাপুকুর (আনছার ভিডিপি/ফায়ার সার্ভিসের বিপরীত) তেঁতুলিয়া রোড, পঞ্চগড়।
+                 Emma Shopping Center (2nd Flor)
                 </p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>info@example.com</p>
+                <p>cbmsp@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>০১৭১৪-৮১৪১০৯</p>
-                <p>০১৭১৭-৮২৮৬৩৯</p>
-                <p>০১৭১৯-৬৬৭১৮৩</p>
-                <p>০১৭২৭-৪২১২৮৬</p>
+                <p>01636150770</p>
+                <p>01983368753</p>
+                {{-- <p>০১৭১৯-৬৬৭১৮৩</p>
+                <p>০১৭২৭-৪২১২৮৬</p> --}}
               </div>
 
             </div>

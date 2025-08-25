@@ -8,6 +8,8 @@ use App\Models\Event;
 use App\Models\Notice;
 use App\Models\Result;
 use App\Models\Career;
+
+use App\Models\Member;
 use DB;
 
 class UserController extends Controller
@@ -15,9 +17,11 @@ class UserController extends Controller
     public function home()
     {
         $ToatalTeacher = Teacher::all()->Count();
+
+        $ToatalMember = Member::where('status', 1)->Count();
         $ToatalEvent = Event::all()->Count();
         $ToatalNotice = Notice::all()->Count();
-        return view('homePage', compact('ToatalTeacher','ToatalEvent','ToatalNotice') );
+        return view('homePage', compact('ToatalTeacher','ToatalMember','ToatalEvent','ToatalNotice') );
     }
 
     public function teachers()
