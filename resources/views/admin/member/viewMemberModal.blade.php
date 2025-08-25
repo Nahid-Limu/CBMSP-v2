@@ -15,7 +15,10 @@
           <div class="row mb-3">
             <div class="col-md-4 text-center">
               <img src="assets/img/imagePlaceholder.jpg" class="img-thumbnail" id="photo" alt="Photo" style="max-height: 150px;">
-              <p><strong>Status:</strong> <span id="member_status" ></span></p>
+              <p>
+                <strong>Status:</strong> <span id="member_status" ></span> <br>
+                <strong>ID:</strong> <span id="mid" >Null</span>
+              </p>
             </div>
             <div class="col-md-8">
               <p><strong>Name:</strong> <span id="name"></span></p>

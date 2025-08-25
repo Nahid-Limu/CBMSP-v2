@@ -14,7 +14,7 @@ class EventController extends Controller
     public function eventList()
     {
         
-        $Event = Event::all(['id','title','event_date','event_time','description','image']);
+        $Event = Event::orderBy('event_date', 'desc')->get(['id','title','event_date','event_time','description','image']);
         // dd($Event);
         if(request()->ajax())
         {
@@ -55,49 +55,38 @@ class EventController extends Controller
     {
         // dd($request->all());
         //validation [start]
-        $rules = array(
-            'title'    =>  'required',
-            'event_date'    =>  'required',
-            'event_time'    =>  'required',
-            'description'     =>  'required',
-            'image' => 'required | file | mimes:jpg,jpeg,png,gif | max:2048',
-        );
+        $validator = Validator::make($request->all(), [
+            'title' => 'required|string|max:255',
+            'event_date' => 'required|date',
+            'event_time' => 'required',
+            'description' => 'nullable|string',
+            'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+        ]);
 
-        $error = Validator::make($request->all(), $rules);
-
-        if($error->fails())
+        if($validator->fails())
         {
-            return response()->json(['errors' => $error->errors()->all()]);
+            return response()->json(['errors' => $validator->errors()->all()]);
         }
         //validation [end]
 
+        $data = $request->all();
+
+        //image uplode [start]
         if ($request->hasFile('image')) {
             
-            $Event = new Event;
+            $image = $request->file('image');
+            
+            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $path = public_path('assets/img/events/' . $filename);
+            Image::make($image->getRealPath())->resize(600, 600)->save($path);
 
-            // $Event->title = ucwords($request->title);
-            $Event->title = $request->title;
-            $Event->event_date =$request->event_date;
-            $Event->event_time =$request->event_time;
-            $Event->description =$request->description;
-
-                $image = $request->file('image');
-
-                $filename = $request->title.'.'.$image->getClientOriginalExtension();
-                $path = public_path('assets/img/events/' . $filename);
-                Image::make($image->getRealPath())->resize(800, 533)->save($path);
-
-            $Event->image =$filename;
-            $Event->save();
-
-            if ($Event->id) {
-                return response()->json(['success' => 'Event Added successfully.']);
-            } else {
-                return response()->json(['failed' => 'Event Added failed.']);
-            }
-
-
+            $data['image'] = $filename;
         }
+        //image uplode [end]
+
+        Event::create($data);
+
+        return response()->json(['success' => 'Event Added successfully.']);
     }
 
     public function eventDelete($id)
@@ -130,56 +119,39 @@ class EventController extends Controller
     public function eventUpdate(Request $request)
     {
         // dd($request->all());
+        $data = $request->all();
+
+        $Event = Event::find($request->id);
+        
+        // Check if an image file is uploaded [start]
         if ($request->hasFile('image')) {
 
-            $Event = Event::find($request->id);
+            // Delete old image if exists
+            if ($Event->image && file_exists(public_path('assets/img/events/' . $Event->image) ) ) {
+                unlink(public_path('assets/img/events/' . $Event->image));
+            }
+
+            // Store the new image
+            $image = $request->file('image');
             
-            $image=$Event->image;
+            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $path = public_path('assets/img/events/' . $filename);
+            Image::make($image->getRealPath())->resize(600, 600)->save($path);
 
-            if($image!=null){
-                $path = public_path('assets/img/events/' . $image);
-                if (file_exists($path)) {
-                    unlink($path);
-                }
-            }
             
-            // $Event->title = ucwords($request->title);
-            $Event->title = $request->title;
-            $Event->event_date =$request->event_date;
-            $Event->event_time =$request->event_time;
-            $Event->description =$request->description;
 
-                $image = $request->file('image');
+            // Save image name to the database
+            $data['image'] = $filename;
+        }
+        // Check if an image file is uploaded [end]
 
-                $filename = $request->title.'.'.$image->getClientOriginalExtension();
-                $path = public_path('assets/img/events/' . $filename);
-                Image::make($image->getRealPath())->resize(800, 533)->save($path);
+        $Event->update($data);
 
-            $Event->image =$filename;
-            $Event->save();
-
-            if ($Event->id) {
-                return response()->json(['success' => 'Event Update successfully.']);
-            } else {
-                return response()->json(['failed' => 'Event Update failed.']);
-            }
-
-
-        }else {
-            $Event = Event::find($request->id);
-            // $Event->title = ucwords($request->title);
-            $Event->title = $request->title;
-            $Event->event_date =$request->event_date;
-            $Event->event_time =$request->event_time;
-            $Event->description =$request->description;
-            $Event->save();
-
-            if ($Event->id) {
-                return response()->json(['success' => 'Event Update successfully.']);
-            } else {
-                return response()->json(['failed' => 'Event Update failed.']);
-            }
-
+        if ($Event) {
+            return response()->json(['success' => 'Data Update Successfully.']);
+        } else {
+            return response()->json(['failed' => 'Update failed.']);
         }
     }
+
 }

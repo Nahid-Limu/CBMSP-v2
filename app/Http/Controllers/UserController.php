@@ -33,13 +33,14 @@ class UserController extends Controller
     
     public function events()
     {
-        $Events = Event::orderBy('id', 'desc')->get();
+        $Events = Event::orderBy('event_date', 'desc')->paginate(4);
         return view('events', compact('Events'));
     }
 
     public function notice()
     {
         $Notices = Notice::orderBy('id', 'desc')->get();
+        // $Events = Event::orderBy('event_date', 'desc')->paginate(4);
         return view('notice', compact('Notices'));
     }
 

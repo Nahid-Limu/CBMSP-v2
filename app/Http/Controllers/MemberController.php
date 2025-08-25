@@ -15,7 +15,7 @@ class MemberController extends Controller
     public function showMemberList()
     {
         // dd(121);
-        $Members = Member::where('status', 1)->get(['id','name','photo','phone','tea_board_registration_number','tea_garden_address','amount_of_tea_garden']);
+        $Members = Member::where('status', 1)->get(['id','name','mid','photo','phone','tea_board_registration_number','tea_garden_address','amount_of_tea_garden']);
         // dd($Members);
         if(request()->ajax())
         {
@@ -142,6 +142,7 @@ class MemberController extends Controller
         $Member = Member::find($request->id);
 
         $Member->status = 1;
+        $Member->mid  = "CBMSP-".$Member->id;
         $Member->save();
 
         if ($Member->id) {

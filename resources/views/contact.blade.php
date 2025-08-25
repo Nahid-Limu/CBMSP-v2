@@ -17,7 +17,7 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div data-aos="fade-up">
-        <iframe style="border:0; width: 100%; height: 350px;" src="https://maps.google.com/maps?q=panchagarh+residential+school+and+college&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" allowfullscreen></iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d265.77611749865486!2d88.55552293865631!3d26.331584423752574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e48ba3ae3e02cf%3A0x51113613e93d73e7!2z4Kai4Ka-4KaV4Ka-IOCmnOCmv-Cmrg!5e0!3m2!1sbn!2sbd!4v1756140731771!5m2!1sbn!2sbd" frameborder="0" allowfullscreen></iframe>
       </div>
 
       <div class="container" data-aos="fade-up">

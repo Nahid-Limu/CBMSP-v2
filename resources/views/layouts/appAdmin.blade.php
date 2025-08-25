@@ -43,4 +43,5 @@
   </body>
 @include('include.admin.jsAdmin')
 @yield('script')
+{{-- NiceAdmin Template --}}
 </html>

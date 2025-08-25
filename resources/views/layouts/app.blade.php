@@ -46,4 +46,5 @@
   </body>
 @include('include.js')
 @yield('script')
+{{-- Mentor Template --}}
 </html>

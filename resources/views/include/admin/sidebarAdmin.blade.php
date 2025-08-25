@@ -5,19 +5,32 @@
 
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'dashboard') ? 'nav-item ' : 'nav-link collapsed' }} " href="{{ route('dashboard') }}">
-          <i class="bi bi-grid"></i>
+          <i class="bx bx-grid-alt"></i>
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
 
-      <li class="nav-heading">Pages</li>
+      <li class="nav-heading">Modules</li>
       
-      <li class="nav-item">
-        <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
-          <i class="bx bxs-user-detail"></i>
-          <span>Test</span>
+      <li class="nav-item"><!-- start Member Nav -->
+        <a class="nav-link " data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
+          <i class="bx bx-layout"></i><span>Member</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      </li><!-- End Teacher Page Nav -->
+        <ul id="tables-nav" class="{{ (Route::currentRouteName() == 'MemberList' || Route::currentRouteName() ==  'pendingMemberList' ) ? 'nav-content collapse show' : 'nav-content collapse' }}" data-bs-parent="#sidebar-nav">
+          <li>
+            <a href="{{ route('MemberList') }}" class="{{ (Route::currentRouteName() == 'MemberList') ? 'active' : '' }}">
+              <i class="bi bi-circle"></i><span>Member List</span>
+            </a>
+          </li>
+          <li>
+            <a href="{{ route('pendingMemberList') }}" class="{{ (Route::currentRouteName() == 'pendingMemberList') ? 'active' : '' }}">
+              <i class="bi bi-circle"></i><span>Pending Member List</span>
+            </a>
+          </li>
+        </ul>
+      </li><!-- End Member Nav -->
+
+
 
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'eventList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('eventList') }}">
@@ -33,6 +46,13 @@
         </a>
       </li><!-- End Notice Page Nav -->
 
+            <li class="nav-item">
+        <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
+          <i class="bx bxs-user-detail"></i>
+          <span>Test</span>
+        </a>
+      </li><!-- End Teacher Page Nav -->
+
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'resultList') ? 'nav-item ' : 'nav-link collapsed' }}" href="{{ route('resultList') }}">
           <i class='bx bx-spreadsheet' ></i>
@@ -47,23 +67,7 @@
         </a>
       </li><!-- End Career Page Nav -->
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-layout-text-window-reverse"></i><span>Member</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="tables-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="{{ route('MemberList') }}">
-              <i class="bi bi-circle"></i><span>Member List</span>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('pendingMemberList') }}">
-              <i class="bi bi-circle"></i><span>Pending Member List</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Tables Nav -->
+      
 
     </ul>
 

@@ -152,11 +152,12 @@
         url: "{{url('viewMember')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
-            console.log(response);
+            // console.log(response);
             if (response) {
               
               $('#id').val(response.id);
               $('#status').val(response.status);
+              // $('#mid').text(response.mid);
 
               $("#photo").attr("src", "assets/img/Members/"+ response.photo);
 

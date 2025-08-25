@@ -44,6 +44,7 @@
                     <tr>
                       <th scope="col">#</th>
                       <th scope="col">Name</th>
+                      <th scope="col">Member ID</th>
                       <th scope="col">Photo</th>
                       <th scope="col">Phone</th>
                       <th scope="col">Tea Board Registration</th>
@@ -92,6 +93,10 @@
           {
               data: 'name',
               name: 'name'
+          },
+          {
+              data: 'mid',
+              name: 'mid'
           },
           {
               data: 'photo',
@@ -231,6 +236,7 @@
               
               $('#id').val(response.id);
               $('#status').val(response.status);
+              $('#mid').text(response.mid);
 
               $("#photo").attr("src", "assets/img/Members/"+ response.photo);
 

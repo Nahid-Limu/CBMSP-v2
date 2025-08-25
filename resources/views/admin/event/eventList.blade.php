@@ -131,7 +131,7 @@
             processData: false,
             success:function(response)
             {
-              // console.log(response);
+              console.log(response.errors);
 
               // validation
               var html = '';
