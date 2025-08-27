@@ -1,17 +1,17 @@
 @extends('layouts.appAdmin')
 
-@section('title', 'EventList')
+@section('title', 'InsectAndDiseaseList')
 
 @section('content')
 
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Even</h1>
+      <h1>Insect And Disease List</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item">Even</li>
+          <li class="breadcrumb-item">Insect And Disease</li>
           <li class="breadcrumb-item active">List</li>
         </ol>
       </nav>
@@ -26,28 +26,28 @@
                 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     
-                  <h6 class="m-0 font-weight-bold text-primary"><i class='bi bi-person-lines-fill text-success'> Even LIST</i></h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><i class='bi bi-person-lines-fill text-success'> Insect And Disease LIST</i></h6>
                     
                   {{-- flash Message --}}
                     <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
                   {{-- flash Message --}}
 
                   <div class="dropdown no-arrow">
-                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddEventModal"><i class='bx bxs-file-plus'></i> Add Even</button>
+                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddInsectAndDiseaseModal"><i class='bx bxs-file-plus'></i> Add Treatment</button>
                   </div>
 
                 </div>
 
                 <!-- Table with stripped rows -->
-                <table class="table table-responsive" id="EvenListTable">
+                <table class="table table-responsive" id="InsectAndDiseaseListTable">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Title</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">Time</th>
+                      <th scope="col">Type</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Image</th>
                       <th scope="col">Description</th>
-                      <th scope="col">Photo</th>
+                      <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
                   </thead>
@@ -60,10 +60,10 @@
   
           </div>
         </div>
-    </section>
+      </section>
 
-      @include('admin.event.addEventModal')
-      @include('admin.event.editEventModal')
+      @include('admin.insectanddisease.addInsectAndDiseaseModal')
+      @include('admin.teacher.editTeaherModal')
 
       @include('include.admin.deleteModal')
 
@@ -75,13 +75,13 @@
 <script>
 
   //Table Data
-  $('#EvenListTable').DataTable({
+  $('#InsectAndDiseaseListTable').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
         "order": [[ 0, "asc" ]],
         ajax:{
-        url: "{{ route('eventList') }}",
+        url: "{{ route('insectAndDiseaseList') }}",
         },
         columns:[
           { 
@@ -89,24 +89,24 @@
               name: 'DT_RowIndex' 
           },
           {
-              data: 'title',
-              name: 'title'
+              data: 'type',
+              name: 'type'
           },
           {
-              data: 'event_date',
-              name: 'event_date'
+              data: 'name',
+              name: 'name'
           },
           {
-              data: 'event_time',
-              name: 'event_time'
+              data: 'image',
+              name: 'image'
           },
           {
               data: 'description',
               name: 'description'
           },
           {
-              data: 'image',
-              name: 'image'
+              data: 'pinned',
+              name: 'pinned'
           },
           {
               data: 'action',
@@ -119,10 +119,10 @@
   //Add Table Data
   function addData() {
 
-    var form = $('#AddEventForm')[0];
+    var form = $('#AddInsectAndDiseaseForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('eventAdd') }}",
+            url:"{{ route('insectAndDiseaseAdd') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -152,8 +152,9 @@
                 
                 $("#success_message").text(response.success);
                 $('#EvenListTable').DataTable().ajax.reload();
-                $('#AddEventModal').modal('hide');
-                $("#AddEventForm").trigger("reset");
+                $('#AddInsectAndDiseaseModal').modal('hide');
+                // $("#AddInsectAndDiseaseForm").trigger("reset");
+                onCloseModal('AddInsectAndDiseaseForm');
                 // alert(response.success);
                 SuccessMsg();
               }
@@ -171,13 +172,13 @@
       // alert(121);
       $.ajax({
           type: 'GET',
-          url: "{{url('eventDelete')}}"+"/"+id,
+          url: "{{url('teacherDelete')}}"+"/"+id,
           success: function (response) {
               // console.log(response);
               if (response.success) {
                       
                 $("#success_message").text(response.success);
-                $('#EvenListTable').DataTable().ajax.reload();
+                $('#TeacherListTable').DataTable().ajax.reload();
                 $('#DeleteModal').modal('hide');
 
                 SuccessMsg();
@@ -192,21 +193,20 @@
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditEventForm").trigger("reset");
+    $("#EditTeacherForm").trigger("reset");
     $.ajax({
         type: 'GET',
-        url: "{{url('eventEdit')}}"+"/"+id,
+        url: "{{url('teacherEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
             // console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
-              $('#edit_title').val(response.title);
-              $('#edit_event_date').val(response.event_date);
-              $('#edit_event_time').val(response.event_time);
-              $('#edit_description').val(response.description);
-              $("#imageView").attr("src", "assets/img/events/"+ response.image);
+              $('#edit_name').val(response.name);
+              $('#edit_designation').val(response.designation);
+              $('#edit_teachers_words').val(response.teachers_words);
+              $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
               
             }
 
@@ -219,10 +219,10 @@
   //Update Table Data
   function updateData(params) {
     // alert();
-    var form = $('#EditEventForm')[0];
+    var form = $('#EditTeacherForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('eventUpdate') }}",
+            url:"{{ route('teacherUpdate') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -235,8 +235,8 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#EvenListTable').DataTable().ajax.reload();
-                $('#EditEventModal').modal('hide');
+                $('#TeacherListTable').DataTable().ajax.reload();
+                $('#EditTeacherModal').modal('hide');
                 
                 SuccessMsg();
               }
@@ -247,5 +247,19 @@
     })
   }
 
+  //Preview an image before Uplode
+  $('.uplodeImage').change(function() {
+    if (this.files && this.files[0]) {
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            $('.imgPreview').attr('src', e.target.result);
+        }
+
+        reader.readAsDataURL(this.files[0]);
+    }
+  });
+  
 </script>
 @endsection

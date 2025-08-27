@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string("dag_number")->nullable();
             $table->string("mouja_name")->nullable();
             $table->string("tea_board_registration_number")->nullable();
-            $table->tinyInteger('status')->default('0');
+            $table->tinyInteger('status')->default('0')->comment('Indicates the current status of the Member (e.g., 1->active, 0->pending)');
             $table->timestamps();
         });
     }

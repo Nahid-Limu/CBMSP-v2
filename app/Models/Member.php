@@ -13,6 +13,6 @@ class Member extends Model
         'name', 'photo', 'nid', 'dob', 'father_name', 'mother_name',
         'village', 'union_parishad', 'upazila', 'zila', 'phone', 'email',
         'amount_of_tea_garden', 'tea_garden_address', 'dag_number', 'mouja_name',
-        'tea_board_registration_number'
+        'tea_board_registration_number','status'
     ];
 }

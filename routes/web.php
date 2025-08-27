@@ -6,12 +6,14 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TeacherController;
-use App\Http\Controllers\EventController;
-use App\Http\Controllers\NoticeController;
+
 use App\Http\Controllers\ResultController;
 use App\Http\Controllers\CareerController;
 
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\NoticeController;
+use App\Http\Controllers\InsectAndDiseaseController;
 
 
 /*
@@ -74,21 +76,9 @@ Route::group(['middleware'=>'auth'], function () {
     Route::post('/teacherUpdate', [TeacherController::class, 'teacherUpdate'])->name('teacherUpdate');
     //--teacher [end]--//
 
-    //--event [start]--//
-    Route::get('/eventList', [EventController::class, 'eventList'])->name('eventList');
-    Route::post('/eventAdd', [EventController::class, 'eventAdd'])->name('eventAdd');
-    Route::get('/eventDelete/{id}', [EventController::class, 'eventDelete'])->name('eventDelete');
-    Route::get('/eventEdit/{id}', [EventController::class, 'eventEdit'])->name('eventEdit');
-    Route::post('/eventUpdate', [EventController::class, 'eventUpdate'])->name('eventUpdate');
-    //--event [end]--//
 
-    //--notice [start]--//
-    Route::get('/noticeList', [NoticeController::class, 'noticeList'])->name('noticeList');
-    Route::post('/noticeAdd', [NoticeController::class, 'noticeAdd'])->name('noticeAdd');
-    Route::get('/noticeDelete/{id}', [NoticeController::class, 'noticeDelete'])->name('noticeDelete');
-    Route::get('/noticeEdit/{id}', [NoticeController::class, 'noticeEdit'])->name('noticeEdit');
-    Route::post('/noticeUpdate', [NoticeController::class, 'noticeUpdate'])->name('noticeUpdate');
-    //--notice [end]--//
+
+
 
     //--result [start]--//
     Route::get('/resultList', [ResultController::class, 'resultList'])->name('resultList');
@@ -114,6 +104,31 @@ Route::group(['middleware'=>'auth'], function () {
     Route::post('/updateMember', [MemberController::class, 'updateMember'])->name('updateMember');
     Route::get('/deleteMember/{id}', [MemberController::class, 'deleteMember'])->name('deleteMember');
     //--Member [end]--//
+
+    //--event [start]--//
+    Route::get('/eventList', [EventController::class, 'eventList'])->name('eventList');
+    Route::post('/eventAdd', [EventController::class, 'eventAdd'])->name('eventAdd');
+    Route::get('/eventDelete/{id}', [EventController::class, 'eventDelete'])->name('eventDelete');
+    Route::get('/eventEdit/{id}', [EventController::class, 'eventEdit'])->name('eventEdit');
+    Route::post('/eventUpdate', [EventController::class, 'eventUpdate'])->name('eventUpdate');
+    //--event [end]--//
+
+    //--notice [start]--//
+    Route::get('/noticeList', [NoticeController::class, 'noticeList'])->name('noticeList');
+    Route::post('/noticeAdd', [NoticeController::class, 'noticeAdd'])->name('noticeAdd');
+    Route::get('/noticeDelete/{id}', [NoticeController::class, 'noticeDelete'])->name('noticeDelete');
+    Route::get('/noticeEdit/{id}', [NoticeController::class, 'noticeEdit'])->name('noticeEdit');
+    Route::post('/noticeUpdate', [NoticeController::class, 'noticeUpdate'])->name('noticeUpdate');
+    //--notice [end]--//
+
+    //--teacher [start]--//
+    Route::get('/insectAndDiseaseList', [InsectAndDiseaseController::class, 'insectAndDiseaseList'])->name('insectAndDiseaseList');
+    Route::post('/insectAndDiseaseAdd', [InsectAndDiseaseController::class, 'insectAndDiseaseAdd'])->name('insectAndDiseaseAdd');
+    // Route::post('/teacherAdd', [TeacherController::class, 'teacherAdd'])->name('teacherAdd');
+    // Route::get('/teacherDelete/{id}', [TeacherController::class, 'teacherDelete'])->name('teacherDelete');
+    // Route::get('/teacherEdit/{id}', [TeacherController::class, 'teacherEdit'])->name('teacherEdit');
+    // Route::post('/teacherUpdate', [TeacherController::class, 'teacherUpdate'])->name('teacherUpdate');
+    //--teacher [end]--//
     
     // Route::get('/test', 'SalesController@test')->name('test');
     // pendingMemberList

@@ -26,7 +26,7 @@
                 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     
-                  <h6 class="m-0 font-weight-bold text-primary"><i class='bx bxs-user-detail'> Member LIST</i></h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><i class='bi bi-person-lines-fill text-success'> Member LIST</i></h6>
                     
                   {{-- flash Message --}}
                     <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
