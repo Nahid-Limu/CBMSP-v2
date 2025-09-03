@@ -39,19 +39,22 @@
                 
                 <div class="col-md-6">
                   <div class="text-center">
-                    <img src="" class='img-fluid imgPreview' id="imageView" style='widows: 70px; height: 70px;'>
+                    <img src="" class='img-fluid imgPreview' id="imageView">
+                    {{-- <img src="" class='w-100 imgPreview' id="imageView"> --}}
                   </div>
                 </div>
 
-                <div class="text-center">
+                {{-- <div class="text-center">
                   <button type="button" onclick="updateData()" class="btn btn-outline-success btn-sm">Update</button>
                   <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                </div>
+                </div> --}}
             </form>
             <!-- Vertical Form -->
         </div>
         <div class="modal-footer">
-          
+          <button type="button" onclick="updateData()" class="btn btn-outline-success btn-sm">Update</button>
+          {{-- <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button> --}}
+          <button type="reset" onclick="onCloseModal('EditEventForm')" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

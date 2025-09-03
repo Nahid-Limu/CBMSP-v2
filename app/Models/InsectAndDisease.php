@@ -10,6 +10,6 @@ class InsectAndDisease extends Model
     use HasFactory;
 
     protected $fillable = [
-        'type', 'name', 'image', 'description', 'status'
+        'type', 'name', 'image', 'description', 'pinned'
     ];
 }

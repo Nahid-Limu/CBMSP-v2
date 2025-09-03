@@ -9,7 +9,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
       <div class="container">
-        <h2>Member Registration</h2>
+        <h2>MEMBER REGISTRATION</h2>
         <p>New Member Registration. </p>
       </div>
     </div><!-- End Breadcrumbs -->

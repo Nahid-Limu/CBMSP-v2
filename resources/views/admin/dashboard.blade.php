@@ -32,7 +32,7 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class='bx bx-user-circle bx-tada' ></i>
+                      <i class='bi bi-person-circle text-success bx-lg bx-tada' ></i>
                     </div>
                     <div class="ps-3">
                       <h6 >{{ $TotalMember }}</h6>
@@ -54,7 +54,7 @@
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class='bx bx-user-circle bx-tada' ></i>
+                      <i class='bi bi-person-circle bx-lg bx-tada' ></i>
                     </div>
                     <div class="ps-3">
                       <h6 >{{ $PendingMember }}</h6>
@@ -70,17 +70,17 @@
             <hr>
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card bg-info">
+              <div class="card info-card sales-card" style="background-color:wheat">
                 
                 <div class="card-body">
-                  <h5 class="card-title">Other</h5>
+                  <h5 class="card-title">Treatment</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class='bx bx-user-circle bx-tada' ></i>
+                      <i class='bi bi-bug-fill bx-lg bx-tada' ></i>
                     </div>
                     <div class="ps-3">
-                      <h6 >{{ $TotalTeacher }}</h6>
+                      <h6 >{{ $TotalTreatment }}</h6>
                       {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
                     </div>
@@ -92,14 +92,14 @@
 
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card bg-warning">
+              <div class="card info-card sales-card bg-info">
                 
                 <div class="card-body">
                   <h5 class="card-title">Event</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class='bx bx-calendar-event bx-tada' ></i>
+                      <i class='bi bi-calendar-event-fill bx-md bx-tada' ></i>
                     </div>
                     <div class="ps-3">
                       <h6 >{{ $TotalEvent }}</h6>
@@ -114,14 +114,14 @@
 
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-4">
-              <div class="card info-card sales-card bg-success">
+              <div class="card info-card sales-card" style="background-color:thistle">
                 
                 <div class="card-body">
                   <h5 class="card-title">Notice</h5>
 
                   <div class="d-flex align-items-center">
                     <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class='bx bx-bell bx-tada' ></i>
+                      <i class='bi bi-bell-fill bx-lg bx-tada' ></i>
                     </div>
                     <div class="ps-3">
                       <h6 >{{ $TotalNotice }}</h6>

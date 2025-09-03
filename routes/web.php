@@ -50,6 +50,11 @@ Route::get('/contact', [UserController::class, 'contact'])->name('contact');
 Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
 Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
 
+Route::get('/treatment', [UserController::class, 'treatment'])->name('treatment');
+
+Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+// Route::get('/treatment/{type}/{id}', [UserController::class, 'treatment'])->name('treatment.details');
+
 // Route::get('/phpinfo', function() {
 //     return phpinfo();
 // });
@@ -121,14 +126,12 @@ Route::group(['middleware'=>'auth'], function () {
     Route::post('/noticeUpdate', [NoticeController::class, 'noticeUpdate'])->name('noticeUpdate');
     //--notice [end]--//
 
-    //--teacher [start]--//
+    //--InsectAndDisease [start]--//
     Route::get('/insectAndDiseaseList', [InsectAndDiseaseController::class, 'insectAndDiseaseList'])->name('insectAndDiseaseList');
     Route::post('/insectAndDiseaseAdd', [InsectAndDiseaseController::class, 'insectAndDiseaseAdd'])->name('insectAndDiseaseAdd');
-    // Route::post('/teacherAdd', [TeacherController::class, 'teacherAdd'])->name('teacherAdd');
-    // Route::get('/teacherDelete/{id}', [TeacherController::class, 'teacherDelete'])->name('teacherDelete');
-    // Route::get('/teacherEdit/{id}', [TeacherController::class, 'teacherEdit'])->name('teacherEdit');
-    // Route::post('/teacherUpdate', [TeacherController::class, 'teacherUpdate'])->name('teacherUpdate');
-    //--teacher [end]--//
+    Route::get('/insectAndDiseaseEdit/{id}', [InsectAndDiseaseController::class, 'insectAndDiseaseEdit'])->name('insectAndDiseaseEdit');
+    Route::post('/insectAndDiseaseUpdate', [InsectAndDiseaseController::class, 'insectAndDiseaseUpdate'])->name('insectAndDiseaseUpdate');
+    //--InsectAndDisease [end]--//
     
     // Route::get('/test', 'SalesController@test')->name('test');
     // pendingMemberList

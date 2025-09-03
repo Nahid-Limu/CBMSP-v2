@@ -32,15 +32,16 @@
                   <input type="file" class="form-control" name="document" id="document" >
                 </div>
 
-                <div class="text-center">
+                {{-- <div class="text-center">
                   <button type="button" onclick="updateData()" class="btn btn-outline-success btn-sm">Update</button>
-                  <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>
-                </div>
+                  <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+                </div> --}}
             </form>
             <!-- Vertical Form -->
         </div>
         <div class="modal-footer">
-          
+          <button type="button" onclick="updateData()" class="btn btn-outline-success btn-sm">Update</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

@@ -21,8 +21,8 @@
           
           <li class="dropdown"><a href="#"><span>Cha Seba</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">পোকামাকড় ব্যবস্থাপনা</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="{{ route('treatment', ['type'=>'insect'] ) }}">পোকামাকড় ব্যবস্থাপনা</a></li>
+              {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="#">Deep Drop Down 1</a></li>
                   <li><a href="#">Deep Drop Down 2</a></li>
@@ -30,12 +30,14 @@
                   <li><a href="#">Deep Drop Down 4</a></li>
                   <li><a href="#">Deep Drop Down 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">অন্যান্য রোগ</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
+              </li> --}}
+              <li><a href="{{ route('treatment', ['type'=>'disease'] ) }}">অন্যান্য রোগ</a></li>
+              {{-- <li><a href="#">Drop Down 3</a></li>
+              <li><a href="#">Drop Down 4</a></li> --}}
             </ul>
           </li>
+
+          <li><a class="{{ (Route::currentRouteName() == 'blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
           
           <li><a class="{{ (Route::currentRouteName() == 'about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
           {{-- <li><a class="{{ (Route::currentRouteName() == 'career') ? 'active' : '' }}" href="{{ route('career') }}">career</a></li> --}}

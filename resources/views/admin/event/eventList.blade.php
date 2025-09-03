@@ -198,7 +198,7 @@
         url: "{{url('eventEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
-            // console.log(response);
+            console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
@@ -206,6 +206,8 @@
               $('#edit_event_date').val(response.event_date);
               $('#edit_event_time').val(response.event_time);
               $('#edit_description').val(response.description);
+
+              $('.imgPreview').attr('hidden', false);
               $("#imageView").attr("src", "assets/img/events/"+ response.image);
               
             }

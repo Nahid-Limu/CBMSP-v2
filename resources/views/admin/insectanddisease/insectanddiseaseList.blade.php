@@ -63,7 +63,7 @@
       </section>
 
       @include('admin.insectanddisease.addInsectAndDiseaseModal')
-      @include('admin.teacher.editTeaherModal')
+      @include('admin.insectanddisease.editInsectAndDiseaseModal')
 
       @include('include.admin.deleteModal')
 
@@ -193,20 +193,27 @@
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditTeacherForm").trigger("reset");
+    $("#EditInsectAndDiseaseForm").trigger("reset");
     $.ajax({
         type: 'GET',
-        url: "{{url('teacherEdit')}}"+"/"+id,
+        url: "{{url('insectAndDiseaseEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
             // console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
+              $('#edit_pinned').val(response.pinned).attr("selected", "selected");
+              $('#edit_type').val(response.type);
               $('#edit_name').val(response.name);
-              $('#edit_designation').val(response.designation);
-              $('#edit_teachers_words').val(response.teachers_words);
-              $("#imageView").attr("src", "assets/img/teachers/"+ response.image);
+              $('#edit_type').val(response.type).attr("selected", "selected");
+              $('#edit_description').val(response.description);
+
+              $('.imgPreview').attr('hidden', false);
+              $("#imageView").attr("src", "assets/img/insectAndDisease/"+ response.image);
+              
+              $('#edit_description').summernote('code', response.description);
+              // $("#edit_photo").attr("src", "assets/img/Members/"+ response.photo);
               
             }
 
@@ -219,10 +226,10 @@
   //Update Table Data
   function updateData(params) {
     // alert();
-    var form = $('#EditTeacherForm')[0];
+    var form = $('#EditInsectAndDiseaseForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('teacherUpdate') }}",
+            url:"{{ route('insectAndDiseaseUpdate') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -235,8 +242,8 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#TeacherListTable').DataTable().ajax.reload();
-                $('#EditTeacherModal').modal('hide');
+                $('#InsectAndDiseaseListTable').DataTable().ajax.reload();
+                $('#EditInsectAndDiseaseModal').modal('hide');
                 
                 SuccessMsg();
               }
@@ -246,20 +253,6 @@
             }
     })
   }
-
-  //Preview an image before Uplode
-  $('.uplodeImage').change(function() {
-    if (this.files && this.files[0]) {
-
-        var reader = new FileReader();
-
-        reader.onload = function(e) {
-            $('.imgPreview').attr('src', e.target.result);
-        }
-
-        reader.readAsDataURL(this.files[0]);
-    }
-  });
   
 </script>
 @endsection

@@ -9,7 +9,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-        <h2>About Us</h2>
+        <h2>ABOUT US</h2>
         <p>Let's Know About Us. </p>
       </div>
     </div><!-- End Breadcrumbs -->

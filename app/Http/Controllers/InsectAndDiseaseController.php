@@ -43,8 +43,8 @@ class InsectAndDiseaseController extends Controller
                     
                     ->addColumn('action', function($data){
             
-                        $button = '<div class="d-flex justify-content-center"><button type="button" onclick="editData('.$data->id.')" name="edit" id="'.$data->id.'" class="edit btn btn-outline-success btn-sm " data-bs-toggle="modal" data-bs-target="#EditEventModal" ><i class="bx bx-edit"> Edit</i></button>';
-                        $button .= '&nbsp<button type="button" onclick="deleteModal('.$data->id.',\''.$data->title.'\',\'Event List\')" name="delete" id="'.$data->id.'" class="delete btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteModal" ><i class="bx bx-trash"> Delete</i></button></div>';
+                        $button = '<div class="d-flex justify-content-center"><button type="button" onclick="editData('.$data->id.')" name="edit" id="'.$data->id.'" class="edit btn btn-outline-success btn-sm " data-bs-toggle="modal" data-bs-target="#EditInsectAndDiseaseModal" ><i class="bx bx-edit"> Edit</i></button>';
+                        $button .= '&nbsp<button type="button" disabled onclick="deleteModal('.$data->id.',\''.$data->name.'\',\'Event List\')" name="delete" id="'.$data->id.'" class="delete btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteModal" ><i class="bx bx-trash"> Delete</i></button></div>';
                         
                         return $button;
                     })
@@ -55,17 +55,7 @@ class InsectAndDiseaseController extends Controller
         return view('admin.insectanddisease.insectanddiseaseList');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    //---Store a newly created Data.
     public function insectAndDiseaseAdd(Request $request)
     {
         // dd($request->all());
@@ -103,29 +93,54 @@ class InsectAndDiseaseController extends Controller
         return response()->json(['success' => 'Treatment Added successfully.']);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(InsectAndDisease $insectAndDisease)
+    //---Display the specified Data.
+    public function insectAndDiseaseEdit($id)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(InsectAndDisease $insectAndDisease)
-    {
-        //
+        $InsectAndDisease = InsectAndDisease::find($id);
+        return response()->json($InsectAndDisease);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, InsectAndDisease $insectAndDisease)
+    public function insectAndDiseaseUpdate(Request $request)
     {
-        //
+        // dd($request->all());
+        $data = $request->all();
+
+        $InsectAndDisease = InsectAndDisease::find($request->id);
+        
+        // Check if an image file is uploaded [start]
+        if ($request->hasFile('image')) {
+
+            // Delete old image if exists
+            if ($InsectAndDisease->image && file_exists(public_path('assets/img/insectAndDisease/' . $InsectAndDisease->image) ) ) {
+                unlink(public_path('assets/img/insectAndDisease/' . $InsectAndDisease->image));
+            }
+
+            // Store the new image
+            $image = $request->file('image');
+            
+            $filename = $request->name.'.'.$image->getClientOriginalExtension();
+            $path = public_path('assets/img/insectAndDisease/' . $filename);
+            Image::make($image->getRealPath())->resize(600, 600)->save($path);
+
+            
+
+            // Save image name to the database
+            $data['image'] = $filename;
+        }
+        // Check if an image file is uploaded [end]
+
+        $InsectAndDisease->update($data);
+
+        if ($InsectAndDisease) {
+            return response()->json(['success' => 'Data Update Successfully.']);
+        } else {
+            return response()->json(['failed' => 'Update failed.']);
+        }
     }
+
 
     /**
      * Remove the specified resource from storage.

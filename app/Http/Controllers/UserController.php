@@ -10,6 +10,7 @@ use App\Models\Result;
 use App\Models\Career;
 
 use App\Models\Member;
+use App\Models\InsectAndDisease;
 use DB;
 
 class UserController extends Controller
@@ -96,6 +97,29 @@ class UserController extends Controller
     public function memberRegistration()
     {
         return view('memberRegistration');
+    }
+
+    function treatment(Request $request)
+    {
+        // dd($request->all());
+        $RecentDiseases = InsectAndDisease::orderBy('updated_at', 'desc')->where('pinned', 1)->get();
+        
+        if (isset($request->id)) {
+            // echo "id.";
+            $TreatmentsList = InsectAndDisease::orderBy('id', 'desc')->where('type', $request->type)->get(['id','type','name']);
+            $TreatmentDetails = InsectAndDisease::find($request->id);
+
+            return view('treatment', compact('RecentDiseases','TreatmentsList','TreatmentDetails'));
+        }
+        // echo "type only.";
+        $TreatmentsList = InsectAndDisease::orderBy('id', 'desc')->where('type', $request->type)->get(['id','type','name']);
+        
+        return view('treatment', compact('TreatmentsList','RecentDiseases'));
+    }
+
+    function blog()
+    {
+        return view('blog');
     }
 
 

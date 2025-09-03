@@ -10,7 +10,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs">
         <div class="container">
-        <h2>Notice</h2>
+        <h2>NOTICE</h2>
         <p>Notice Details</p>
         </div>
     </div>

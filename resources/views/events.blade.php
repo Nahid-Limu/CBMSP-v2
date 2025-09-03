@@ -9,7 +9,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
         <div class="container">
-        <h2>Events</h2>
+        <h2>EVENTS</h2>
         <p>All Events Of CBMSP. </p>
         </div>
     </div><!-- End Breadcrumbs -->

@@ -90,7 +90,7 @@
 
         <div class="modal-footer">
           <button type="submit" onclick="updateData()" class="btn btn-outline-success btn-sm">Update</button>
-          <button type="button" class="btn btn-outline-danger btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
 
       </div>
