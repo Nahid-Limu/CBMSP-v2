@@ -31,7 +31,6 @@
         </ul>
       </li><!-- End Member Nav -->
 
-      
       <li class="nav-item">
         <a class="{{ (Route::currentRouteName() == 'eventList') ? 'nav-link ' : 'nav-link collapsed' }}" href="{{ route('eventList') }}">
           <i class='bi bi-calendar2-day {{ request()->routeIs('eventList') ? ' bx-md' : '' }}'></i>
@@ -52,29 +51,6 @@
           <span>Insects And Diseases</span>
         </a>
       </li><!-- End Insects and other diseases Page Nav -->
-
-      <li class="nav-item">
-        <a class="{{ (Route::currentRouteName() == 'teacherList') ? 'nav-link ' : 'nav-link collapsed' }}" href="{{ route('teacherList') }}">
-          <i class="bx bxs-user-detail"></i>
-          <span>Test</span>
-        </a>
-      </li><!-- End Teacher Page Nav -->
-
-      <li class="nav-item">
-        <a class="{{ (Route::currentRouteName() == 'resultList') ? 'nav-link ' : 'nav-link collapsed' }}" href="{{ route('resultList') }}">
-          <i class='bx bx-spreadsheet' ></i>
-          <span>Result</span>
-        </a>
-      </li><!-- End Notice Page Nav -->
-
-      <li class="nav-item">
-        <a class="{{ (Route::currentRouteName() == 'careerList') ? 'nav-link ' : 'nav-link collapsed' }}" href="{{ route('careerList') }}">
-          <i class='bx bxs-graduation'></i>
-          <span>Career</span>
-        </a>
-      </li><!-- End Career Page Nav -->
-
-      
 
     </ul>
 

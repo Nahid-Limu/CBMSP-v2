@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact')
+@section('title', 'Treatment')
 
 @section('content')
 
@@ -33,7 +33,7 @@
             <hr>
             <hr>
 
-            <kbd class="form-control bg-warning text-center"><i class="bi bi-list-ol"></i> Recent Diseases List <i class="bi bi-fire text-danger"></i></kbd>
+            <kbd class="form-control bg-warning text-center"><i class="bi bi-list-ol"></i> Recent Diseases List <i class="bi bi-fire text-danger"></i><br>সাম্প্রতিক রোগসমূহ</kbd>
             <div class="list-group">
               @foreach ($RecentDiseases as $rd)
                   <a href="{{ route('treatment', ['type'=>$rd->type,'id'=>$rd->id] ) }}" class="list-group-item list-group-item-action text-danger">{{ $loop->index + 1 }}<i class="bi bi-dot"></i> {{ucwords($rd->name)}} <i class="bi bi-pin-angle" style="padding-left: 20px;"></i></a>

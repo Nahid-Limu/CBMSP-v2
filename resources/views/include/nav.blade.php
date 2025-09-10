@@ -10,60 +10,40 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="{{ (Route::currentRouteName() == 'home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
-          {{-- <li><a class="{{ (Route::currentRouteName() == 'teachers') ? 'active' : '' }}" href="{{ route('teachers') }}">Our Teachers</a></li> --}}
           <li><a class="{{ (Route::currentRouteName() == 'events') ? 'active' : '' }}" href="{{ route('events') }}">Events</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'notice') || (Route::currentRouteName() == 'noticeDetails') ? 'active' : '' }}" href="{{ route('notice') }}">Notice</a></li>
-          {{-- <li><a class="{{ (Route::currentRouteName() == 'result') ? 'active' : '' }}" href="{{ route('result') }}">Result</a></li> --}}
           {{-- <li><a class="{{ (Route::currentRouteName() == 'admission') ? 'active' : '' }}" href="{{ route('admission') }}">Admission</a></li> --}}
-          {{-- <li><a class="{{ (Route::currentRouteName() == 'career') || (Route::currentRouteName() == 'careerDetails') ? 'active' : '' }}" href="{{ route('career') }}">Career</a></li> --}}
-          {{-- <li><a href="courses.html">Courses</a></li> --}}
-          
           
           <li class="dropdown"><a href="#"><span>Cha Seba</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{{ route('treatment', ['type'=>'insect'] ) }}">পোকামাকড় ব্যবস্থাপনা</a></li>
-              {{-- <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="{{ route('treatment', ['type'=>'insect'] ) }}" >পোকামাকড় ব্যবস্থাপনা</a></li>
+              <li><a href="{{ route('treatment', ['type'=>'disease'] ) }}">অন্যান্য রোগ (ছত্রাক ও অন্যন্য)</a></li>
+              
+              <li class="dropdown"><a href="#"><span>সার ও মাটি</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="{{ route('fertilizer') }}" class="{{ (Route::currentRouteName() == 'fertilizer') ? 'active' : '' }}">সার প্রয়োগের সুপারিশমালা</a></li>
+                  <li><a href="{{ route('foliarSpray') }}" class="{{ (Route::currentRouteName() == 'foliarSpray') ? 'active' : '' }}">ফলিয়ার স্প্রে</a></li>
+                  <li><a href="{{ route('dolomite') }}" class="{{ (Route::currentRouteName() == 'dolomite') ? 'active' : '' }}">ডলোমাইট প্রয়োগ</a></li>
                 </ul>
-              </li> --}}
-              <li><a href="{{ route('treatment', ['type'=>'disease'] ) }}">অন্যান্য রোগ</a></li>
-              {{-- <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li> --}}
+              </li>
+
+              <li class="dropdown"><a href="#"><span>চা বাগান পরিচর্যা </span> <i class="bi bi-chevron-right"></i></a>
+                <ul>
+                  <li><a href="{{ route('shadeTree') }}" class="{{ (Route::currentRouteName() == 'shadeTree') ? 'active' : '' }}">ছায়া তরুর চারা রোপন </a></li>
+                  <li><a href="{{ route('gardenPruning') }}" class="{{ (Route::currentRouteName() == 'gardenPruning') ? 'active' : '' }}">অপরিপত চা গাছ কর্তন/ছাঁটাই </a></li>
+                  <li><a href="{{ route('matureGardenPruning') }}" class="{{ (Route::currentRouteName() == 'matureGardenPruning') ? 'active' : '' }}">পরিণত চা গাছ কর্তন/ছাঁটাই </a></li>
+                  <li><a href="{{ route('afterPruning') }}" class="{{ (Route::currentRouteName() == 'afterPruning') ? 'active' : '' }}">গাছ কর্তন/ছাঁটাই সময়ে করণীয় </a></li>
+                </ul>
+              </li>
+
             </ul>
           </li>
 
           <li><a class="{{ (Route::currentRouteName() == 'blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
-          
           <li><a class="{{ (Route::currentRouteName() == 'about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
-          {{-- <li><a class="{{ (Route::currentRouteName() == 'career') ? 'active' : '' }}" href="{{ route('career') }}">career</a></li> --}}
-          {{-- <li><a href="pricing.html">Pricing</a></li> --}}
-          {{-- <li><a href="{{ route('testPage') }}">testPage</a></li> --}}
-
-          {{-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul>
-          </li> --}}
-          
           <li><a class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Registration</a></li>
+          {{-- <li><a href="{{ route('testPage') }}">testPage</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->

@@ -16,7 +16,7 @@
 
     <!-- ======= Registration Section ======= -->
     <section id="courses" class="courses">
-      <div class="container" data-aos="fade-up">
+      <div class="container" >
 
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
@@ -54,15 +54,16 @@
                     <input type="text" class="form-control" id="memberName" name="name" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="photo" class="form-label">Photo</label>
+                    
                     
                     <div class="row">
                       <div class="col-md-6">
+                        <label for="photo" class="form-label">Photo</label>
                         <input type="file" class="form-control uplodeImage" id="photo" name="photo" required>
                       </div>
                       <div class="col-md-6">
                         {{-- Preview an image before  --}}
-                          <img src="assets/img/imagePlaceholder.jpg" class="w-50 imgPreview" style="padding-bottom: 18px; width: 266px; height: 190px;" id="imgPreview" hidden>
+                          <img src="assets/img/imagePlaceholder.jpg" class="w-100 imgPreview" style="padding-bottom: 18px; width: 266px; height: 190px;" id="imgPreview" hidden>
                         {{-- Preview an image before  --}}
                       </div>
                     </div>

@@ -3,13 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Teacher;
-use App\Models\Event;
-use App\Models\Notice;
-use App\Models\Result;
-use App\Models\Career;
 
 use App\Models\Member;
+use App\Models\Event;
+use App\Models\Notice;
 use App\Models\InsectAndDisease;
 use DB;
 
@@ -17,19 +14,11 @@ class UserController extends Controller
 {
     public function home()
     {
-        $ToatalTeacher = Teacher::all()->Count();
-
         $ToatalMember = Member::where('status', 1)->Count();
         $ToatalEvent = Event::all()->Count();
         $ToatalNotice = Notice::all()->Count();
-        return view('homePage', compact('ToatalTeacher','ToatalMember','ToatalEvent','ToatalNotice') );
-    }
-
-    public function teachers()
-    {
-        // $Teachers = Teacher::all();
-        $Teachers = Teacher::orderBy('id', 'desc')->get();
-        return view('teachers', compact('Teachers'));
+        $ToatalTreatment = InsectAndDisease::all()->Count();
+        return view('homePage', compact('ToatalMember','ToatalEvent','ToatalNotice','ToatalTreatment') );
     }
     
     public function events()
@@ -52,53 +41,7 @@ class UserController extends Controller
         return view('noticeDetails', compact('Notice'));
     }
 
-    public function result()
-    {
-        $Results = Result::orderBy('id', 'desc')->get();
-        return view('result', compact('Results'));
-    }
-
-    public function about()
-    {
-        $ToatalTeacher = Teacher::all()->Count();
-        $ToatalEvent = Event::all()->Count();
-        $ToatalNotice = Notice::all()->Count();
-        return view('about', compact('ToatalTeacher','ToatalEvent','ToatalNotice') );
-    }
-
-
-
-
-
-    public function career()
-    {
-        // $Careers = Career::all();
-        $Careers = Career::orderBy('id', 'desc')->get();
-        return view('career', compact('Careers'));
-    }
-
-    public function careerDetails($id)
-    {
-        $id = (base64_decode($id));
-        $Career = Career::find($id);
-        return view('careerDetails', compact('Career'));
-    }
-
-    public function contact()
-    {
-        return view('contact');
-    }
-
-    public function admission()
-    {
-        return view('admission');
-    }
-
-    public function memberRegistration()
-    {
-        return view('memberRegistration');
-    }
-
+    //--Cha Saba [Start]---
     function treatment(Request $request)
     {
         // dd($request->all());
@@ -117,12 +60,66 @@ class UserController extends Controller
         return view('treatment', compact('TreatmentsList','RecentDiseases'));
     }
 
+    function fertilizer()
+    {
+        return view('fertilizer');
+    }
+
+    function foliarSpray()
+    {
+        return view('foliarSpray');
+    }
+
+    function dolomite()
+    {
+        return view('dolomite');
+    }
+
+    function shadeTree()
+    {
+        return view('shadeTree');
+    }
+
+    function gardenPruning()
+    {
+        return view('gardenPruning');
+    }
+
+    function matureGardenPruning()
+    {
+        return view('matureGardenPruning');
+    }
+
+    function afterPruning()
+    {
+        return view('afterPruning');
+    }
+    //--Cha Saba [End]---
+
     function blog()
     {
         return view('blog');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
 
+    public function contact()
+    {
+        return view('contact');
+    }
+
+    public function memberRegistration()
+    {
+        return view('memberRegistration');
+    }
+
+    public function admission()
+    {
+        return view('admission');
+    }
 
     public function testPage()
     {

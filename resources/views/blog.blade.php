@@ -78,7 +78,7 @@
                 <aside class="col-lg-4">
                     <div class="card">
                     <div class="card-body text-center">
-                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author Jane Doe" class="rounded-circle mb-3" width="120" height="120" />
+                        {{-- <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author Jane Doe" class="rounded-circle mb-3" width="120" height="120" /> --}}
                         <h5 class="card-title">Jane Doe</h5>
                         <p class="text-muted mb-2">Web Developer & Blogger</p>
                         <p class="card-text">

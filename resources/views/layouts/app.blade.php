@@ -32,6 +32,22 @@
         <h1 class="text-danger">চা-এর স্বর্গ, পঞ্চগড়,<br><span class="text-success"> যেখানে সবুজ স্বপ্ন বোনা হয়.</span></h1>
         <h2>চা বাগান মালিক সমিতি, পঞ্চগড়.</h2>
         {{-- <a href="courses.html" class="btn-get-started">Get Started</a> --}}
+        <br>
+        @php
+            $RecentDiseases = \App\Models\InsectAndDisease::orderBy('updated_at', 'desc')->where('pinned', 1)->get('name'); // Example: Fetch all users
+        @endphp
+
+        @if ($RecentDiseases->isNotEmpty())
+            <marquee class="marq" direction="right" loop="">
+              <a href="{{ route('treatment') }}" class="btn btn-sm btn-outline-warning rounded-pill">
+                চা বাগানের সাম্প্রতিক রোগসমূহ ঃ
+                @foreach ($RecentDiseases as $RD)
+                    {{ $RD->name }}
+                @endforeach
+              </a>
+            </marquee>
+        @endif
+        
       </div>
     </section>
     <!-- End Hero -->
