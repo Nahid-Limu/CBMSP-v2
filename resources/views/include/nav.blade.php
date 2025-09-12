@@ -3,7 +3,7 @@
     <div class="container d-flex align-items-center">
 
       <a href="{{ route('home') }}" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
-      <h6 class="logo me-auto">CBMSP</h6>
+      <h6 class="logo me-auto">CB<strong class="text-success fs-1">M</strong>SP</h6>
       <!-- Uncomment below if you prefer to use an image logo -->
       {{-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.jpg" alt="" class="img-fluid"></a> --}}
 
@@ -12,7 +12,6 @@
           <li><a class="{{ (Route::currentRouteName() == 'home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'events') ? 'active' : '' }}" href="{{ route('events') }}">Events</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'notice') || (Route::currentRouteName() == 'noticeDetails') ? 'active' : '' }}" href="{{ route('notice') }}">Notice</a></li>
-          {{-- <li><a class="{{ (Route::currentRouteName() == 'admission') ? 'active' : '' }}" href="{{ route('admission') }}">Admission</a></li> --}}
           
           <li class="dropdown"><a href="#"><span>Cha Seba</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -42,7 +41,7 @@
           <li><a class="{{ (Route::currentRouteName() == 'blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
-          <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Registration</a></li>
+          <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Register</a></li>
           {{-- <li><a href="{{ route('testPage') }}">testPage</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>

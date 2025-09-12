@@ -28,24 +28,11 @@ use App\Http\Controllers\InsectAndDiseaseController;
 /* User route start */
 
 Route::get('/',  [UserController::class, 'home'])->name('home');
-
 Route::get('/events', [UserController::class, 'events'])->name('events');
-
 Route::get('/notice', [UserController::class, 'notice'])->name('notice');
 Route::get('/noticeDetails/{id}', [UserController::class, 'noticeDetails'])->name('noticeDetails');
 
-
-Route::get('/admission', [UserController::class, 'admission'])->name('admission');
-
-
-
-
-Route::get('/about', [UserController::class, 'about'])->name('about');
-Route::get('/contact', [UserController::class, 'contact'])->name('contact');
-
-Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
-Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
-
+//---cha saba---
 Route::get('/treatment', [UserController::class, 'treatment'])->name('treatment');
 
 Route::get('/fertilizer', [UserController::class, 'fertilizer'])->name('fertilizer');
@@ -56,9 +43,27 @@ Route::get('/shadeTree', [UserController::class, 'shadeTree'])->name('shadeTree'
 Route::get('/gardenPruning', [UserController::class, 'gardenPruning'])->name('gardenPruning');
 Route::get('/matureGardenPruning', [UserController::class, 'matureGardenPruning'])->name('matureGardenPruning');
 Route::get('/afterPruning', [UserController::class, 'afterPruning'])->name('afterPruning');
+//---cha saba---
 
 Route::get('/blog', [UserController::class, 'blog'])->name('blog');
-// Route::get('/treatment/{type}/{id}', [UserController::class, 'treatment'])->name('treatment.details');
+Route::get('/about', [UserController::class, 'about'])->name('about');
+Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+
+Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
+Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Route::get('/phpinfo', function() {
 //     return phpinfo();

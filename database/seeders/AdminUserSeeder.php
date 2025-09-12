@@ -15,15 +15,24 @@ class AdminUserSeeder extends Seeder
     {
         $data=[
             [
-                'name'=>'Super',
+                'name'=>'Super Admin',
                 'email'=>'super@email.com',
-                'password'=>bcrypt('admin'),
+                'username'=>'super_admin',
+                'password'=>bcrypt('admin@121'),
 
             ],
             [
-                'name'=>'Admin',
+                'name'=>'MAnik Khan',
+                'email'=>'manik@email.com',
+                'username'=>'manik_cmbs',
+                'password'=>bcrypt('manik@cbms'),
+
+            ],
+            [
+                'name'=>'Nazmul',
                 'email'=>'admin@email.com',
-                'password'=>bcrypt('admin'),
+                'username'=>'nazmul_cbms',
+                'password'=>bcrypt('nazmul@cbms'),
 
             ],
         ];

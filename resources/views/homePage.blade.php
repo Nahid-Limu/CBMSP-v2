@@ -94,8 +94,10 @@
                             <img src="assets/img/We Unity.jpg" class="img-fluid" alt="">
                         </i>
                         
-                        <h4>Unity</h4>
-                        <p>Working together to resolve any problems of tea farmers in Panchagarh district and implement their reasonable demands</p>
+                        {{-- <h4>Unity</h4> --}}
+                        <h4>ঐক্য</h4>
+                        {{-- <p>Working together to resolve any problems of tea farmers in Panchagarh district and implement their reasonable demands</p> --}}
+                        <p>পঞ্চগড় জেলার চা চাষীদের যেকোনো সমস্যা সমাধান এবং তাদের যুক্তিসঙ্গত দাবি বাস্তবায়নে একসাথে কাজ করা</p>
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
@@ -104,8 +106,10 @@
                         <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
                             <img src="assets/img/We Care.jpg" class="img-fluid" alt="">
                         </i>
-                        <h4>Care</h4>
-                        <p>Take all steps to protect the health of tea farmers/tea workers.</p>
+                        {{-- <h4>Care</h4>
+                        <p>Take all steps to protect the health of tea farmers/tea workers.</p> --}}
+                        <h4>যত্ন</h4>
+                        <p>চা চাষি/চা শ্রমিকদের স্বাস্থ্য সুরক্ষার জন্য সকল পদক্ষেপ গ্রহণ করুন।</p>
                     </div>
                     </div>
                     <div class="col-xl-4 d-flex align-items-stretch">
@@ -114,8 +118,10 @@
                         <i class='bx bxs-castle bx-flip-horizontal bx-tada' undefined >
                             <img src="assets/img/We Learn.jpg" class="img-fluid" alt="">
                         </i>
-                        <h4>Learn </h4>
-                        <p>Taking all steps, including training, for tea farmers to produce good quality tea</p>
+                        {{-- <h4>Learn </h4>
+                        <p>Taking all steps, including training, for tea farmers to produce good quality tea</p> --}}
+                        <h4>শেখা </h4>
+                        <p>চা চাষীদের উন্নত মানের চা উৎপাদনের জন্য প্রশিক্ষণ সহ সকল পদক্ষেপ গ্রহণ করা</p>
                     </div>
                     </div>
                 </div>

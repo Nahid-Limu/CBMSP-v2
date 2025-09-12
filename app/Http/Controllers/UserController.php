@@ -116,11 +116,6 @@ class UserController extends Controller
         return view('memberRegistration');
     }
 
-    public function admission()
-    {
-        return view('admission');
-    }
-
     public function testPage()
     {
         // dd();result

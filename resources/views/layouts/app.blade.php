@@ -38,12 +38,14 @@
         @endphp
 
         @if ($RecentDiseases->isNotEmpty())
-            <marquee class="marq" direction="right" loop="">
-              <a href="{{ route('treatment') }}" class="btn btn-sm btn-outline-warning rounded-pill">
-                চা বাগানের সাম্প্রতিক রোগসমূহ ঃ
+            <marquee class="marq" onmouseout="this.start()" onmouseover="this.stop()" direction="right" loop="">
+              <a href="{{ route('treatment') }}" class="btn btn-md btn-outline-warning rounded-pill">
+                চা বাগানের সাম্প্রতিক রোগসমূহ <i class="bi bi-arrow-right-circle-fill text-danger"></i>
                 @foreach ($RecentDiseases as $RD)
-                    {{ $RD->name }}
+                    {{-- {{ $RD->name }} --}}
+                    {{ $RD->name }}@unless($loop->last) , @endunless
                 @endforeach
+                <i class="bi bi-arrow-left-circle-fill text-danger"></i>
               </a>
             </marquee>
         @endif

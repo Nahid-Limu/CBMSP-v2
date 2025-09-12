@@ -58,7 +58,8 @@
 
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
-          &copy; Copyright <strong><span><a href="https://nahid-limu.github.io/" target="_blank">Nahid Limu</a></span></strong>. All Rights Reserved
+          {{-- &copy; Copyright <strong><span><a href="https://nahid-limu.github.io/" target="_blank">Nahid Limu</a></span></strong>. All Rights Reserved --}}
+          <span class="text-secondary">This Software Developed By -</span> <strong><span><a href="https://nahid-limu.github.io/" target="_blank">Nahid Limu</a></span></strong>
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
