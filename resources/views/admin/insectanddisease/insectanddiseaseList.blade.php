@@ -151,7 +151,7 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#EvenListTable').DataTable().ajax.reload();
+                $('#InsectAndDiseaseListTable').DataTable().ajax.reload();
                 $('#AddInsectAndDiseaseModal').modal('hide');
                 // $("#AddInsectAndDiseaseForm").trigger("reset");
                 onCloseModal('AddInsectAndDiseaseForm');

@@ -49,13 +49,13 @@ class UserController extends Controller
         
         if (isset($request->id)) {
             // echo "id.";
-            $TreatmentsList = InsectAndDisease::orderBy('id', 'desc')->where('type', $request->type)->get(['id','type','name']);
+            $TreatmentsList = InsectAndDisease::orderBy('id', 'asc')->where('type', $request->type)->get(['id','type','name']);
             $TreatmentDetails = InsectAndDisease::find($request->id);
 
             return view('treatment', compact('RecentDiseases','TreatmentsList','TreatmentDetails'));
         }
         // echo "type only.";
-        $TreatmentsList = InsectAndDisease::orderBy('id', 'desc')->where('type', $request->type)->get(['id','type','name']);
+        $TreatmentsList = InsectAndDisease::orderBy('id', 'asc')->where('type', $request->type)->get(['id','type','name']);
         
         return view('treatment', compact('TreatmentsList','RecentDiseases'));
     }

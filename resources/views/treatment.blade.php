@@ -22,7 +22,7 @@
         <div class="row mt-5">
 
           <div class="col-lg-3 shadow-lg p-3 mb-5 bg-body rounded">
-            <kbd class="form-control bg-info text-center"><i class="bi bi-list-ol"></i> <strong>Insects & Diseases</strong></kbd>
+            <kbd class="form-control bg-success text-center text-light"><i class="bi bi-list-ol"></i> List of Insects & Diseases <br>পোকামাকড় ও রোগের তালিকা</kbd>
             
             <div class="list-group">
               @foreach ($TreatmentsList as $Treatment)
@@ -33,12 +33,14 @@
             <hr>
             <hr>
 
+          @if ($RecentDiseases->isNotEmpty())
             <kbd class="form-control bg-warning text-center"><i class="bi bi-list-ol"></i> Recent Diseases List <i class="bi bi-fire text-danger"></i><br>সাম্প্রতিক রোগসমূহ</kbd>
             <div class="list-group">
               @foreach ($RecentDiseases as $rd)
                   <a href="{{ route('treatment', ['type'=>$rd->type,'id'=>$rd->id] ) }}" class="list-group-item list-group-item-action text-danger">{{ $loop->index + 1 }}<i class="bi bi-dot"></i> {{ucwords($rd->name)}} <i class="bi bi-pin-angle" style="padding-left: 20px;"></i></a>
               @endforeach
             </div>
+          @endif
 
           </div>
 
@@ -72,7 +74,7 @@
                 </div>
             @else
                 <div class="container my-5 text-center">
-                  <h2 class="mb-4 text-center">Please select from Disease list to see details</h2>
+                  <h2 class="mb-4 text-center">Please select from Disease list to see Details.</h2>
                   <i class="bi bi-arrow-left-circle bx-md text-info"></i>
                 </div>
             @endif

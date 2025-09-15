@@ -454,7 +454,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Nazmul Hasan Hridoy.jpg" class="testimonial-img" alt="">
                   <h3>Nazmul Hasan Hridoy</h3>
-                  <h4>Group Admin &amp; Founding Member</h4>
+                  <h4>Group Admin &amp; Founder</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.

@@ -60,9 +60,9 @@
       <!-- Vertical Form -->
         
         <div class="modal-footer">
-          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" onclick="approveData()" class="btn btn-outline-success btn-sm" id="accept_btn">Accept</button>
           {{-- <button type="button" class="btn btn-outline-danger btn-sm">Delete</button> --}}
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
         </div>
 
       </div>

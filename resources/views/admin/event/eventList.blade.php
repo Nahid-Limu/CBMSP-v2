@@ -153,7 +153,8 @@
                 $("#success_message").text(response.success);
                 $('#EvenListTable').DataTable().ajax.reload();
                 $('#AddEventModal').modal('hide');
-                $("#AddEventForm").trigger("reset");
+                // $("#AddEventForm").trigger("reset");
+                onCloseModal('AddEventForm')
                 // alert(response.success);
                 SuccessMsg();
               }
