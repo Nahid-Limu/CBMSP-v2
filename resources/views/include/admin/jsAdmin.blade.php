@@ -15,7 +15,8 @@
 <script src="{{ asset('adminAssets/assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('adminAssets/assets/vendor/chart.js/chart.umd.js') }}"></script>
 <script src="{{ asset('adminAssets/assets/vendor/echarts/echarts.min.js') }}"></script>
-<script src="{{ asset('adminAssets/assets/vendor/summernote/summernote.min.js') }}"></script>
+{{-- <script src="{{ asset('adminAssets/assets/vendor/summernote/summernote.min.js') }}"></script> --}}
+<script src="{{ asset('adminAssets/assets/vendor/summernote/summernote-bs5.js') }}"></script>
 <script src="{{ asset('adminAssets/assets/vendor/php-email-form/validate.js') }}"></script>
 
 <!-- Template Main JS File -->

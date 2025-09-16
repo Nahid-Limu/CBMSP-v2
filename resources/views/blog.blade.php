@@ -2,6 +2,21 @@
 
 @section('title', 'Blog')
 
+@section('css')
+<style>
+    .hover-shadow {
+        transition: 0.3s ease;
+    }
+    .hover-shadow:hover {
+        box-shadow: 0px 4px 25px 0px rgba(27, 39, 71, 0.15);
+    }
+    
+    a h4:hover {
+      color: #ffbc3b;
+    }
+</style>
+@endsection
+
 @section('content')
 
 <!-- start #main -->
@@ -16,85 +31,144 @@
     </div>
     <!-- End Breadcrumbs -->
 
-    <!-- notice -->
+    <!-- Blog -->
     <section class="section">
-        <!-- Blog Posts -->
-        <div class="container my-5">
-            <div class="row g-4">
-                <!-- Blog Post 1 -->
-                <div class="col-md-4">
-                    <div class="card h-100">
-                    <img src="assets/img/imagePlaceholder.jpg" class="card-img-top" alt="Post Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title One</h5>
-                        <p class="card-text">This is a brief excerpt from the blog post. Click to read more...</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                    </div>
-                </div>
-                <!-- Blog Post 2 -->
-                <div class="col-md-4">
-                    <div class="card h-100">
-                    <img src="assets/img/imagePlaceholder.jpg" class="card-img-top" alt="Post Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title Two</h5>
-                        <p class="card-text">Another snippet from a different post. Continue reading...</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                    </div>
-                </div>
-                <!-- Blog Post 3 -->
-                <div class="col-md-4">
-                    <div class="card h-100">
-                    <img src="https://via.placeholder.com/400x200" class="card-img-top" alt="Post Image">
-                    <div class="card-body">
-                        <h5 class="card-title">Post Title Three</h5>
-                        <p class="card-text">Learn something new in this featured article.</p>
-                        <a href="#" class="btn btn-primary">Read More</a>
-                    </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <!-- blog post -->
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card  rounded-0 border-bottom border border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-1.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  {{-- <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 28, 2018</li>
+                  <!-- author -->
 
-            <!-- Blog details Section -->
-            <div class="row">
-                <!-- Blog Post Section -->
-                <article class="col-lg-8 mb-5">
-                    <h2 class="mb-3">Understanding Bootstrap 5 Grid System</h2>
-                    <p class="text-muted">Published on August 28, 2025 by <strong>Jane Doe</strong></p>
-                    <img src="https://via.placeholder.com/800x400" alt="Bootstrap Grid" class="img-fluid mb-4 rounded" />
-                    <p>
-                    Bootstrap 5 introduces a powerful and flexible grid system that makes designing responsive layouts easy. In this post, we'll explore how to effectively use rows and columns, breakpoints, and alignment utilities...
-                    </p>
-                    <p>
-                    The grid system in Bootstrap 5 is based on flexbox, which offers greater control over alignment, order, and distribution of elements...
-                    </p>
-                    <p>
-                    By mastering the grid system, you can create designs that look great on any device, from mobile phones to large desktop monitors.
-                    </p>
-                </article>
+                  <li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li> --}}
+                  <div class="d-flex">
+                    <!-- post date -->
+                  <span><i class="bi bi-calendar2-week"></i> August 28, 2017</span>
+                  <!-- author -->
+                  <span class="ms-auto"><i class="bi bi-signpost-2"> By </i>Somrat Sorkar</span>
+                </div>
 
-                <!-- Author Section -->
-                <aside class="col-lg-4">
-                    <div class="card">
-                    <div class="card-body text-center">
-                        {{-- <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Author Jane Doe" class="rounded-circle mb-3" width="120" height="120" /> --}}
-                        <h5 class="card-title">Jane Doe</h5>
-                        <p class="text-muted mb-2">Web Developer & Blogger</p>
-                        <p class="card-text">
-                        Jane is a passionate web developer with over 8 years of experience in front-end development. She enjoys writing about modern web technologies and sharing tutorials.
-                        </p>
-                        <div>
-                        <a href="#" class="btn btn-primary btn-sm me-2" aria-label="Twitter"><i class="bi bi-twitter"></i> Twitter</a>
-                        <a href="#" class="btn btn-primary btn-sm" aria-label="LinkedIn"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                        </div>
-                    </div>
-                    </div>
-                </aside>
+                </ul>
+                
+                <a href="blog-single.html">
+                  <h4 class="card-title" style="font-family: futura-bold;">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="{{ route('blogDetails') }}" class="btn btn-outline-warning btn-sm"><i class="bi bi-book"></i> read more</a>
+              </div>
             </div>
+          </article>
+          <!-- blog post -->
+
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-2.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 13, 2018</li>
+                  <!-- author -->
+                  <li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+                </ul>
+                <a href="blog-single.html">
+                  <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- blog post -->
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-3.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 24, 2018</li>
+                  <!-- author -->
+                  <li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+                </ul>
+                <a href="blog-single.html">
+                  <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- blog post -->
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-1.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 28, 2018</li>
+                  <!-- author -->
+                  <li class="list-inline-item mr-3 ml-0">By Somrat Sorkar</li>
+                </ul>
+                <a href="blog-single.html">
+                  <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- blog post -->
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-2.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 13, 2018</li>
+                  <!-- author -->
+                  <li class="list-inline-item mr-3 ml-0">By Jonathon Drew</li>
+                </ul>
+                <a href="blog-single.html">
+                  <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+              </div>
+            </div>
+          </article>
+          <!-- blog post -->
+          <article class="col-lg-4 col-sm-6 mb-5">
+            <div class="card rounded-0 border-bottom border-primary border-top-0 border-left-0 border-right-0 hover-shadow">
+              <img class="card-img-top rounded-0" src="assets/img/blog/post-3.jpg" alt="Post thumb">
+              <div class="card-body">
+                <!-- post meta -->
+                <ul class="list-inline mb-3">
+                  <!-- post date -->
+                  <li class="list-inline-item mr-3 ml-0">August 24, 2018</li>
+                  <!-- author -->
+                  <li class="list-inline-item mr-3 ml-0">By Alex Pitt</li>
+                </ul>
+                <a href="blog-single.html">
+                  <h4 class="card-title">Lorem ipsum dolor amet, adipisicing eiusmod tempor.</h4>
+                </a>
+                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicin</p>
+                <a href="blog-single.html" class="btn btn-primary btn-sm">read more</a>
+              </div>
+            </div>
+          </article>
         </div>
+      </div>
     </section>
-    <!-- /notice -->
+    <!-- /Blog -->
 
 </main>
 <!-- End #main -->

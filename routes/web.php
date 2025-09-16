@@ -43,6 +43,7 @@ Route::get('/afterPruning', [UserController::class, 'afterPruning'])->name('afte
 //---cha saba---
 
 Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+Route::get('/blogDetails', [UserController::class, 'blogDetails'])->name('blogDetails');
 Route::get('/about', [UserController::class, 'about'])->name('about');
 Route::get('/contact', [UserController::class, 'contact'])->name('contact');
 

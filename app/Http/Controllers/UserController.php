@@ -101,6 +101,14 @@ class UserController extends Controller
         return view('blog');
     }
 
+    public function blogDetails()
+    {
+        // $id = (base64_decode($id));
+        // $Notice = Notice::find($id);
+        // return view('blogDetails', compact('Notice'));
+        return view('blogDetails');
+    }
+
     public function about()
     {
         return view('about');
