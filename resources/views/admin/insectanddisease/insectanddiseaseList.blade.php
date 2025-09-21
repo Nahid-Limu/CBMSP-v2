@@ -119,6 +119,8 @@
   //Add Table Data
   function addData() {
 
+    $('.addData').prop('disabled', true).html('Processing...'); // Disable and change text of button
+
     var form = $('#AddInsectAndDiseaseForm')[0];
     var formdata = new FormData(form);
     $.ajax({
@@ -157,6 +159,8 @@
                 onCloseModal('AddInsectAndDiseaseForm');
                 // alert(response.success);
                 SuccessMsg();
+
+                $('.addData').prop('disabled', false); //enable and change text of button
               }
 
             },

@@ -54,7 +54,7 @@
         </div>
 
         <div class="modal-footer">
-          <button type="button" onclick="addData()" class="btn btn-sm btn-outline-success">ADD</button>
+          <button type="button" onclick="addData()" class="btn btn-sm btn-outline-success addData">ADD</button>
           <button type="reset" onclick="onCloseModal('AddInsectAndDiseaseForm')" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
         </div>
         
