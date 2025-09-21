@@ -38,7 +38,7 @@
             </ul>
           </li>
 
-          <li><a class="{{ (Route::currentRouteName() == 'blog') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
+          <li><a class="{{ (Route::currentRouteName() == 'blog') || (Route::currentRouteName() == 'blogDetails') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Register</a></li>

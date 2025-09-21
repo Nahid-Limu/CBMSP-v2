@@ -8,125 +8,69 @@ use App\Models\Member;
 use App\Models\Event;
 use App\Models\Notice;
 use App\Models\InsectAndDisease;
+use App\Models\Blog;
+
+use App\Models\User;
+// use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use DB;
 
 class UserController extends Controller
 {
-    public function home()
+        //---Display Insect And Disease list.
+    public function userList()
     {
-        $ToatalMember = Member::where('status', 1)->Count();
-        $ToatalEvent = Event::all()->Count();
-        $ToatalNotice = Notice::all()->Count();
-        $ToatalTreatment = InsectAndDisease::all()->Count();
-        return view('homePage', compact('ToatalMember','ToatalEvent','ToatalNotice','ToatalTreatment') );
-    }
-    
-    public function events()
-    {
-        $Events = Event::orderBy('event_date', 'desc')->paginate(4);
-        return view('events', compact('Events'));
+        $User = User::where('type', '>', 2)->get(['id','name','username','type']);
+    //    dd($User);
+        if(request()->ajax())
+        {
+            return datatables()->of($User)
+            
+                    ->editColumn('type', function ($data) {
+                        $type = ($data->type) == 3 ? "Blog User" : "";
+                        return $type;
+                    })
+                    
+                    ->addColumn('action', function($data){
+
+                        $button = '<div class="d-flex justify-content-center "><button type="button" disabled onclick="editData('.$data->id.')" name="edit" id="'.$data->id.'" class="edit btn btn-outline-success btn-sm " data-bs-toggle="modal" data-bs-target="#EditBlogModal" ><i class="bx bx-edit"> Edit</i></button>';
+                        $button .= '&nbsp<button type="button" disabled onclick="deleteModal('.$data->id.',\''.$data->name.'\',\'User List\')" name="delete" id="'.$data->id.'" class="delete btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteModal" ><i class="bx bx-trash"> Delete</i></button></div>';
+                        
+                        return $button;
+                    })
+                    ->rawColumns(['type','action'])
+                    ->addIndexColumn()
+                    ->make(true);
+        }
+        return view('admin.user.userList');
     }
 
-    public function notice()
-    {
-        $Notices = Notice::orderBy('id', 'desc')->get();
-        // $Events = Event::orderBy('event_date', 'desc')->paginate(4);
-        return view('notice', compact('Notices'));
-    }
-
-    public function noticeDetails($id)
-    {
-        $id = (base64_decode($id));
-        $Notice = Notice::find($id);
-        return view('noticeDetails', compact('Notice'));
-    }
-
-    //--Cha Saba [Start]---
-    function treatment(Request $request)
+        //---Store a newly created Data.
+    public function userAdd(Request $request)
     {
         // dd($request->all());
-        $RecentDiseases = InsectAndDisease::orderBy('updated_at', 'desc')->where('pinned', 1)->get();
-        
-        if (isset($request->id)) {
-            // echo "id.";
-            $TreatmentsList = InsectAndDisease::orderBy('id', 'asc')->where('type', $request->type)->get(['id','type','name']);
-            $TreatmentDetails = InsectAndDisease::find($request->id);
+        //validation [start]
+        $validator = Validator::make($request->all(), [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'username' => ['required', 'string', 'max:255', 'unique:users', 'alpha_dash'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
 
-            return view('treatment', compact('RecentDiseases','TreatmentsList','TreatmentDetails'));
+        if($validator->fails())
+        {
+            return response()->json(['errors' => $validator->errors()->all()]);
         }
-        // echo "type only.";
-        $TreatmentsList = InsectAndDisease::orderBy('id', 'asc')->where('type', $request->type)->get(['id','type','name']);
-        
-        return view('treatment', compact('TreatmentsList','RecentDiseases'));
-    }
+        //validation [end]
 
-    function fertilizer()
-    {
-        return view('fertilizer');
-    }
+        $data = $request->all();
 
-    function foliarSpray()
-    {
-        return view('foliarSpray');
-    }
+        $data['password'] = Hash::make($request->password);
 
-    function dolomite()
-    {
-        return view('dolomite');
-    }
+        User::create($data);
 
-    function shadeTree()
-    {
-        return view('shadeTree');
+        return response()->json(['success' => 'User Created successfully.']);
     }
-
-    function gardenPruning()
-    {
-        return view('gardenPruning');
-    }
-
-    function matureGardenPruning()
-    {
-        return view('matureGardenPruning');
-    }
-
-    function afterPruning()
-    {
-        return view('afterPruning');
-    }
-    //--Cha Saba [End]---
-
-    function blog()
-    {
-        return view('blog');
-    }
-
-    public function blogDetails()
-    {
-        // $id = (base64_decode($id));
-        // $Notice = Notice::find($id);
-        // return view('blogDetails', compact('Notice'));
-        return view('blogDetails');
-    }
-
-    public function about()
-    {
-        return view('about');
-    }
-
-    public function contact()
-    {
-        return view('contact');
-    }
-
-    public function memberRegistration()
-    {
-        return view('memberRegistration');
-    }
-
-    public function testPage()
-    {
-        // dd();result
-        return view('testPage');
-    }
+    
 }

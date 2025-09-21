@@ -14,8 +14,8 @@
           {{-- <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           <button type="button" class="btn btn-primary">Save changes</button> --}}
           <input type="hidden" id="data_id" value="">
-          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
           <button onclick="deleteTableData($('#data_id').val())" class="btn btn-sm btn-outline-danger float-right" type="button">Delete</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

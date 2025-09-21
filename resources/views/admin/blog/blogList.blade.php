@@ -1,17 +1,17 @@
 @extends('layouts.appAdmin')
 
-@section('title', 'InsectAndDiseaseList')
+@section('title', 'Blog List')
 
 @section('content')
 
 <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Insect And Disease List</h1>
+      <h1>Blog List</h1>
       <nav>
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-          <li class="breadcrumb-item">Insect And Disease</li>
+          <li class="breadcrumb-item">Blog</li>
           <li class="breadcrumb-item active">List</li>
         </ol>
       </nav>
@@ -26,27 +26,26 @@
                 
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     
-                  <h6 class="m-0 font-weight-bold text-primary"><i class='bi bi-person-lines-fill text-success'> Insect And Disease LIST</i></h6>
+                  <h6 class="m-0 font-weight-bold text-primary"><i class='bi bi-person-lines-fill text-success'> Blog LIST</i></h6>
                     
                   {{-- flash Message --}}
                     <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
                   {{-- flash Message --}}
 
                   <div class="dropdown no-arrow">
-                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddInsectAndDiseaseModal"><i class='bx bxs-file-plus'></i> Add Treatment</button>
+                    <button type="button" class="btn btn-sm btn-outline-success " data-bs-toggle="modal"  data-bs-target="#AddBlogModal"><i class='bx bxs-file-plus'></i> Add New Blog</button>
                   </div>
 
                 </div>
 
                 <!-- Table with stripped rows -->
-                <table class="table table-responsive" id="InsectAndDiseaseListTable">
+                <table class="table table-responsive" id="BlogListTable">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
-                      <th scope="col">Type</th>
-                      <th scope="col">Name</th>
+                      <th scope="col">Title</th>
                       <th scope="col">Image</th>
-                      <th scope="col">Description</th>
+                      <th scope="col">Content</th>
                       <th scope="col">Status</th>
                       <th scope="col">Action</th>
                     </tr>
@@ -62,8 +61,8 @@
         </div>
       </section>
 
-      @include('admin.insectanddisease.addInsectAndDiseaseModal')
-      @include('admin.insectanddisease.editInsectAndDiseaseModal')
+      @include('admin.blog.addBlogModal')
+      @include('admin.blog.editBlogModal')
 
       @include('include.admin.deleteModal')
 
@@ -75,13 +74,13 @@
 <script>
 
   //Table Data
-  $('#InsectAndDiseaseListTable').DataTable({
+  $('#BlogListTable').DataTable({
         processing: true,
         serverSide: true,
         responsive: true,
         "order": [[ 0, "asc" ]],
         ajax:{
-        url: "{{ route('insectAndDiseaseList') }}",
+          url: "{{ route('blogList') }}",
         },
         columns:[
           { 
@@ -89,24 +88,20 @@
               name: 'DT_RowIndex' 
           },
           {
-              data: 'type',
-              name: 'type'
-          },
-          {
-              data: 'name',
-              name: 'name'
+              data: 'title',
+              name: 'title'
           },
           {
               data: 'image',
               name: 'image'
           },
           {
-              data: 'description',
-              name: 'description'
+              data: 'content',
+              name: 'content'
           },
           {
-              data: 'pinned',
-              name: 'pinned'
+              data: 'is_published',
+              name: 'is_published'
           },
           {
               data: 'action',
@@ -119,10 +114,12 @@
   //Add Table Data
   function addData() {
 
-    var form = $('#AddInsectAndDiseaseForm')[0];
+    $('.addData').prop('disabled', true).html('Processing...'); // Disable and change text of button
+
+    var form = $('#AddBlogForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('insectAndDiseaseAdd') }}",
+            url:"{{ route('blogAdd') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -151,12 +148,14 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#InsectAndDiseaseListTable').DataTable().ajax.reload();
-                $('#AddInsectAndDiseaseModal').modal('hide');
+                $('#BlogListTable').DataTable().ajax.reload();
+                $('#AddBlogModal').modal('hide');
                 // $("#AddInsectAndDiseaseForm").trigger("reset");
-                onCloseModal('AddInsectAndDiseaseForm');
+                onCloseModal('AddBlogForm');
                 // alert(response.success);
                 SuccessMsg();
+
+                $('.addData').prop('disabled', false); //enable and change text of button
               }
 
             },
@@ -168,52 +167,48 @@
   }
 
   //Delete Table Data
-  // function deleteTableData(id) {
-  //     // alert(121);
-  //     $.ajax({
-  //         type: 'GET',
-  //         url: "{{url('teacherDelete')}}"+"/"+id,
-  //         success: function (response) {
-  //             // console.log(response);
-  //             if (response.success) {
+  function deleteTableData(id) {
+      // alert(121);
+      $.ajax({
+          type: 'GET',
+          url: "{{url('blogDelete')}}"+"/"+id,
+          success: function (response) {
+              // console.log(response);
+              if (response.success) {
                       
-  //               $("#success_message").text(response.success);
-  //               $('#TeacherListTable').DataTable().ajax.reload();
-  //               $('#DeleteModal').modal('hide');
+                $("#success_message").text(response.success);
+                $('#BlogListTable').DataTable().ajax.reload();
+                $('#DeleteModal').modal('hide');
 
-  //               SuccessMsg();
-  //             }
+                SuccessMsg();
+              }
 
-  //         },error:function(){ 
-  //             console.log(response);
-  //         }
-  //     });
-  // }
+          },error:function(){ 
+              console.log(response);
+          }
+      });
+  }
 
   //Edit Table Data
   function editData(id) {
     // alert(id);
-    $("#EditInsectAndDiseaseForm").trigger("reset");
+    $("#EditBlogForm").trigger("reset");
     $.ajax({
         type: 'GET',
-        url: "{{url('insectAndDiseaseEdit')}}"+"/"+id,
+        url: "{{url('blogEdit')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
             // console.log(response);
             if (response) {
               
               $('#edit_data_id').val(response.id);
-              $('#edit_pinned').val(response.pinned).attr("selected", "selected");
-              $('#edit_type').val(response.type);
-              $('#edit_name').val(response.name);
-              $('#edit_type').val(response.type).attr("selected", "selected");
-              // $('#edit_description').val(response.description);
-              $('#edit_description').summernote('code', response.description);
+
+              $('#edit_is_published').val(response.is_published).attr("selected", "selected");
+              $('#edit_title').val(response.title);
+              $('#edit_content').summernote('code', response.content);
 
               $('.imgPreview').attr('hidden', false);
-              $("#imageView").attr("src", "assets/img/insectAndDisease/"+ response.image);
-              
-              // $("#edit_photo").attr("src", "assets/img/Members/"+ response.photo);
+              $("#imageView").attr("src", "assets/img/blog/"+ response.image);
               
             }
 
@@ -226,10 +221,10 @@
   //Update Table Data
   function updateData(params) {
     // alert();
-    var form = $('#EditInsectAndDiseaseForm')[0];
+    var form = $('#EditBlogForm')[0];
     var formdata = new FormData(form);
     $.ajax({
-            url:"{{ route('insectAndDiseaseUpdate') }}",
+            url:"{{ route('blogUpdate') }}",
             method:"POST",
             data:formdata,
             dataType:'JSON',
@@ -242,8 +237,8 @@
               if (response.success) {
                 
                 $("#success_message").text(response.success);
-                $('#InsectAndDiseaseListTable').DataTable().ajax.reload();
-                $('#EditInsectAndDiseaseModal').modal('hide');
+                $('#BlogListTable').DataTable().ajax.reload();
+                $('#EditBlogModal').modal('hide');
                 
                 SuccessMsg();
               }

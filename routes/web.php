@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\UserViewController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DashboardController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\InsectAndDiseaseController;
+use App\Http\Controllers\BlogController;
 
 
 /*
@@ -24,31 +27,61 @@ use App\Http\Controllers\InsectAndDiseaseController;
 
 /* User route start */
 
-Route::get('/',  [UserController::class, 'home'])->name('home');
-Route::get('/events', [UserController::class, 'events'])->name('events');
-Route::get('/notice', [UserController::class, 'notice'])->name('notice');
-Route::get('/noticeDetails/{id}', [UserController::class, 'noticeDetails'])->name('noticeDetails');
+Route::get('/',  [UserViewController::class, 'home'])->name('home');
+Route::get('/events', [UserViewController::class, 'events'])->name('events');
+Route::get('/notice', [UserViewController::class, 'notice'])->name('notice');
+Route::get('/noticeDetails/{id}', [UserViewController::class, 'noticeDetails'])->name('noticeDetails');
 
 //---cha saba---
-Route::get('/treatment', [UserController::class, 'treatment'])->name('treatment');
+Route::get('/treatment', [UserViewController::class, 'treatment'])->name('treatment');
 
-Route::get('/fertilizer', [UserController::class, 'fertilizer'])->name('fertilizer');
-Route::get('/foliarSpray', [UserController::class, 'foliarSpray'])->name('foliarSpray');
-Route::get('/dolomite', [UserController::class, 'dolomite'])->name('dolomite');
+Route::get('/fertilizer', [UserViewController::class, 'fertilizer'])->name('fertilizer');
+Route::get('/foliarSpray', [UserViewController::class, 'foliarSpray'])->name('foliarSpray');
+Route::get('/dolomite', [UserViewController::class, 'dolomite'])->name('dolomite');
 
-Route::get('/shadeTree', [UserController::class, 'shadeTree'])->name('shadeTree');
-Route::get('/gardenPruning', [UserController::class, 'gardenPruning'])->name('gardenPruning');
-Route::get('/matureGardenPruning', [UserController::class, 'matureGardenPruning'])->name('matureGardenPruning');
-Route::get('/afterPruning', [UserController::class, 'afterPruning'])->name('afterPruning');
+Route::get('/shadeTree', [UserViewController::class, 'shadeTree'])->name('shadeTree');
+Route::get('/gardenPruning', [UserViewController::class, 'gardenPruning'])->name('gardenPruning');
+Route::get('/matureGardenPruning', [UserViewController::class, 'matureGardenPruning'])->name('matureGardenPruning');
+Route::get('/afterPruning', [UserViewController::class, 'afterPruning'])->name('afterPruning');
 //---cha saba---
 
-Route::get('/blog', [UserController::class, 'blog'])->name('blog');
-Route::get('/blogDetails', [UserController::class, 'blogDetails'])->name('blogDetails');
-Route::get('/about', [UserController::class, 'about'])->name('about');
-Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+Route::get('/blog', [UserViewController::class, 'blog'])->name('blog');
+Route::get('/blogDetails/{id}', [UserViewController::class, 'blogDetails'])->name('blogDetails');
 
-Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
+Route::get('/about', [UserViewController::class, 'about'])->name('about');
+Route::get('/contact', [UserViewController::class, 'contact'])->name('contact');
+
+Route::get('/memberRegistration', [UserViewController::class, 'memberRegistration'])->name('memberRegistration');
 Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
+
+
+
+// Route::get('/',  [UserController::class, 'home'])->name('home');
+// Route::get('/events', [UserController::class, 'events'])->name('events');
+// Route::get('/notice', [UserController::class, 'notice'])->name('notice');
+// Route::get('/noticeDetails/{id}', [UserController::class, 'noticeDetails'])->name('noticeDetails');
+
+// //---cha saba---
+// Route::get('/treatment', [UserController::class, 'treatment'])->name('treatment');
+
+// Route::get('/fertilizer', [UserController::class, 'fertilizer'])->name('fertilizer');
+// Route::get('/foliarSpray', [UserController::class, 'foliarSpray'])->name('foliarSpray');
+// Route::get('/dolomite', [UserController::class, 'dolomite'])->name('dolomite');
+
+// Route::get('/shadeTree', [UserController::class, 'shadeTree'])->name('shadeTree');
+// Route::get('/gardenPruning', [UserController::class, 'gardenPruning'])->name('gardenPruning');
+// Route::get('/matureGardenPruning', [UserController::class, 'matureGardenPruning'])->name('matureGardenPruning');
+// Route::get('/afterPruning', [UserController::class, 'afterPruning'])->name('afterPruning');
+// //---cha saba---
+
+// Route::get('/blog', [UserController::class, 'blog'])->name('blog');
+// Route::get('/blogDetails/{id}', [UserController::class, 'blogDetails'])->name('blogDetails');
+
+// Route::get('/about', [UserController::class, 'about'])->name('about');
+// Route::get('/contact', [UserController::class, 'contact'])->name('contact');
+
+// Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
+// Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
 
 
 
@@ -112,6 +145,22 @@ Route::group(['middleware'=>'auth'], function () {
     Route::get('/insectAndDiseaseEdit/{id}', [InsectAndDiseaseController::class, 'insectAndDiseaseEdit'])->name('insectAndDiseaseEdit');
     Route::post('/insectAndDiseaseUpdate', [InsectAndDiseaseController::class, 'insectAndDiseaseUpdate'])->name('insectAndDiseaseUpdate');
     //--InsectAndDisease [end]--//
+
+    //--Blog [start]--//
+    Route::get('/blogList', [BlogController::class, 'blogList'])->name('blogList');
+    Route::post('/blogAdd', [BlogController::class, 'blogAdd'])->name('blogAdd');
+    Route::get('/blogEdit/{id}', [BlogController::class, 'blogEdit'])->name('blogEdit');
+    Route::post('/blogUpdate', [BlogController::class, 'blogUpdate'])->name('blogUpdate');
+    Route::get('/blogDelete/{id}', [BlogController::class, 'blogDelete'])->name('blogDelete');
+    //--Blog [end]--//
+
+    //--User [start]--//
+    Route::get('/userList', [UserController::class, 'userList'])->name('userList');
+    Route::post('/userAdd', [UserController::class, 'userAdd'])->name('userAdd');
+    // Route::get('/blogEdit/{id}', [BlogController::class, 'blogEdit'])->name('blogEdit');
+    // Route::post('/blogUpdate', [BlogController::class, 'blogUpdate'])->name('blogUpdate');
+    // Route::get('/blogDelete/{id}', [BlogController::class, 'blogDelete'])->name('blogDelete');
+    //--User [end]--//
     
     // Route::get('/test', 'SalesController@test')->name('test');
     // pendingMemberList

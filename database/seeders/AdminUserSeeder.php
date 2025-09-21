@@ -19,20 +19,31 @@ class AdminUserSeeder extends Seeder
                 'email'=>'super@email.com',
                 'username'=>'super_admin',
                 'password'=>bcrypt('admin@121'),
+                'type'=>'1',
 
             ],
             [
-                'name'=>'MAnik Khan',
+                'name'=>'Nahid Limu',
+                'email'=>'nahidlimu@email.com',
+                'username'=>'nahid_cbms',
+                'password'=>bcrypt('nahid@cbms'),
+                'type'=>'2',
+
+            ],
+            [
+                'name'=>'Manik Khan',
                 'email'=>'manik@email.com',
-                'username'=>'manik_cmbs',
+                'username'=>'manik_cbms',
                 'password'=>bcrypt('manik@cbms'),
+                'type'=>'2',
 
             ],
             [
                 'name'=>'Nazmul',
-                'email'=>'admin@email.com',
+                'email'=>'nazmul@email.com',
                 'username'=>'nazmul_cbms',
                 'password'=>bcrypt('nazmul@cbms'),
+                'type'=>'2',
 
             ],
         ];
