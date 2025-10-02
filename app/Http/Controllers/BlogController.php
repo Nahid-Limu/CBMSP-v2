@@ -87,7 +87,8 @@ class BlogController extends Controller
             
             $image = $request->file('image');
             
-            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/blog/' . $filename);
             Image::make($image->getRealPath())->resize(1000, 600)->save($path);
 
@@ -128,7 +129,8 @@ class BlogController extends Controller
             // Store the new image
             $image = $request->file('image');
             
-            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/blog/' . $filename);
             Image::make($image->getRealPath())->resize(1000, 600)->save($path);
 

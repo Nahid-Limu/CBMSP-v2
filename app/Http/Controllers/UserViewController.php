@@ -103,6 +103,7 @@ class UserViewController extends Controller
         $blogs = DB::table('blogs')
                             ->join('users', 'blogs.user_id', '=', 'users.id')
                             ->select('blogs.id','blogs.title','blogs.content','blogs.image','blogs.created_at', 'users.name as user_name',)
+                            ->orderBy('blogs.created_at', 'desc')
                             ->get();
 
         // dd($blogs);

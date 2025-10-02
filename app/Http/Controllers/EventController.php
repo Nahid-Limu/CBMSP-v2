@@ -76,7 +76,8 @@ class EventController extends Controller
             
             $image = $request->file('image');
             
-            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/events/' . $filename);
             Image::make($image->getRealPath())->resize(600, 600)->save($path);
 
@@ -134,7 +135,8 @@ class EventController extends Controller
             // Store the new image
             $image = $request->file('image');
             
-            $filename = $request->title.'.'.$image->getClientOriginalExtension();
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/events/' . $filename);
             Image::make($image->getRealPath())->resize(600, 600)->save($path);
 

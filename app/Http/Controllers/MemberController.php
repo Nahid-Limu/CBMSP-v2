@@ -78,7 +78,8 @@ class MemberController extends Controller
             
             $image = $request->file('photo');
             
-            $filename = $request->name.'.'.$image->getClientOriginalExtension();
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->name.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/Members/' . $filename);
             Image::make($image->getRealPath())->resize(600, 600)->save($path);
 

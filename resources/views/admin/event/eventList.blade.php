@@ -160,7 +160,7 @@
                 // alert(response.success);
                 SuccessMsg();
 
-                $('.addData').prop('disabled', false); //enable and change text of button
+                $('.addData').prop('disabled', false).html('ADD'); //enable and change text of button
               }
 
             },

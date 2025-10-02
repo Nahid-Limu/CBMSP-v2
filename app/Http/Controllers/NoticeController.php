@@ -76,7 +76,8 @@ class NoticeController extends Controller
             
             $document = $request->file('document');
 
-            $filename = $request->title.'.'.$document->getClientOriginalExtension();
+            $filename = time().'.'.$document->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$document->getClientOriginalExtension();
             $document->move(public_path().'/assets/file/notice/', $filename);  
 
             $data['document'] = $filename;
@@ -138,7 +139,8 @@ class NoticeController extends Controller
             // Store the new document
             $document = $request->file('document');
 
-            $filename = $request->title.'.'.$document->getClientOriginalExtension();
+            $filename = time().'.'.$document->getClientOriginalExtension();
+            // $filename = $request->title.'.'.$document->getClientOriginalExtension();
             $document->move(public_path().'/assets/file/notice/', $filename);  
 
             // Save image name to the database

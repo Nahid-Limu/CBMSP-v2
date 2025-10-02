@@ -2,6 +2,14 @@
 
 @section('title', 'Blog Details')
 
+@section('head')
+  <meta property="og:title" content="{{ ucwords($Blog->title) }}" />
+  <meta property="og:description" content="{!! Str::limit( strip_tags($Blog->content, 150) ) !!}" />
+  <meta property="og:image" content="{{ asset('assets/img/blog/' . $Blog->image) }}" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:type" content="article" />
+@endsection
+
 @section('css')
 <style>
     .hover-shadow {
@@ -10,6 +18,23 @@
     .hover-shadow:hover {
         box-shadow: 0px 4px 25px 0px rgba(27, 39, 71, 0.15);
     }
+
+    div#social-links {
+            margin: 0 auto;
+            max-width: 500px;
+        }
+        div#social-links ul li {
+            display: inline-block;
+        }          
+        div#social-links ul li a {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            margin: 1px;
+            font-size: 30px;
+            background-color: white;
+        }
+
+    
 
 </style>
 @endsection
@@ -23,7 +48,7 @@
     <div class="breadcrumbs">
         <div class="container">
         <h2>Our Blog</h2>
-        <p>Blog Details</p>
+        <p>Details</p>
         </div>
     </div>
     <!-- End Breadcrumbs -->
@@ -53,6 +78,19 @@
             <p>{!! $Blog->content !!}</p>
           </div>
 
+          <!-- Social Share -->
+          <div id="social-links" class="text-center">
+            {!! 
+                  Share::page(url()->current(), $Blog->title)
+                            ->facebook()
+                            ->twitter()
+                            ->linkedin('Extra linkedin summary can be passed here')
+                            ->whatsapp(); 
+              !!}
+              <span >Share This On Social Media</span>
+          </div>
+          
+          
           <!-- comment box -->
           <div class="col-12 bg-white p-3">
             <form action="#" class="row">

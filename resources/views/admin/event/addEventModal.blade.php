@@ -49,7 +49,7 @@
         </div>
         
         <div class="modal-footer">
-          <button type="button" onclick="addData()" class="btn btn-outline-success btn-sm addData">Add</button>
+          <button type="button" onclick="addData()" class="btn btn-outline-success btn-sm addData">ADD</button>
           <button type="reset" onclick="onCloseModal('AddEventForm')" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
         </div>
         
