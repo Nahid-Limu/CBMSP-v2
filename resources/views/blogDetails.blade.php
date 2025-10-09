@@ -19,23 +19,6 @@
         box-shadow: 0px 4px 25px 0px rgba(27, 39, 71, 0.15);
     }
 
-    div#social-links {
-            margin: 0 auto;
-            max-width: 500px;
-        }
-        div#social-links ul li {
-            display: inline-block;
-        }          
-        div#social-links ul li a {
-            padding: 10px 20px;
-            border: 1px solid #ccc;
-            margin: 1px;
-            font-size: 30px;
-            background-color: white;
-        }
-
-    
-
 </style>
 @endsection
 
@@ -81,13 +64,13 @@
           <!-- Social Share -->
           <div id="social-links" class="text-center">
             {!! 
-                  Share::page(url()->current(), $Blog->title)
-                            ->facebook()
-                            ->twitter()
-                            ->linkedin('Extra linkedin summary can be passed here')
-                            ->whatsapp(); 
-              !!}
-              <span >Share This On Social Media</span>
+                Share::page(url()->current(), $Blog->title)
+                      ->facebook()
+                      ->twitter()
+                      ->linkedin('Extra linkedin summary can be passed here')
+                      ->whatsapp(); 
+            !!}
+            <span >Share This On Social Media</span>
           </div>
           
           

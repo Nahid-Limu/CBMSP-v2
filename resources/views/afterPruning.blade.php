@@ -4,18 +4,17 @@
 
 @section('content')
 
-<style>
-        
-        ul {
-            padding-left: 20px;
-        }
+<style>  
+    ul {
+        padding-left: 20px;
+    }
 
-        ul li {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 10px;
-        }
-    </style>
+    ul li {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+</style>
 
 <!-- start #main -->
 <main id="main">

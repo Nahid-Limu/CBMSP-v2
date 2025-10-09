@@ -19,3 +19,23 @@
 <!-- Template Main CSS File -->
 {{-- <link href="assets/css/style.css" rel="stylesheet"> --}}
 <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+
+
+<style>
+    /* social-links Style [Start] */
+    div#social-links {
+        margin: 0 auto;
+        max-width: 500px;
+    }
+    div#social-links ul li {
+        display: inline-block;
+    }          
+    div#social-links ul li a {
+        padding: 10px 20px;
+        border: 1px solid #ccc;
+        margin: 1px;
+        font-size: 30px;
+        background-color: white;
+    }
+    /* social-links Style [End] */
+</style>
