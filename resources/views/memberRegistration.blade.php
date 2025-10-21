@@ -27,8 +27,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     <ul>
                         @foreach ($errors->all() as $error)
-                            <li>{{ $error }}
-                            </li>
+                            <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -93,20 +92,35 @@
                 <div class="card-header">Address Information</div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="village" class="form-label">Village</label>
-                    <input type="text" class="form-control" id="village" name="village">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="union" class="form-label">Union Parishad</label>
-                    <input type="text" class="form-control" id="union" name="union_parishad">
+                    <label for="zila" class="form-label">Zila</label>
+                    {{-- <input type="text" class="form-control" id="zila" name="zila"> --}}
+                    <select class="form-select" id="zila" name="zila" required>
+                      <option value="" selected>Select Zila</option>
+                      <option value="Panchagarh">Panchagarh </option>
+                    </select>
                   </div>
                   <div class="col-md-6">
                     <label for="upazila" class="form-label">Upazila</label>
-                    <input type="text" class="form-control" id="upazila" name="upazila">
+                    {{-- <input type="text" class="form-control" id="upazila" name="upazila"> --}}
+                    <select class="form-select" id="upazila" name="upazila" required disabled>
+                      <option value=""  selected>Select Upazila</option>
+                      <option value="Atwari">Atwari</option>
+                      <option value="Boda">Boda</option>
+                      <option value="Debiganj">Debiganj</option>
+                      <option value="Panchagarh_Sadar">Panchagarh Sadar </option>
+                      <option value="Tetulia">Tetulia</option>
+                    </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="zila" class="form-label">Zila</label>
-                    <input type="text" class="form-control" id="zila" name="zila">
+                    <label for="union" class="form-label">Union</label>
+                    {{-- <input type="text" class="form-control" id="union" name="union_parishad"> --}}
+                    <select class="form-select" id="union" name="union_parishad" required disabled>
+                      <option value="" selected>Select a Union</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="village" class="form-label">Village</label>
+                    <input type="text" class="form-control" id="village" name="village" required>
                   </div>
                 </div>
               </div>
@@ -179,5 +193,59 @@
 
 </main>
 <!-- End #main -->
+
+@endsection
+
+@section('script')
+
+<script>
+    const zila = document.getElementById('zila');
+    const upazila = document.getElementById('upazila');
+
+    zila.onchange = function() {
+        const selectedValue = zila.value;
+        
+        if (selectedValue === '') {
+            upazila.disabled = true; // Disable the option
+        } else {
+            upazila.disabled = false; // Enable the option
+        }
+    };
+</script>
+
+
+<script>
+    const unionByupazila = {
+      Atwari: ['Alowakhowa', 'Balarampur', 'Dhamor', 'Mirzapur', 'Radhanagar', 'Toria'],
+      Boda: ['Benghari', 'Boda', 'Boroshoshi', 'Chandanbari', 'Jholaishal Shiri', 'Kajoldighi Kaligonj', 'Marea', 'Moidan Dighi', 'Pachpir', 'Sakoa'],
+      Debiganj: ['Chengthi Hazradanga', 'Chilahati', 'Dandopal', 'Debiduba', 'Debiganj', 'Pamuli', 'Sonahar Mollikadaha', 'Sundardighi', 'Tepriganj'],
+      Panchagarh_Sadar: ['Amarkhana', 'Chaklahat', 'Dhakkamara', 'Garinabari', 'Hafizabad', 'Haribhasa', 'Kamat Kajal Dighi', 'Magura', 'Panchagarh Sadar', 'Satmara'],
+      Tetulia: ['Banglabandha', 'Bhajanpur', 'Buraburi', 'Devnagar', 'Shalbahan', 'Tetulia', 'Tirnaihat']
+    };
+
+    const upazilaSelect = document.getElementById('upazila');
+    const unionSelect = document.getElementById('union');
+
+    upazilaSelect.addEventListener('change', function () {
+      const selectedUpazila = this.value;
+
+      // Clear existing options
+      unionSelect.innerHTML = '<option value="" selected>Select a Union</option>';
+
+      if (unionByupazila[selectedUpazila]) {
+        unionSelect.disabled = false;
+
+        // Add new options
+        unionByupazila[selectedUpazila].forEach(function (union) {
+          const option = document.createElement('option');
+          option.value = union.toLowerCase().replace(/\s+/g, '-');
+          option.textContent = union;
+          unionSelect.appendChild(option);
+        });
+      } else {
+        unionSelect.disabled = true;
+      }
+    });
+</script>
 
 @endsection

@@ -67,6 +67,9 @@
               </div>
             </div><!-- End Sales Card -->
 
+
+    
+
             <hr>
             <!-- Sales Card -->
             <div class="col-xxl-4 col-md-4">
@@ -125,6 +128,28 @@
                     </div>
                     <div class="ps-3">
                       <h6 >{{ $TotalNotice }}</h6>
+                      {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div><!-- End Sales Card -->
+
+            <!-- Sales Card -->
+            <div class="col-xxl-4 col-md-4">
+              <div class="card info-card sales-card" style="background-color:cadetblue">
+                
+                <div class="card-body">
+                  <h5 class="card-title">Blog</h5>
+
+                  <div class="d-flex align-items-center">
+                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                      <i class='bi bi-mailbox2 bx-lg bx-tada' ></i>
+                    </div>
+                    <div class="ps-3">
+                      <h6 >{{ $TotalBlog }}</h6>
                       {{-- <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span> --}}
 
                     </div>
@@ -434,21 +459,58 @@
 
           <!-- Website Traffic -->
           <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
+            
+            <div class="card-body pb-0">
+              <h5 class="card-title">Member Upazila Wise <span>| Today</span></h5>
+
+              <ul class="list-group shadow-sm">
+
+                <!-- Company 1 -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-0"> {{$chartData[0]['name']}} </h6>
+                    {{-- <small class="text-muted">Tech & Innovation</small> --}}
+                  </div>
+                  <span class="badge bg-primary rounded-pill"> {{$chartData[0]['value']}} Members</span>
                 </li>
 
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
+                <!-- Company 2 -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-0"> {{$chartData[1]['name']}} </h6>
+                    {{-- <small class="text-muted">Finance & Investment</small> --}}
+                  </div>
+                  <span class="badge bg-success rounded-pill"> {{$chartData[1]['value']}} Members</span>
+                </li>
 
-            <div class="card-body pb-0">
-              <h5 class="card-title">Website Traffic <span>| Today</span></h5>
+                <!-- Company 3 -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-0"> {{$chartData[2]['name']}} </h6>
+                    {{-- <small class="text-muted">Healthcare</small> --}}
+                  </div>
+                  <span class="badge bg-warning text-dark rounded-pill"> {{$chartData[2]['value']}} Members</span>
+                </li>
+
+                <!-- Company 4 -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-0"> {{$chartData[3]['name']}} </h6>
+                    {{-- <small class="text-muted">Education</small> --}}
+                  </div>
+                  <span class="badge bg-danger rounded-pill"> {{$chartData[3]['value']}} Members</span>
+                </li>
+
+                <!-- Company 5 -->
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                  <div>
+                    <h6 class="mb-0"> {{$chartData[4]['name']}} </h6>
+                    {{-- <small class="text-muted">E-commerce</small> --}}
+                  </div>
+                  <span class="badge bg-info text-dark rounded-pill"> {{$chartData[4]['value']}} Members</span>
+                </li>
+
+              </ul>
 
               <div id="trafficChart" style="min-height: 400px;" class="echart"></div>
 
@@ -463,7 +525,7 @@
                       left: 'center'
                     },
                     series: [{
-                      name: 'Access From',
+                      name: 'Total Member',
                       type: 'pie',
                       radius: ['40%', '70%'],
                       avoidLabelOverlap: false,
@@ -481,34 +543,16 @@
                       labelLine: {
                         show: false
                       },
-                      data: [{
-                          value: 1048,
-                          name: 'Search Engine'
-                        },
-                        {
-                          value: 735,
-                          name: 'Direct'
-                        },
-                        {
-                          value: 580,
-                          name: 'Email'
-                        },
-                        {
-                          value: 484,
-                          name: 'Union Ads'
-                        },
-                        {
-                          value: 300,
-                          name: 'Video Ads'
-                        }
-                      ]
+                      // data: <? php echo json_encode($chartData); ?>, // PHP variable echoed here
+                       data: @php echo json_encode($chartData);  @endphp
                     }]
                   });
                 });
               </script>
 
             </div>
-          </div><!-- End Website Traffic -->
+          </div>
+          <!-- End Website Traffic -->
 
         </div><!-- End Right side columns -->
 

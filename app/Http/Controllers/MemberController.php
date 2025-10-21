@@ -59,14 +59,17 @@ class MemberController extends Controller
             'dob' => 'required|date',
             'father_name' => 'required|string',
             'mother_name' => 'required|string',
-            'village' => 'required|string',
-            'union_parishad' => 'required|string',
-            'upazila' => 'required|string',
+
             'zila' => 'required|string',
+            'upazila' => 'required|string',
+            'union_parishad' => 'required|string',
+            'village' => 'required|string',
+
             'phone' => 'required|string|unique:members,phone',
             'email' => 'nullable|email|unique:members,email',
-            'amount_of_tea_garden' => 'nullable|numeric|between:0,99.99',
-            'tea_garden_address' => 'nullable|string',
+
+            'amount_of_tea_garden' => 'required|nullable|numeric|between:0,99.99',
+            'tea_garden_address' => 'required|nullable|string',
             'dag_number' => 'nullable|string',
             'mouja_name' => 'nullable|string',
             'tea_board_registration_number' => 'nullable|string',

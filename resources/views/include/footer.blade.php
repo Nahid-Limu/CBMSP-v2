@@ -11,17 +11,20 @@
               Emma Shopping Center (2nd Flor) <br>
               Panchagarh 5000<br>
               Bangladesh <br><br>
-              <strong>Phone:</strong> <a href="tel:++801714814109"> +88 01636150770</a><br>
+              <strong>Phone:</strong> <a href="tel:+880 1737-369190"> +880 1737-369190</a><br>
+              <strong>Phone:</strong> <a href="tel:+880 1737-369190"> +880 1750-580725</a><br>
+              <strong>Phone:</strong> <a href="tel:+880 1737-369190"> +880 163-6150770</a><br>
+              <strong>Phone:</strong> <a href="tel:+880 1737-369190"> +880 1717-154890</a><br>
               {{-- <strong>Phone:</strong> <a href="tel:++801714814109"> +88 01714814109</a><br> --}}
-              <strong>Email:</strong> info@example.com<br>
+              <strong>Email:</strong> info@cbmspg.com<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('home') }}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>

@@ -22,64 +22,37 @@
 
       <div class="container" data-aos="fade-up">
 
-        <div class="row mt-5">
+        <div class="container my-5">
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h4 class="card-title mb-4 text-center text-primary">Contact Details</h4>
+              <div class="row g-4">
 
-          <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>Location:</h4>
-                <p>
-                 Emma Shopping Center (2nd Flor)
-                </p>
+                <!-- Association Info -->
+                <div class="col-md-6">
+                  <h5 class="mb-3">Association Info</h5>
+                  <p><strong>Name:</strong> Tea Garden Owners Association, Panchagarh</p>
+                  <p><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Emma Shopping Center (2nd Flor), Panchagarh Bazar, Panchagarh</p>
+                  <p><i class="bi bi-envelope-fill me-2 text-primary"></i>contact@cbmspg.com</p>
+                  <p><i class="bi bi-telephone-fill me-2 text-primary"></i> <a href="tel:+880 1737-369190"> +880 1737-369190</a></p>
+                  <p><i class="bi bi-telephone-fill me-2 text-primary"></i> <a href="tel:+880 1750-580725"> +880 1750-580725</a></p>
+                  <p><i class="bi bi-telephone-fill me-2 text-primary"></i> <a href="tel:+880 163-6150770"> +880 163-6150770</a></p>
+                  <p><i class="bi bi-telephone-fill me-2 text-primary"></i> <a href="tel:+880 1717-154890"> +880 1717-154890</a></p>
+                  
+                </div>
+
+                <!-- Office Hours / Other -->
+                <div class="col-md-6">
+                  <h5 class="mb-3">Office Hours</h5>
+                  <p><i class="bi bi-clock-fill me-2 text-primary"></i>Mon – Fri: 10:00 AM – 6:00 PM</p>
+                  <p><i class="bi bi-globe me-2 text-primary"></i><a href="https://cbmspg.com" target="_blank">www.cbmspg.com</a></p>
+                  <p><i class="bi bi-facebook me-2 text-primary"></i><a href="https://www.facebook.com/groups/chabaganmaliksomity.panchagarh" target="_blank">Facebook Page</a></p>
+                  {{-- <p><i class="bi bi-twitter-x me-2 text-primary"></i><a href="#" target="_blank">X (Twitter)</a></p> --}}
+                </div>
+
               </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>Email:</h4>
-                <p>cbmsp@gmail.com</p>
-              </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>Call:</h4>
-                <p>01636150770</p>
-                <p>01983368753</p>
-                {{-- <p>০১৭১৯-৬৬৭১৮৩</p>
-                <p>০১৭২৭-৪২১২৮৬</p> --}}
-              </div>
-
             </div>
-
           </div>
-
-          {{-- <div class="col-lg-8 mt-5 mt-lg-0">
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-                </div>
-              </div>
-              <div class="form-group mt-3">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-              </div>
-              <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-              </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-
-          </div> --}}
-
         </div>
 
       </div>
