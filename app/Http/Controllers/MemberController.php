@@ -36,6 +36,8 @@ class MemberController extends Controller
 
                         $button .= '&nbsp<button type="button" onclick="editData('.$data->id.')" name="edit" id="'.$data->id.'" class="edit btn btn-outline-success btn-sm " data-bs-toggle="modal" data-bs-target="#EditMemberModal" ><i class="bx bx-edit"> Edit</i></button>';
 
+                        $button .= '&nbsp<button type="button" onclick="idCard('.$data->id.')" name="idCard" id="'.$data->id.'" class="edit btn btn-outline-info btn-sm " data-bs-toggle="modal" data-bs-target="#IdCardModal" ><i class="bx bxs-id-card"> ID Card</i></button>';
+
                         $button .= '&nbsp<button type="button" onclick="deleteModal('.$data->id.',\''.$data->name.'\',\'Member List\')" name="delete" id="'.$data->id.'" class="delete btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteModal" ><i class="bx bx-trash"> Delete</i></button></div>';
                         
                         return $button;
@@ -143,10 +145,11 @@ class MemberController extends Controller
     public function approveMember (Request $request, Member $member)
     {
         // dd($request->all());
+        $count = Member::where('status', 1)->count();
         $Member = Member::find($request->id);
 
         $Member->status = 1;
-        $Member->mid  = "CBMSP-".$Member->id;
+        $Member->mid  = "CBMSP-".$count+1;
         $Member->save();
 
         if ($Member->id) {

@@ -15,3 +15,4 @@
 <!-- Template Main CSS File -->
 {{-- <link href="adminAssets/assets/css/style.css" rel="stylesheet"> --}}
 <link href="{{ asset('adminAssets/assets/css/style.css') }}" rel="stylesheet">
+<link href="{{ asset('adminAssets/assets/css/idCardStyle.css') }}" rel="stylesheet">

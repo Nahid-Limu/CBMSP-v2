@@ -66,6 +66,7 @@
 
       @include('admin.member.editMemberModal')
       @include('admin.member.viewMemberModal')
+      @include('admin.member.IdCardModal')
 
       @include('include.admin.deleteModal')
 
@@ -222,7 +223,7 @@
     })
   }
 
-  //--View Data
+  //--View member Data
   function viewData(id) {
 
     // $("#EditTeacherForm").trigger("reset");
@@ -267,6 +268,60 @@
             console.log(response);
         }
     });
+  }
+
+  //--idCard Data om modal
+  function idCard(id) {
+
+    // $("#EditTeacherForm").trigger("reset");
+    $.ajax({
+        type: 'GET',
+        url: "{{url('viewMember')}}"+"/"+id,
+        // dataType: "html",
+        success: function (response) {
+            // console.log(response);
+            if (response) {
+              
+              $("#idCard_photo").attr("src", "assets/img/Members/"+ response.photo);
+
+              let originalText = response.name;
+              let uppercaseText = originalText.toUpperCase(response.name); 
+
+              $('#member_name').val(uppercaseText);
+
+              $('#idCard_Name').text(uppercaseText);
+              $('#idCard_id').text(response.mid);
+              $('#idCard_phone').text(response.phone);
+              $('#idCard_email').text(response.email);
+            }
+
+        },error:function(){ 
+            console.log(response);
+        }
+    });
+  }
+
+  //--idCard Print
+  function printIdCard(member_name) {
+      
+    var divContent = $("#printableDiv").html();
+    var printWindow = window.open('', '', 'height=600,width=800');
+    printWindow.document.write('<html><head><title>' + member_name + ' ID Card </title>');
+    printWindow.document.write('<link href="adminAssets/assets/css/idCardStyle.css" rel="stylesheet">');
+    printWindow.document.write('<style>');
+    printWindow.document.write('@media print { body { -webkit-print-color-adjust: exact !important; color-adjust: exact !important; } }');
+    printWindow.document.write('#printDiv { background-color: ; padding: 20px; border: 2px solid #000; }');
+    printWindow.document.write('</style></head><body>');
+    printWindow.document.write('<div id="printDiv">' + divContent + '</div>');
+    printWindow.document.write('</body></html>');
+    printWindow.document.close();
+    printWindow.focus();
+    printWindow.print();
+    printWindow.close();
+
+    // $('#IdCardModal').modal('hide');
+    location.reload();
+    // $('#MemberListTable').DataTable().ajax.reload();
   }
   
 </script>

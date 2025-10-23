@@ -1,0 +1,36 @@
+.id-card {
+      /* background: linear-gradient(135deg, #0d6efd, #6610f2); */
+      background: linear-gradient(135deg, limegreen, green);
+      color: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .id-card img.user-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .id-card h5 {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .id-card .info {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .association-footer {
+      font-size: 0.85rem;
+      margin-top: 15px;
+      opacity: 0.9;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+      padding-top: 10px;
+    }

@@ -19,11 +19,11 @@ class DashboardController extends Controller
         $TotalMember = Member::where('status', 1)->Count();
         $PendingMember = Member::where('status', 0)->Count();
 
-        $Atwari = Member::where('upazila', 'Atwari')->Count();
-        $Boda = Member::where('upazila', 'Boda')->Count();
-        $Debiganj = Member::where('upazila', 'Debiganj')->Count();
-        $Panchagarh_Sadar = Member::where('upazila', 'Panchagarh_Sadar')->Count();
-        $Tetulia = Member::where('upazila', 'Tetulia')->Count();
+        $Atwari = Member::where('upazila', 'Atwari')->where('status', 1)->Count();
+        $Boda = Member::where('upazila', 'Boda')->where('status', 1)->Count();
+        $Debiganj = Member::where('upazila', 'Debiganj')->where('status', 1)->Count();
+        $Panchagarh_Sadar = Member::where('upazila', 'Panchagarh_Sadar')->where('status', 1)->Count();
+        $Tetulia = Member::where('upazila', 'Tetulia')->where('status', 1)->Count();
 
         $chartData = [
             ['value' => $Atwari, 'name' => 'Atwari'],
