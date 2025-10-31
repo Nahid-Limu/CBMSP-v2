@@ -41,13 +41,17 @@
           <li><a class="{{ (Route::currentRouteName() == 'blog') || (Route::currentRouteName() == 'blogDetails') ? 'active' : '' }}" href="{{ route('blog') }}">Blog</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'about') ? 'active' : '' }}" href="{{ route('about') }}">About Us</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a></li>
-          <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Register</a></li>
+          {{-- <li><a class="{{ (Route::currentRouteName() == 'memberRegistration') ? 'active' : '' }}" href="{{ route('memberRegistration') }}">Register</a></li> --}}
+
+          {{-- <li><a href="{{ route('login') }}" class="">Log In</a></li> --}}
+          
           {{-- <li><a href="{{ route('testPage') }}">testPage</a></li> --}}
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="{{ route('login') }}" class="get-started-btn">Log In</a>
+      {{-- <a href="{{ route('login') }}" class="get-started-btn">Admin</a> --}}
+      <a href="{{ route('memberRegistration') }}" class="get-started-btn">Registration</a>
 
     </div>
   </header>

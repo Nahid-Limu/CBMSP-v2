@@ -167,3 +167,18 @@ Route::group(['middleware'=>'auth'], function () {
     
 });
 /* Admin route end */
+
+Route::get('/view-cache', function () {
+    Artisan::call('view:cache');
+    return 'View cache generated.';
+});
+
+Route::get('/view-clear', function () {
+    Artisan::call('view:clear');
+    return 'View cache cleared.';
+});
+
+Route::get('/optimize-clear', function () {
+    Artisan::call('optimize:clear');
+    return 'Optimize cache cleared.';
+});

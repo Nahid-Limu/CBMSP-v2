@@ -29,6 +29,12 @@ class EventController extends Controller
                         return $button;   
                     })
 
+                    ->editColumn('description', function ($data) {
+                        $description = html_entity_decode($data->description);
+                        // return Str::limit($description, 40);
+                        return $description;
+                    })
+
                     ->editColumn('event_date', function ($data) {
                         return date('l, F jS, Y', strtotime($data->event_date));
                     })
@@ -44,7 +50,7 @@ class EventController extends Controller
                         
                         return $button;
                     })
-                    ->rawColumns(['image','event_date','event_time','action'])
+                    ->rawColumns(['image','description','event_date','event_time','action'])
                     ->addIndexColumn()
                     ->make(true);
         }
@@ -61,7 +67,11 @@ class EventController extends Controller
             'event_time' => 'required',
             'description' => 'nullable|string',
             'image' => 'required|image|mimes:jpg,jpeg,png|max:2048',
-        ]);
+        ], [
+
+                'image.max' => 'The image file is too large. (2 MB Max)',
+
+            ]);
 
         if($validator->fails())
         {

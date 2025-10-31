@@ -56,7 +56,7 @@ class MemberController extends Controller
         // dd($request->all());
         $request->validate([
             'name' => 'required|string|max:255',
-            'photo' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'photo' => 'required|image|mimes:jpg,jpeg,png|max:4096',
             'nid' => 'required|string|unique:members,nid',
             'dob' => 'required|date',
             'father_name' => 'required|string',
@@ -75,7 +75,11 @@ class MemberController extends Controller
             'dag_number' => 'nullable|string',
             'mouja_name' => 'nullable|string',
             'tea_board_registration_number' => 'nullable|string',
-        ]);
+        ], [
+
+                'photo.max' => 'The image file is too large. (4 MB Max)',
+
+            ]);
         
         $data = $request->all();
         

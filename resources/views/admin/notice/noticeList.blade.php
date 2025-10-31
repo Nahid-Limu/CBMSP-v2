@@ -144,6 +144,7 @@
                 
               }
               $('#form_result').html(html);
+              $('.addData').prop('disabled', false).html('ADD'); //enable and change text of button
 
               //success
               if (response.success) {

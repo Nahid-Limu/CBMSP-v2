@@ -148,6 +148,7 @@
                 
               }
               $('#form_result').html(html);
+              $('.addData').prop('disabled', false).html('ADD'); //enable and change text of button
 
               //success
               if (response.success) {
@@ -210,7 +211,8 @@
               $('#edit_title').val(response.title);
               $('#edit_event_date').val(response.event_date);
               $('#edit_event_time').val(response.event_time);
-              $('#edit_description').val(response.description);
+              // $('#edit_description').val(response.description);
+              $('#edit_description').summernote('code', response.description);
 
               $('.imgPreview').attr('hidden', false);
               $("#imageView").attr("src", "assets/img/events/"+ response.image);

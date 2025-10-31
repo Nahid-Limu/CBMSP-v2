@@ -2,6 +2,14 @@
 
 @section('title', 'Member Registration')
 
+@section('head')
+  <meta property="og:title" content="MEMBER REGISTRATION" />
+  {{-- <meta property="og:description" content="{!! Str::limit( strip_tags($Notice->description, 150) ) !!}" /> --}}
+  <meta property="og:image" content="{{ asset('assets/img/memberRegThambalin.jpg') }}" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:type" content="article" />
+@endsection
+
 @section('content')
 
 <main id="main" data-aos="fade-in">
@@ -49,7 +57,7 @@
                 <div class="card-header">Member Information</div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="memberName" class="form-label">Member Name</label>
+                    <label for="memberName" class="form-label">Member Name ( সদস্যের নাম )</label>
                     <input type="text" class="form-control" id="memberName" name="name" required>
                   </div>
                   <div class="col-md-6">
@@ -57,7 +65,7 @@
                     
                     <div class="row">
                       <div class="col-md-6">
-                        <label for="photo" class="form-label">Photo</label>
+                        <label for="photo" class="form-label">Photo ( ছবি )</label>
                         <input type="file" class="form-control uplodeImage" id="photo" name="photo" required>
                       </div>
                       <div class="col-md-6">
@@ -69,19 +77,19 @@
 
                   </div>
                   <div class="col-md-6">
-                    <label for="nid" class="form-label">NID Number</label>
+                    <label for="nid" class="form-label">NID Number ( জাতীয় পরিচয়পত্র নম্বর )</label>
                     <input type="text" class="form-control" pattern="^\d{10}|\d{17}$" minlength="10" maxlength="17" id="nid" name="nid" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="dob" class="form-label">Date of Birth</label>
+                    <label for="dob" class="form-label">Date of Birth ( জন্ম তারিখ )</label>
                     <input type="date" class="form-control" id="dob" name="dob" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="fatherName" class="form-label">Father's Name</label>
+                    <label for="fatherName" class="form-label">Father's Name ( পিতার নাম )</label>
                     <input type="text" class="form-control" id="fatherName" name="father_name">
                   </div>
                   <div class="col-md-6">
-                    <label for="motherName" class="form-label">Mother's Name</label>
+                    <label for="motherName" class="form-label">Mother's Name ( মাতার নাম )</label>
                     <input type="text" class="form-control" id="motherName" name="mother_name">
                   </div>
                 </div>
@@ -92,7 +100,7 @@
                 <div class="card-header">Address Information</div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="zila" class="form-label">Zila</label>
+                    <label for="zila" class="form-label">Zila ( জেলা )</label>
                     {{-- <input type="text" class="form-control" id="zila" name="zila"> --}}
                     <select class="form-select" id="zila" name="zila" required>
                       <option value="" selected>Select Zila</option>
@@ -100,7 +108,7 @@
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="upazila" class="form-label">Upazila</label>
+                    <label for="upazila" class="form-label">Upazila ( উপজেলা )</label>
                     {{-- <input type="text" class="form-control" id="upazila" name="upazila"> --}}
                     <select class="form-select" id="upazila" name="upazila" required disabled>
                       <option value=""  selected>Select Upazila</option>
@@ -112,14 +120,14 @@
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="union" class="form-label">Union</label>
+                    <label for="union" class="form-label">Union ( ইউনিয়ন )</label>
                     {{-- <input type="text" class="form-control" id="union" name="union_parishad"> --}}
                     <select class="form-select" id="union" name="union_parishad" required disabled>
                       <option value="" selected>Select a Union</option>
                     </select>
                   </div>
                   <div class="col-md-6">
-                    <label for="village" class="form-label">Village</label>
+                    <label for="village" class="form-label">Village ( গ্রাম )</label>
                     <input type="text" class="form-control" id="village" name="village" required>
                   </div>
                 </div>
@@ -130,11 +138,11 @@
                 <div class="card-header">Contact Information</div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="phone" class="form-label">Phone Number</label>
+                    <label for="phone" class="form-label">Phone Number ( ফোন নম্বর )</label>
                     <input type="tel" class="form-control" id="phone" name="phone" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="email" class="form-label">Email Address</label>
+                    <label for="email" class="form-label">Email ( ইমেইল )</label>
                     <input type="email" class="form-control" id="email" name="email">
                   </div>
                 </div>
@@ -145,23 +153,23 @@
                 <div class="card-header">Tea Garden Information</div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="amount" class="form-label">Amount of Tea Garden (in acres/hectares)</label>
+                    <label for="amount" class="form-label">Amount of Tea Garden (in acres) ( চা বাগানের পরিমাণ (একর) )</label>
                     <input type="number" step="0.01" class="form-control" id="amount" name="amount_of_tea_garden">
                   </div>
                   <div class="col-md-6">
-                    <label for="tgAddress" class="form-label">Tea Garden Address</label>
+                    <label for="tgAddress" class="form-label">Tea Garden Address ( চা বাগানের ঠিকানা )</label>
                     <input type="text" class="form-control" id="tgAddress" name="tea_garden_address">
                   </div>
                   <div class="col-md-6">
-                    <label for="dagNo" class="form-label">Dag Number</label>
+                    <label for="dagNo" class="form-label">Dag Number ( দাগ নম্বর )</label>
                     <input type="text" class="form-control" id="dagNo" name="dag_number">
                   </div>
                   <div class="col-md-6">
-                    <label for="mouja" class="form-label">Mouja Name</label>
+                    <label for="mouja" class="form-label">Mouja Name ( মৌজা নাম )</label>
                     <input type="text" class="form-control" id="mouja" name="mouja_name">
                   </div>
                   <div class="col-md-6">
-                    <label for="tea_board_registration_number" class="form-label">Tea Board Registration Number( if registered )</label>
+                    <label for="tea_board_registration_number" class="form-label">Tea Board Registration Number( if registered ) ( চা বোর্ডের নিবন্ধন নম্বর (যদি নিবন্ধিত থাকে) )</label>
                     <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
                   </div>
                 </div>
@@ -173,7 +181,9 @@
                 <div class="card-body row g-3">
                   <div class="col-md-12 ">
                     <label for="amount" class="form-label">I agree to the terms</label>
-                    <input type="checkbox"  name="i_agree" value="1" required>
+                    {{-- <input type="checkbox"  name="i_agree" value="1" required> --}}
+                    &nbsp;
+                    <input class="form-check-input" type="checkbox"  name="i_agree" value="1" required>
                   </div>
                 </div>
               </div>

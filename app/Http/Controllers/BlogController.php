@@ -68,11 +68,22 @@ class BlogController extends Controller
     {
         // dd($request->all());
         //validation [start]
+
+        // $validator = Validator::make($request->all(), [
+        //     'title' => 'required|string|max:255',
+        //     'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        //     'content' => 'nullable|string',
+        // ]);
+
         $validator = Validator::make($request->all(), [
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'content' => 'nullable|string',
-        ]);
+        ], [
+
+                'image.max' => 'The image file is too large. (2 MB Max)',
+
+            ]);
 
         if($validator->fails())
         {

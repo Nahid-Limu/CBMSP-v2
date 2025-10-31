@@ -30,7 +30,7 @@
 
                 <div class="col-12">
                   <label for="description" class="form-label">Description</label>
-                  <textarea class="form-control" name="description" id="edit_description" required cols="20" rows="5"></textarea>
+                  <textarea class="form-control summerNote" name="description" id="edit_description" required cols="20" rows="5"></textarea>
                 </div>
                 
                 <div class="col-md-6">
