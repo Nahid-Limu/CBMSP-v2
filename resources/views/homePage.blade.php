@@ -2,6 +2,44 @@
 
 @section('title', 'Home')
 
+@section('hero')
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1 class="text-danger">চা-এর স্বর্গ, পঞ্চগড়,<br><span class="text-success"> যেখানে সবুজ স্বপ্ন বোনা হয়.</span></h1>
+        <h2>চা বাগান মালিক সমিতি, পঞ্চগড়.</h2>
+        {{-- <a href="courses.html" class="btn-get-started">Get Started</a> --}}
+        <br>
+        @php
+            $RecentDiseases = \App\Models\InsectAndDisease::orderBy('updated_at', 'desc')->where('pinned', 1)->get('name'); // Example: Fetch all users
+        @endphp
+
+        @if ($RecentDiseases->isNotEmpty())
+            <marquee class="marq" onmouseout="this.start()" onmouseover="this.stop()" direction="right" loop="">
+                <a href="{{ route('treatment') }}" class="btn btn-md btn-outline-warning rounded-pill">
+                চা বাগানের সাম্প্রতিক রোগসমূহ <i class="bi bi-arrow-right-circle-fill text-danger"></i>
+                @foreach ($RecentDiseases as $RD)
+                    {{-- {{ $RD->name }} --}}
+                    {{ $RD->name }}@unless($loop->last) , @endunless
+                @endforeach
+                <i class="bi bi-arrow-left-circle-fill text-danger"></i>
+                </a>
+            </marquee>
+        @endif
+
+        {{-- advertisement [Start] --}}
+        <marquee class="marq" onmouseout="this.start()" onmouseover="this.stop()" direction="left" loop="">
+            <a href="{{ route('memberRegistration') }}" class="btn btn-md btn-outline-success rounded-pill">
+            <strong>🌿☕ চা চাষি সম্মেলন ২০২৫ ☕🌿</strong> <i class="bi bi-arrow-right-circle-fill text-danger"></i>
+            ফি ছাড়াই সমিতির ওয়েবসাইটে সদস্যপদ নিবন্ধন
+            <i class="bi bi-arrow-left-circle-fill text-danger"></i>
+            </a>
+        </marquee>
+        {{-- advertisement [END] --}}
+
+    </div>
+</section>
+@endsection
+
 @section('content')
 <main id="main">
     <!-- ======= About Section ======= -->
