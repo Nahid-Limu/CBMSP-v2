@@ -22,14 +22,14 @@ class DashboardController extends Controller
         $Atwari = Member::where('upazila', 'Atwari')->where('status', 1)->Count();
         $Boda = Member::where('upazila', 'Boda')->where('status', 1)->Count();
         $Debiganj = Member::where('upazila', 'Debiganj')->where('status', 1)->Count();
-        $Panchagarh_Sadar = Member::where('upazila', 'Panchagarh_Sadar')->where('status', 1)->Count();
+        $Panchagarh_Sadar = Member::where('upazila', 'Panchagarh Sadar')->where('status', 1)->Count();
         $Tetulia = Member::where('upazila', 'Tetulia')->where('status', 1)->Count();
 
         $chartData = [
             ['value' => $Atwari, 'name' => 'Atwari'],
             ['value' => $Boda, 'name' => 'Boda'],
             ['value' => $Debiganj, 'name' => 'Debiganj'],
-            ['value' => $Panchagarh_Sadar, 'name' => 'Panchagarh_Sadar'],
+            ['value' => $Panchagarh_Sadar, 'name' => 'Panchagarh Sadar'],
             ['value' => $Tetulia, 'name' => 'Tetulia']
         ];
 

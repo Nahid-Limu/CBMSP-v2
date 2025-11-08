@@ -46,7 +46,7 @@
                       <th scope="col">Name</th>
                       <th scope="col">Photo</th>
                       <th scope="col">Phone</th>
-                      <th scope="col">Tea Board Registration</th>
+                      <th scope="col">Reference Code</th>
                       <th scope="col">Garden Address</th>
                       <th scope="col">Garden Amount (in acres)</th>
                       <th scope="col">Action</th>
@@ -101,8 +101,8 @@
               name: 'phone'
           },
           {
-              data: 'tea_board_registration_number',
-              name: 'tea_board_registration_number'
+              data: 'reference',
+              name: 'reference'
           },
           {
               data: 'tea_garden_address',
@@ -152,7 +152,7 @@
         url: "{{url('viewMember')}}"+"/"+id,
         // dataType: "html",
         success: function (response) {
-            // console.log(response);
+            console.log(response);
             if (response) {
               
               $('#id').val(response.id);
@@ -181,6 +181,7 @@
               $('#tea_board_registration_number').text(response.tea_board_registration_number);
 
               response.status == 1 ? $('#member_status').text(" Active").addClass("text-success") : $('#member_status').text(" Pending").addClass("text-danger");
+              $('#reference').text(response.reference);
 
             }
 

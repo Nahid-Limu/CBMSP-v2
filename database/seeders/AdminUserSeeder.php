@@ -16,7 +16,7 @@ class AdminUserSeeder extends Seeder
         $data=[
             [
                 'name'=>'Super Admin',
-                'email'=>'super@email.com',
+                'email'=>'super@cbmspg.com',
                 'username'=>'super_admin',
                 'password'=>bcrypt('admin@121'),
                 'type'=>'1',
@@ -24,7 +24,7 @@ class AdminUserSeeder extends Seeder
             ],
             [
                 'name'=>'Nahid Limu',
-                'email'=>'nahidlimu@email.com',
+                'email'=>'nahidlimu@cbmspg.com',
                 'username'=>'nahid_cbms',
                 'password'=>bcrypt('nahid@cbms'),
                 'type'=>'2',
@@ -32,7 +32,7 @@ class AdminUserSeeder extends Seeder
             ],
             [
                 'name'=>'Manik Khan',
-                'email'=>'manik@email.com',
+                'email'=>'manik@cbmspg.com',
                 'username'=>'manik_cbms',
                 'password'=>bcrypt('manik@cbms'),
                 'type'=>'2',
@@ -40,9 +40,17 @@ class AdminUserSeeder extends Seeder
             ],
             [
                 'name'=>'Nazmul',
-                'email'=>'nazmul@email.com',
+                'email'=>'nazmul@cbmspg.com',
                 'username'=>'nazmul_cbms',
                 'password'=>bcrypt('nazmul@cbms'),
+                'type'=>'2',
+
+            ],
+            [
+                'name'=>'Habibur',
+                'email'=>'habibur@cbmspg.com',
+                'username'=>'habibur_cbms',
+                'password'=>bcrypt('habibur@cbms'),
                 'type'=>'2',
 
             ],

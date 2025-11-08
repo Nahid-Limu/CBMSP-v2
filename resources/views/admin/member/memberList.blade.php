@@ -261,6 +261,7 @@
               $('#tea_board_registration_number').text(response.tea_board_registration_number);
 
               response.status == 1 ? $('#member_status').text(" Active").addClass("text-success") && $("#accept_btn").attr("hidden", true) : $('#member_status').text(" Pending").addClass("text-danger");
+              $('#reference').text(response.reference);
               
             }
 

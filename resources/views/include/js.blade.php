@@ -26,6 +26,13 @@
       $('#successMessage').fadeOut('fast');
     }, 3000);
 
+    //--ajax flash msg 
+    function SuccessMsg() {
+      $("#success_message").fadeTo(5000, 500).slideUp(500, function(){
+          // $("#success_message").alert('close');
+      });
+    }
+
     //--Preview an image before Uplode
     $('.uplodeImage').change(function() {
       if (this.files && this.files[0]) {

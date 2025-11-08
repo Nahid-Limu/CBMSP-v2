@@ -30,42 +30,32 @@
 
           <div class="container mt-5">
 
-            @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
-
-            @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" id="success_message" role="alert">
-                  {{ session('success') }}
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-            @endif
+            {{-- flash Message [Error] --}}
+            <span id="form_result"></span>
+            {{-- flash Message [Error] --}}
+            {{-- <hr> --}}
+            {{-- flash Message [Success] --}}
+              <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
+            {{-- flash Message [Success] --}}
 
             {{-- <h2 class="mb-4">Member Registration Form</h2> --}}
-            <form action="{{ route('memberRegistration.store') }}" method="post" enctype="multipart/form-data">
+            <form  id="AddMemberForm" enctype="multipart/form-data laravel" file="false" class="row g-3 needs-validation" novalidate>
               @csrf
           
               <!-- Member Information -->
               <div class="card mb-4">
-                <div class="card-header">Member Information</div>
+                <div class="card-header text-primary"><strong>Member Information</strong></div>
                 <div class="card-body row g-3">
+
                   <div class="col-md-6">
-                    <label for="memberName" class="form-label">Member Name ( সদস্যের নাম )</label>
+                    <label for="memberName" class="form-label text-secondary">Member Name ( সদস্যের নাম )</label>
                     <input type="text" class="form-control" id="memberName" name="name" required>
                   </div>
                   <div class="col-md-6">
                     
-                    
                     <div class="row">
                       <div class="col-md-6">
-                        <label for="photo" class="form-label">Photo ( ছবি )</label>
+                        <label for="photo" class="form-label text-secondary">Photo ( ছবি *2 MB Max* )</label>
                         <input type="file" class="form-control uplodeImage" id="photo" name="photo" required>
                       </div>
                       <div class="col-md-6">
@@ -77,57 +67,43 @@
 
                   </div>
                   <div class="col-md-6">
-                    <label for="nid" class="form-label">NID Number ( জাতীয় পরিচয়পত্র নম্বর )</label>
-                    <input type="text" class="form-control" pattern="^\d{10}|\d{17}$" minlength="10" maxlength="17" id="nid" name="nid" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="dob" class="form-label">Date of Birth ( জন্ম তারিখ )</label>
-                    <input type="date" class="form-control" id="dob" name="dob" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label for="fatherName" class="form-label">Father's Name ( পিতার নাম )</label>
+                    <label for="fatherName" class="form-label text-secondary">Father's Name ( পিতার নাম )</label>
                     <input type="text" class="form-control" id="fatherName" name="father_name">
                   </div>
                   <div class="col-md-6">
-                    <label for="motherName" class="form-label">Mother's Name ( মাতার নাম )</label>
+                    <label for="motherName" class="form-label text-secondary">Mother's Name ( মাতার নাম )</label>
                     <input type="text" class="form-control" id="motherName" name="mother_name">
                   </div>
+                  <div class="col-md-6">
+                    <label for="nid" class="form-label text-secondary">NID Number ( জাতীয় পরিচয়পত্র নম্বর )</label>
+                    <input type="text" class="form-control" pattern="^\d{10}|\d{17}$" minlength="10" maxlength="17" id="nid" name="nid" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="dob" class="form-label text-secondary">Date of Birth ( জন্ম তারিখ )</label>
+                    <input type="date" class="form-control" id="dob" name="dob" required>
+                  </div>
+
                 </div>
               </div>
           
               <!-- Address Section -->
               <div class="card mb-4">
-                <div class="card-header">Address Information</div>
+                <div class="card-header text-primary"><strong>Address Information</strong></div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="zila" class="form-label">Zila ( জেলা )</label>
-                    {{-- <input type="text" class="form-control" id="zila" name="zila"> --}}
-                    <select class="form-select" id="zila" name="zila" required>
-                      <option value="" selected>Select Zila</option>
-                      <option value="Panchagarh">Panchagarh </option>
-                    </select>
+                    <label for="zila" class="form-label text-secondary">Zila ( জেলা )</label>
+                    <select class="form-select" id="zilaSelect" onchange="populateUpazilas()"  name="zila" required></select>
                   </div>
                   <div class="col-md-6">
-                    <label for="upazila" class="form-label">Upazila ( উপজেলা )</label>
-                    {{-- <input type="text" class="form-control" id="upazila" name="upazila"> --}}
-                    <select class="form-select" id="upazila" name="upazila" required disabled>
-                      <option value=""  selected>Select Upazila</option>
-                      <option value="Atwari">Atwari</option>
-                      <option value="Boda">Boda</option>
-                      <option value="Debiganj">Debiganj</option>
-                      <option value="Panchagarh_Sadar">Panchagarh Sadar </option>
-                      <option value="Tetulia">Tetulia</option>
-                    </select>
+                    <label for="upazila" class="form-label  text-secondary">Upazila ( উপজেলা )</label>
+                    <select class="form-select" id="upazilaSelect" onchange="populateUnions()"  name="upazila" required></select>
                   </div>
                   <div class="col-md-6">
-                    <label for="union" class="form-label">Union ( ইউনিয়ন )</label>
-                    {{-- <input type="text" class="form-control" id="union" name="union_parishad"> --}}
-                    <select class="form-select" id="union" name="union_parishad" required disabled>
-                      <option value="" selected>Select a Union</option>
-                    </select>
+                    <label for="union" class="form-label text-secondary">Union ( ইউনিয়ন )</label>
+                    <select class="form-select" id="unionSelect" name="union_parishad" required></select>
                   </div>
                   <div class="col-md-6">
-                    <label for="village" class="form-label">Village ( গ্রাম )</label>
+                    <label for="village" class="form-label text-secondary">Village ( গ্রাম )</label>
                     <input type="text" class="form-control" id="village" name="village" required>
                   </div>
                 </div>
@@ -135,14 +111,14 @@
           
               <!-- Contact Section -->
               <div class="card mb-4">
-                <div class="card-header">Contact Information</div>
+                <div class="card-header text-primary"><strong>Contact Information</strong></div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="phone" class="form-label">Phone Number ( ফোন নম্বর )</label>
+                    <label for="phone" class="form-label text-secondary">Phone Number ( ফোন নম্বর )</label>
                     <input type="tel" class="form-control" id="phone" name="phone" required>
                   </div>
                   <div class="col-md-6">
-                    <label for="email" class="form-label">Email ( ইমেইল )</label>
+                    <label for="email" class="form-label text-secondary">Email ( ইমেইল )</label>
                     <input type="email" class="form-control" id="email" name="email">
                   </div>
                 </div>
@@ -150,50 +126,40 @@
           
               <!-- Tea Garden Info -->
               <div class="card mb-4">
-                <div class="card-header">Tea Garden Information</div>
+                <div class="card-header text-primary"><strong>Tea Garden Information</strong></div>
                 <div class="card-body row g-3">
                   <div class="col-md-6">
-                    <label for="amount" class="form-label">Amount of Tea Garden (in acres) ( চা বাগানের পরিমাণ (একর) )</label>
+                    <label for="amount" class="form-label text-secondary">Amount of Tea Garden (in acres) ( চা বাগানের পরিমাণ (একর) )</label>
                     <input type="number" step="0.01" class="form-control" id="amount" name="amount_of_tea_garden">
                   </div>
                   <div class="col-md-6">
-                    <label for="tgAddress" class="form-label">Tea Garden Address ( চা বাগানের ঠিকানা )</label>
+                    <label for="tgAddress" class="form-label text-secondary">Tea Garden Address ( চা বাগানের ঠিকানা )</label>
                     <input type="text" class="form-control" id="tgAddress" name="tea_garden_address">
                   </div>
                   <div class="col-md-6">
-                    <label for="dagNo" class="form-label">Dag Number ( দাগ নম্বর )</label>
+                    <label for="dagNo" class="form-label text-secondary">Dag Number ( দাগ নম্বর )</label>
                     <input type="text" class="form-control" id="dagNo" name="dag_number">
                   </div>
                   <div class="col-md-6">
-                    <label for="mouja" class="form-label">Mouja Name ( মৌজা নাম )</label>
+                    <label for="mouja" class="form-label text-secondary">Mouja Name ( মৌজা নাম )</label>
                     <input type="text" class="form-control" id="mouja" name="mouja_name">
                   </div>
                   <div class="col-md-6">
-                    <label for="tea_board_registration_number" class="form-label">Tea Board Registration Number( if registered ) ( চা বোর্ডের নিবন্ধন নম্বর (যদি নিবন্ধিত থাকে) )</label>
+                    <label for="tea_board_registration_number" class="form-label text-secondary">Tea Board Registration Number ( চা বোর্ডের নিবন্ধন নম্বর *যদি  থাকে* )</label>
                     <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
                   </div>
-                </div>
-              </div>
-
-              <!-- class="form-control" -->
-              <div class="card mb-4 text-center">
-                <div class="card-header">Terms and conditions</div>
-                <div class="card-body row g-3">
-                  <div class="col-md-12 ">
-                    <label for="amount" class="form-label">I agree to the terms</label>
-                    {{-- <input type="checkbox"  name="i_agree" value="1" required> --}}
-                    &nbsp;
-                    <input class="form-check-input" type="checkbox"  name="i_agree" value="1" required>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label text-secondary">Reference Code ( রেফারেন্স কোড (সম্মেলন আইডি / সদস্য ফি প্রদানের শেষ ৩ সংখ্যা) )</label>
+                    <input type="text" class="form-control" id="reference" name="reference" required>
                   </div>
                 </div>
-              </div>
-          
-              <!-- Submit Button -->
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
               </div>
           
             </form>
+              <!-- Submit Button -->
+              <div class="text-center">
+                <button type="button" onclick="register()" class="btn btn-primary registerBtn">Submit</button>
+              </div>
           </div>
 
         </div>
@@ -209,53 +175,150 @@
 @section('script')
 
 <script>
-    const zila = document.getElementById('zila');
-    const upazila = document.getElementById('upazila');
 
-    zila.onchange = function() {
-        const selectedValue = zila.value;
+  const administrativeData = {
+    "Panchagarh": {
+        "Atwari": ['Alowakhowa', 'Balarampur', 'Dhamor', 'Mirzapur', 'Radhanagar', 'Toria'],
+        "Boda": ['Benghari', 'Boda', 'Boroshoshi', 'Chandanbari', 'Jholaishal Shiri', 'Kajoldighi Kaligonj', 'Marea', 'Moidan Dighi', 'Pachpir', 'Sakoa'],
+        "Debiganj": ['Chengthi Hazradanga', 'Chilahati', 'Dandopal', 'Debiduba', 'Debiganj', 'Pamuli', 'Sonahar Mollikadaha', 'Sundardighi', 'Tepriganj'],
+        "Panchagarh Sadar": ['Amarkhana', 'Chaklahat', 'Dhakkamara', 'Garinabari', 'Hafizabad', 'Haribhasa', 'Kamat Kajal Dighi', 'Magura', 'Panchagarh Sadar', 'Satmara'],
+        "Tetulia": ['Banglabandha', 'Bhajanpur', 'Buraburi', 'Devnagar', 'Shalbahan', 'Tetulia', 'Tirnaihat']
+    },
+    "Thakurgaon": {
+        "Thakurgaon Sadar": ['Thakurgaon Paurashava', 'Akcha', 'Akhanagar', 'Auliapur', 'Balia', 'Baragaon', 'Begunbari', 'Chilarang', 'Debipur', 'Dholarhat', 'Gareya', 'Jagannathpur', 'Mohammadpur', 'Nargun', 'Rahimanpur', 'Rajagaon', 'Raypur', 'Ruhia', 'Ruhia Pashchim', 'Salandar', 'Senua', 'Shukhan'],
+        "Baliadangi": ['Amjankhore', 'Bara Palashbari', 'Barabari', 'Bhanor', 'Charol', 'Dhantala', 'Duosuo', 'Paria'],
+        "Haripur": ['Gedura', 'Amgaon', 'Bakua', 'Dangipara', 'Haripur'],
+        "Ranisankail": ['Dharmagarh', 'Nekmarad', 'Hossaingaon', 'Lehemba', 'Bachor', 'Kashipur', 'Ratore', 'Nanduar'],
+        "Pirganj": ['Chaitrakol', 'Bhendabari', 'Baradargah', 'Kumedpur', 'Madankhali', 'Tukuria', 'Bara Alampur', 'Raipur', 'Pirganj', 'Shanerhat', 'Panchgachhi', 'Ramnathpur', 'Chatra', 'Kabilpur']
+    },
+    "Nilphamari": {
+        "Dimla": ['Balapara', 'Dimla', 'Gayabari', 'Jhunagachh Chapani', 'Khoga Kharibari', 'Khalisha Chapani', 'Nautara', 'Paschim Chhatnay', 'Purba Chhatnay', 'Tepa Kharibari'],
+        "Domar": ['Bamunia', 'Bhogdaburi', 'Boragari', 'Domar', 'Gomnati', 'Harinchara', 'Jorabari', 'Ketkibari', 'Panga Motukpur', 'Sonaray'],
+        "Jaldhaka": ['Balagram', 'Dharmapal', 'Douabari', 'Golna', 'Golmunda', 'Kaimari', 'Kathali', 'Khutamara', 'Mirganj', 'Shaulmari', 'Shimulbari'],
+        "Kishoreganj": ['Bahagili', 'Barabhita', 'Chandkhana', 'Garagram', 'Kishoreganj', 'Magura', 'Nitai', 'Putimari', 'Ranachandi'],
+        "Nilphamari Sadar": ['Chaora Bargacha', 'Chapra Saranjani', 'Charaikhola', 'Gorgram', 'Itakhola', 'Kachukata', 'Khoksabari', 'Kundapukur', 'Lakshmichap', 'Palasbari', 'Ramnagar', 'Songalsi', 'Sonaray', 'Tupamari'],
+        "Saidpur": ['Bangalipur', 'Botlagari', 'Kamarpukur', 'Kasirambelpukur', 'Khatamadhupur', 'Saidpur Cantonment']
+    }
+    // Add more Zilas, Upazilas, and Unions
+  };
+
+  function populateZilas() {
+      const zilaSelect = document.getElementById('zilaSelect');
+      zilaSelect.innerHTML = '<option value="">Select Zila</option>'; // Default option
+      for (const zila in administrativeData) {
+          const option = document.createElement('option');
+          option.value = zila;
+          option.textContent = zila;
+          zilaSelect.appendChild(option);
+      }
+      populateUpazilas(); // Call to populate Upazilas based on initial Zila (if any)
+  }
+
+  function populateUpazilas() {
+      const zilaSelect = document.getElementById('zilaSelect');
+      const upazilaSelect = document.getElementById('upazilaSelect');
+      const selectedZila = zilaSelect.value;
+
+      upazilaSelect.innerHTML = '<option value="">Select Upazila</option>'; // Clear and add default
+      document.getElementById('unionSelect').innerHTML = '<option value="">Select Union</option>'; // Clear unions
+
+      if (selectedZila) {
+          const upazilas = administrativeData[selectedZila];
+          for (const upazila in upazilas) {
+              const option = document.createElement('option');
+              option.value = upazila;
+              option.textContent = upazila;
+              upazilaSelect.appendChild(option);
+          }
+      }
+      populateUnions(); // Call to populate Unions based on initial Upazila (if any)
+  }
+
+  function populateUnions() {
+      const zilaSelect = document.getElementById('zilaSelect');
+      const upazilaSelect = document.getElementById('upazilaSelect');
+      const unionSelect = document.getElementById('unionSelect');
+      const selectedZila = zilaSelect.value;
+      const selectedUpazila = upazilaSelect.value;
+
+      unionSelect.innerHTML = '<option value="">Select Union</option>'; // Clear and add default
+
+      if (selectedZila && selectedUpazila) {
+          const unions = administrativeData[selectedZila][selectedUpazila];
+          unions.forEach(union => {
+              const option = document.createElement('option');
+              option.value = union;
+              option.textContent = union;
+              unionSelect.appendChild(option);
+          });
+      }
+  }
+
+  // Initialize on page load
+  document.addEventListener('DOMContentLoaded', populateZilas);
         
-        if (selectedValue === '') {
-            upazila.disabled = true; // Disable the option
-        } else {
-            upazila.disabled = false; // Enable the option
-        }
-    };
 </script>
 
-
 <script>
-    const unionByupazila = {
-      Atwari: ['Alowakhowa', 'Balarampur', 'Dhamor', 'Mirzapur', 'Radhanagar', 'Toria'],
-      Boda: ['Benghari', 'Boda', 'Boroshoshi', 'Chandanbari', 'Jholaishal Shiri', 'Kajoldighi Kaligonj', 'Marea', 'Moidan Dighi', 'Pachpir', 'Sakoa'],
-      Debiganj: ['Chengthi Hazradanga', 'Chilahati', 'Dandopal', 'Debiduba', 'Debiganj', 'Pamuli', 'Sonahar Mollikadaha', 'Sundardighi', 'Tepriganj'],
-      Panchagarh_Sadar: ['Amarkhana', 'Chaklahat', 'Dhakkamara', 'Garinabari', 'Hafizabad', 'Haribhasa', 'Kamat Kajal Dighi', 'Magura', 'Panchagarh Sadar', 'Satmara'],
-      Tetulia: ['Banglabandha', 'Bhajanpur', 'Buraburi', 'Devnagar', 'Shalbahan', 'Tetulia', 'Tirnaihat']
-    };
+  //Add Table Data
+  function register() {
 
-    const upazilaSelect = document.getElementById('upazila');
-    const unionSelect = document.getElementById('union');
+    $('.registerBtn').prop('disabled', true).html('Processing...'); // Disable and change text of button
 
-    upazilaSelect.addEventListener('change', function () {
-      const selectedUpazila = this.value;
+    var form = $('#AddMemberForm')[0];
+    var formdata = new FormData(form);
+    $.ajax({
+            url:"{{ route('memberRegistration.store') }}",
+            method:"POST",
+            data:formdata,
+            dataType:'JSON',
+            contentType: false,
+            cache: false,
+            processData: false,
+            success:function(response)
+            {
+              console.log(response.errors);
 
-      // Clear existing options
-      unionSelect.innerHTML = '<option value="" selected>Select a Union</option>';
+              // validation
+              var html = '';
+              if(response.errors)
+              {
+                $('html, body').animate({ scrollTop: 0 }, 'slow'); //scrollTop
 
-      if (unionByupazila[selectedUpazila]) {
-        unionSelect.disabled = false;
+                html = '<div class="alert alert-danger alert-dismissible fade show">';
+                for(var count = 0; count < response.errors.length; count++)
+                {
+                html += '<p>' + response.errors[count] + '</p>';
+                }
+                html += '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>';
+                
+              }
+              $('#form_result').html(html);
+              $('.registerBtn').prop('disabled', false).html('Submit'); //enable and change text of button
 
-        // Add new options
-        unionByupazila[selectedUpazila].forEach(function (union) {
-          const option = document.createElement('option');
-          option.value = union.toLowerCase().replace(/\s+/g, '-');
-          option.textContent = union;
-          unionSelect.appendChild(option);
-        });
-      } else {
-        unionSelect.disabled = true;
-      }
-    });
+              //success
+              if (response.success) {
+                
+                $('.imgPreview').attr('hidden', true);
+                $("#AddMemberForm").trigger("reset");
+
+                $('html, body').animate({ scrollTop: 0 }, 'slow'); //scrollTop
+                $("#success_message").text(response.success);
+                
+                // alert(response.success);
+                // location.reload();
+                SuccessMsg();
+
+                $('.registerBtn').prop('disabled', false).html('Submit'); //enable and change text of button
+              }
+
+            },
+            error: function(response) {
+                // console.log(response);
+            }
+    })
+
+  }
 </script>
 
 @endsection

@@ -18,6 +18,7 @@
               <p>
                 <strong>Status:</strong> <span id="member_status" ></span> <br>
                 <strong>ID:</strong> <span id="mid" >Null</span>
+                <strong>Reference:</strong> <span id="reference" class="text-success"></span>
               </p>
             </div>
             <div class="col-md-8">

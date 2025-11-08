@@ -25,12 +25,13 @@ return new class extends Migration
             $table->string("upazila");
             $table->string("zila");
             $table->string('phone')->unique();
-            $table->string('email')->unique();
+            $table->string('email')->nullable()->unique();
             $table->float("amount_of_tea_garden")->default(0);
             $table->string("tea_garden_address")->nullable();
             $table->string("dag_number")->nullable();
             $table->string("mouja_name")->nullable();
             $table->string("tea_board_registration_number")->nullable();
+            // $table->string('reference')->nullable();
             $table->tinyInteger('status')->default('0')->comment('Indicates the current status of the Member (e.g., 1->active, 0->pending)');
             $table->timestamps();
         });

@@ -54,9 +54,38 @@ class MemberController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
-        $request->validate([
+
+        // $request->validate([
+        //     'name' => 'required|string|max:255',
+        //     'photo' => 'required|image|mimes:jpg,jpeg,png|max:10240',
+        //     'nid' => 'required|string|unique:members,nid',
+        //     'dob' => 'required|date',
+        //     'father_name' => 'required|string',
+        //     'mother_name' => 'required|string',
+
+        //     'zila' => 'required|string',
+        //     'upazila' => 'required|string',
+        //     'union_parishad' => 'required|string',
+        //     'village' => 'required|string',
+
+        //     'phone' => 'required|string|unique:members,phone',
+        //     'email' => 'nullable|email|unique:members,email',
+
+        //     'amount_of_tea_garden' => 'required|nullable|numeric|between:0,99.99',
+        //     'tea_garden_address' => 'required|nullable|string',
+        //     'dag_number' => 'nullable|string',
+        //     'mouja_name' => 'nullable|string',
+        //     'tea_board_registration_number' => 'nullable|string',
+        // ], 
+        // [
+
+        //         'photo.max' => 'The image file is too large. (10 MB Max)',
+
+        // ]);
+
+        $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'photo' => 'required|image|mimes:jpg,jpeg,png|max:4096',
+            'photo' => 'required|image|mimes:jpg,jpeg,png|max:2048',
             'nid' => 'required|string|unique:members,nid',
             'dob' => 'required|date',
             'father_name' => 'required|string',
@@ -75,11 +104,21 @@ class MemberController extends Controller
             'dag_number' => 'nullable|string',
             'mouja_name' => 'nullable|string',
             'tea_board_registration_number' => 'nullable|string',
-        ], [
+            'reference' => 'required|string|nullable',
+        ], 
+        [
 
-                'photo.max' => 'The image file is too large. (4 MB Max)',
+                'photo.max' => 'The image file is too large. (2 MB Max)',
+                'dob' => 'The Date of Birth field is required',
+                'reference.required' => 'রেফারেন্স কোড - ( সম্মেলন আইডি / সদস্য ফি প্রদানের শেষ ৩ সংখ্যা )',
 
-            ]);
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json(['errors' => $validator->errors()->all()]);
+        }
+        //validation [end]
         
         $data = $request->all();
         
@@ -97,7 +136,8 @@ class MemberController extends Controller
         
         Member::create($data);
        
-        return redirect()->back()->with('success', 'Member Registration successfully.');
+        // return redirect()->back()->with('success', 'Member Registration successfully.');
+        return response()->json(['success' => 'Member Registration successfully.']);
     }
 
     //---Display the specified Member.
@@ -112,7 +152,7 @@ class MemberController extends Controller
     public function showPendingMember(Member $member)
     {
         // dd(121);
-        $PendingMember = Member::where('status', 0)->get(['id','name','photo','phone','tea_board_registration_number','tea_garden_address','amount_of_tea_garden']);
+        $PendingMember = Member::where('status', 0)->get(['id','name','photo','phone','reference','tea_garden_address','amount_of_tea_garden']);
         // dd($PendingMember);
         if(request()->ajax())
         {

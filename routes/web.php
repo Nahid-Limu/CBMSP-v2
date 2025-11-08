@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use Illuminate\Support\Facades\Artisan;
+
 use App\Http\Controllers\UserViewController;
 
 use App\Http\Controllers\HomeController;
@@ -171,6 +173,16 @@ Route::group(['middleware'=>'auth'], function () {
 Route::get('/view-cache', function () {
     Artisan::call('view:cache');
     return 'View cache generated.';
+});
+
+Route::get('/config-cache', function () {
+    Artisan::call('config:cache');
+    return 'Config cache generated.';
+});
+
+Route::get('/route-cache', function () {
+    Artisan::call('route:cache');
+    return 'Route cache generated.';
 });
 
 Route::get('/view-clear', function () {
