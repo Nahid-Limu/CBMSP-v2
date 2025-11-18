@@ -17,7 +17,7 @@
               <img src="assets/img/imagePlaceholder.jpg" class="img-thumbnail" id="photo" alt="Photo" style="max-height: 150px;">
               <p>
                 <strong>Status:</strong> <span id="member_status" ></span> <br>
-                <strong>ID:</strong> <span id="mid" >Null</span>
+                <strong>ID:</strong> <span id="mid" >Null</span> <br>
                 <strong>Reference:</strong> <span id="reference" class="text-success"></span>
               </p>
             </div>
@@ -42,6 +42,7 @@
             <div class="col-md-6">
               <p><strong>Phone:</strong> <span id="phone"></p>
               <p><strong>Email:</strong> <span id="email"></p>
+              <p class="text-success"><strong>Reg Date:</strong> <span id="reg_date"></span></p>
             </div>
           </div>
   

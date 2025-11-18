@@ -234,6 +234,9 @@
         success: function (response) {
             // console.log(response);
             if (response) {
+
+              var fullTimestamp = response.created_at;
+              var dateOnly = new Date(fullTimestamp).toLocaleDateString();
               
               $('#id').val(response.id);
               $('#status').val(response.status);
@@ -253,6 +256,7 @@
               $('#zila').text(response.zila);
               $('#phone').text(response.phone);
               $('#email').text(response.email);
+              $('#reg_date').text(dateOnly);
 
               $('#tea_garden_address').text(response.tea_garden_address);
               $('#amount_of_tea_garden').text(response.amount_of_tea_garden);

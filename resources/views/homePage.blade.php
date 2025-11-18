@@ -349,31 +349,13 @@
     </section> --}}
     <!-- End Popular Courses Section -->
 
-    <!-- ======= Trainers Section ======= -->
+    <!-- ======= Core Founding Member Section ======= -->
     <section id="trainers" class="trainers">
         <div class="container" data-aos="fade-up">
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <img src="assets/img/instituteAdmin/General Secretary.jpg" class="img-fluid" alt="">
-                        <div class="member-content">
-                            <h4> Manik Khan </h4>
-                            <span>General Secretary</span>
-                            {{-- <p>
-                            Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                            </p> --}}
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
                     <div class="member">
                         <img src="assets/img/instituteAdmin/President.jpg" class="img-fluid" alt="">
                         <div class="member-content">
@@ -382,9 +364,9 @@
                             {{-- <p>
                             Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus
                             </p> --}}
-                            <div class="social">
+                            <div class="social" style="margin-top: 35px;">
                                 <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href="https://www.facebook.com/mddidarul.alam.5602728"><i class="bi bi-facebook"></i></a>
                                 <a href=""><i class="bi bi-instagram"></i></a>
                                 <a href=""><i class="bi bi-linkedin"></i></a>
                             </div>
@@ -392,18 +374,75 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
                     <div class="member">
-                    <img src="assets/img/instituteAdmin/Official And IT Support.jpg" class="img-fluid" alt="">
+                        <img src="assets/img/instituteAdmin/General Secretary.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4> Manik Khan </h4>
+                            <span>General Secretary & Group Admin</span>
+                            {{-- <p>
+                            Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                            </p> --}}
+                            <div class="social" style="margin-top: 35px;">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/mamik.te"><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/instituteAdmin/Organizing Secretary And Head Of IT Support.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Nahid Hasan Limu </h4>
+                            <span>Organizing Secretary & Head Of IT Support</span>
+                            {{-- <p>
+                            Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                            </p> --}}
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/nahidlimu/"><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="assets/img/instituteAdmin/Office Secretary.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Md Siddiqur Rahman </h4>
+                            <span>Office Secretary & Founding Member</span>
+                            {{-- <p>
+                            Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                            </p> --}}
+                            <div class="social" style="margin-top: 15px;">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/Siddikur.Architect"><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
+                    <div class="member">
+                    <img src="assets/img/instituteAdmin/Founding Member 1.jpg" class="img-fluid" alt="">
                     <div class="member-content">
-                        <h4>Nahid Hasan Limu </h4>
-                        <span>Official And IT Support</span>
+                        <h4>Muhammad Habibur </h4>
+                        <span>Treasurer & Founding Member</span>
                         {{-- <p>
                         Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
                         </p> --}}
-                        <div class="social">
+                        <div class="social" style="margin-top: 20px;">
                             <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.facebook.com/nazmul.hudabd.54"><i class="bi bi-facebook"></i></a>
                             <a href=""><i class="bi bi-instagram"></i></a>
                             <a href=""><i class="bi bi-linkedin"></i></a>
                         </div>
@@ -411,29 +450,30 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                <div class="col-lg-2 col-md-4 d-flex align-items-stretch">
                     <div class="member">
-                    <img src="assets/img/instituteAdmin/Group Admin.jpg" class="img-fluid" alt="">
-                    <div class="member-content">
-                        <h4>Nazmul Hasan Hridoy </h4>
-                        <span>Group Admin</span>
-                        {{-- <p>
-                        Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
-                        </p> --}}
-                        <div class="social">
-                            <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        <img src="assets/img/instituteAdmin/Group Admin.jpg" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>Nazmul Hasan Hridoy </h4>
+                            <span>Founding Member & Group Admin</span>
+                            {{-- <p>
+                            Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara
+                            </p> --}}
+                            <div class="social" style="margin-top: 20px;">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href="https://www.facebook.com/habiburrahman.habibhrh.92"><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
                         </div>
                     </div>
-                    </div>
                 </div>
+                
 
             </div>
 
         </div>
     </section>
-    <!-- End Trainers Section -->
+    <!-- End Core Founding Member Section -->
 </main>
 @endsection

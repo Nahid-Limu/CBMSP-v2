@@ -110,7 +110,7 @@ class MemberController extends Controller
 
                 'photo.max' => 'The image file is too large. (2 MB Max)',
                 'dob' => 'The Date of Birth field is required',
-                'reference.required' => 'রেফারেন্স কোড - ( সম্মেলন আইডি / সদস্য ফি প্রদানের শেষ ৩ সংখ্যা )',
+                'reference.required' => 'রেফারেন্স কোড - ( সম্মেলন আইডি / ফি প্রদানের বিকাশ নাম্বারের শেষ ৩ সংখ্যা  )',
 
         ]);
 
@@ -129,7 +129,7 @@ class MemberController extends Controller
             $filename = time().'.'.$image->getClientOriginalExtension();
             // $filename = $request->name.'.'.$image->getClientOriginalExtension();
             $path = public_path('assets/img/Members/' . $filename);
-            Image::make($image->getRealPath())->resize(600, 600)->save($path);
+            Image::make($image->getRealPath())->resize(300, 300)->save($path);
 
             $data['photo'] = $filename;
         }
@@ -137,7 +137,7 @@ class MemberController extends Controller
         Member::create($data);
        
         // return redirect()->back()->with('success', 'Member Registration successfully.');
-        return response()->json(['success' => 'Member Registration successfully.']);
+        return response()->json(['success' => ' সদস্য নিবন্ধন সফলভাবে সম্পন্ন হয়েছে... ']);
     }
 
     //---Display the specified Member.

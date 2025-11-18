@@ -66,7 +66,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Manik Khan.jpg" class="testimonial-img" alt="">
                   <h3>Manik Khan</h3>
-                  <h4>General Secretary &amp; Founder</h4>
+                  <h4>General Secretary &amp; Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
@@ -81,7 +81,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Muhammad Habibur Rahman.jpg" class="testimonial-img" alt="">
                   <h3>Muhammad Habibur Rahman</h3>
-                  <h4>Founding Member</h4>
+                  <h4>Treasurer & Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
@@ -96,7 +96,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Md Siddiqur Rahman.jpg" class="testimonial-img" alt="">
                   <h3>Md Siddiqur Rahman</h3>
-                  <h4>Founding Member</h4>
+                  <h4>Office Secretary & Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
@@ -111,7 +111,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Nahid Hasan Limu.jpg" class="testimonial-img" alt="">
                   <h3>Nahid Hasan Limu</h3>
-                  <h4>IT Support &amp; Founding Member</h4>
+                  <h4>Organizing Secretary & Founding Member</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
@@ -126,7 +126,7 @@
                 <div class="testimonial-item">
                   <img src="assets/img/FoundingMembers/Nazmul Hasan Hridoy.jpg" class="testimonial-img" alt="">
                   <h3>Nazmul Hasan Hridoy</h3>
-                  <h4>Group Admin &amp; Founder</h4>
+                  <h4>Founding Member & Group Admin</h4>
                   <p>
                     <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                     Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.

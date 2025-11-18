@@ -35,7 +35,12 @@
             {{-- flash Message [Error] --}}
             {{-- <hr> --}}
             {{-- flash Message [Success] --}}
-              <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert"></div>
+              {{-- <div id="success_message" class="alert alert-success alert-dismissible fade" role="alert">ok</div> --}}
+            
+              <div class="alert alert-success alert-dismissible fade" role="alert">
+                <strong id="success_message"></strong>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
             {{-- flash Message [Success] --}}
 
             {{-- <h2 class="mb-4">Member Registration Form</h2> --}}
@@ -149,9 +154,20 @@
                     <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
                   </div>
                   <div class="col-md-6">
-                    <label for="phone" class="form-label text-secondary">Reference Code ( রেফারেন্স কোড (সম্মেলন আইডি / সদস্য ফি প্রদানের শেষ ৩ সংখ্যা) )</label>
+                    <label for="phone" class="form-label text-secondary">Reference Code (সম্মেলন আইডি / ফি প্রদানের বিকাশ নাম্বারের শেষ ৩ সংখ্যা)</label>
                     <input type="text" class="form-control" id="reference" name="reference" required>
                   </div>
+                  
+                  <div class="row justify-content-center">
+                      <div class="col-lg-8">
+                        <h5 class="mt-3 text-center">----রেফারেন্স কোডের বিবরণ----</h5>
+                        <p>১.সদস্য নিবন্ধন ফি ২০০ টাকা ও বাৎসর সমিতি ফি ৫০০ টাকা মোট ৭১০ টাকা বিকাশ করুন .</p>
+                        <p>২.বিকাশ নাম্বার 01636150770 .</p>
+                        <p>৩.যে নাম্বার থেকে রেজিস্ট্রেশন ফ্রি বিকাশ করবেন সেই নাম্বারের শেষের তিনটি সংখ্যা রেফারেন্স দিন .</p>
+                        <p>৪.চা চাষী সম্মেলন-২৫ এ অংশগ্রহণ করে থাকলে আপনার আইডি কার্ড নাম্বার রেফারেন্স দিন .</p>
+                      </div>
+                    </div>
+
                 </div>
               </div>
           
@@ -303,11 +319,14 @@
                 $("#AddMemberForm").trigger("reset");
 
                 $('html, body').animate({ scrollTop: 0 }, 'slow'); //scrollTop
-                $("#success_message").text(response.success);
+                // $("#success_message").text(response.success);
                 
                 // alert(response.success);
                 // location.reload();
-                SuccessMsg();
+                // SuccessMsg();
+
+                $('.alert').addClass('show');
+                $('#success_message').text(response.success);
 
                 $('.registerBtn').prop('disabled', false).html('Submit'); //enable and change text of button
               }

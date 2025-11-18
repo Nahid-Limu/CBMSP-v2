@@ -8,9 +8,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta name="title" content="{{ config('app.name', 'চা বাগান মালিক সমিতি') }} – চা বাগানের মালিকদের জন্য স্মার্ট সফটওয়্যার">
-    <meta name="keywords" content="চা বাগান মালিক সমিতি পঞ্চগড়, চা বাগান পঞ্চগড়, মালিক সমিতি পঞ্চগড়, CBMSPG, Tea Garden Panchagarh, Tea Garden Owners Association, saas, project tracking" />
+    <meta name="keywords" content="চা বাগান মালিক সমিতি পঞ্চগড়, চা বাগান পঞ্চগড়, মালিক সমিতি পঞ্চগড়, CBMSPG, Tea Garden Panchagarh,Tea Garden, Owners Association, Bangladesh, cbmspg, Tea Garden Owners Association, saas, project tracking" />
     <meta name="author" content="চা বাগান মালিক সমিতি" />
-    <meta name="description" content="চা বাগানের মালিকদের জন্য স্মার্ট সফটওয়্যার.">
+    <meta name="description" content="চা বাগান মালিক সমিতির অফিসিয়াল ওয়েবসাইটে আপনাকে স্বাগতম। আমাদের লক্ষ্য, পরিষেবা এবং কার্যক্রম সম্পর্কে জানুন।">
 
     <meta name="google-adsense-account" content="ca-pub-1779671886822617">
 

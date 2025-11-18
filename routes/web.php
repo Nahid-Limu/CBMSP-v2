@@ -30,7 +30,10 @@ use App\Http\Controllers\BlogController;
 /* User route start */
 
 Route::get('/',  [UserViewController::class, 'home'])->name('home');
+
 Route::get('/events', [UserViewController::class, 'events'])->name('events');
+Route::get('/eventDetails/{id}', [UserViewController::class, 'eventDetails'])->name('eventDetails');
+
 Route::get('/notice', [UserViewController::class, 'notice'])->name('notice');
 Route::get('/noticeDetails/{id}', [UserViewController::class, 'noticeDetails'])->name('noticeDetails');
 

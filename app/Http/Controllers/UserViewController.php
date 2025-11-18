@@ -29,6 +29,14 @@ class UserViewController extends Controller
         return view('events', compact('Events'));
     }
 
+    public function eventDetails($id)
+    {
+        $id = (base64_decode($id));
+        $Event = Event::find($id);
+       
+        return view('eventDetails', compact('Event'));
+    }
+
     public function notice()
     {
         $Notices = Notice::orderBy('id', 'desc')->get();
@@ -103,6 +111,7 @@ class UserViewController extends Controller
         $blogs = DB::table('blogs')
                             ->join('users', 'blogs.user_id', '=', 'users.id')
                             ->select('blogs.id','blogs.title','blogs.content','blogs.image','blogs.created_at', 'users.name as user_name',)
+                            ->where('is_published', 1)
                             ->orderBy('blogs.created_at', 'desc')
                             ->get();
 
