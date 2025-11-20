@@ -38,7 +38,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="{{ route('eventDetails', [base64_encode($Event->id)] ) }}">{{  ucwords($Event->title) }}</a></h5>
                                                 <p class="fst-italic text-center">{{ date('l, F jS, Y', strtotime($Event->event_date)) }} at {{ date('h:i A', strtotime($Event->event_time)) }}</p>
-                                                <p class="card-text"> {!! Str::limit( strip_tags($Event->description, 250) ) !!} </p>
+                                                <p class="card-text"> {!! Str::limit( $Event->description, 250 ) !!} </p>
                                                 <a href="{{ route('eventDetails', [base64_encode($Event->id)] ) }}" class="btn btn-outline-info btn-sm"><i class="bi bi-book"></i> read more</a>
                                             </div>
                                         </div>
@@ -58,7 +58,7 @@
                                             <div class="card-body">
                                                 <h5 class="card-title"><a href="{{ route('eventDetails', [base64_encode($Event->id)] ) }}">{{ $Event->title }}</a></h5>
                                                 <p class="fst-italic text-center">{{ date('l, F jS, Y', strtotime($Event->event_date)) }} at {{ date('h:i A', strtotime($Event->event_time)) }}</p>
-                                                <p class="card-text"> {!! Str::limit( strip_tags($Event->description, 150) ) !!} </p>
+                                                <p class="card-text"> {!! Str::limit( $Event->description, 250 ) !!} </p>
                                                 <a href="{{ route('eventDetails', [base64_encode($Event->id)] ) }}" class="btn btn-outline-info btn-sm"><i class="bi bi-book"></i> read more</a>
                                             </div>
                                         </div>

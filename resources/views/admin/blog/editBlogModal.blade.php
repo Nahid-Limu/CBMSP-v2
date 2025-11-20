@@ -11,7 +11,9 @@
           @csrf
           <input type="hidden" id="edit_data_id" name="id">
 
-          <!-- Dropdown: Insect or Disease -->
+          @if ( auth()->user()->type <=2 )
+          
+          <!-- Dropdown: Publish or unPublish -->
           <div class="mb-3">
             <label for="edit_is_published" class="form-label">Publish Status</label>
             <select class="form-select" id="edit_is_published" name="is_published" required>
@@ -20,6 +22,8 @@
               <option value="0" class="text-danger">Unpublish</option>
             </select>
           </div>
+          
+          @endif
           
           <!-- Blog Title -->
           <div class="mb-3">

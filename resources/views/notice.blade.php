@@ -25,7 +25,7 @@
                 <!-- notice item -->
                 @foreach ($Notices as $Notice)
                     <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
-                        <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0" style="width: 120px; height: 100px;"><span class="h2 d-block">{{ date('j', strtotime($Notice->pulish_date)) }}</span> {{ date('M Y', strtotime($Notice->pulish_date)) }}</div>
+                        <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0" style="width: 120px; height: 100px;">Published<span class="h2 d-block">{{ date('j', strtotime($Notice->pulish_date)) }}</span> {{ date('M Y', strtotime($Notice->pulish_date)) }}</div>
                         <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
                             <a href="{{ route('noticeDetails', [base64_encode($Notice->id)] ) }}" class="h4 mb-3 d-block">{{ ucwords($Notice->title) }}</a>
                             <p class="mb-0">{!! Str::limit( strip_tags($Notice->description, 50) ) !!}</p>

@@ -18,6 +18,7 @@ class DashboardController extends Controller
 
         $TotalMember = Member::where('status', 1)->Count();
         $PendingMember = Member::where('status', 0)->Count();
+        $PendingBlog = Blog::where('is_published', 0)->Count();
 
         $Atwari = Member::where('upazila', 'Atwari')->where('status', 1)->Count();
         $Boda = Member::where('upazila', 'Boda')->where('status', 1)->Count();
@@ -37,10 +38,15 @@ class DashboardController extends Controller
         $TotalNotice = Notice::all()->Count();
         $TotalTreatment = InsectAndDisease::all()->Count();
         $TotalBlog = Blog::all()->Count();
+
+        // navAdmin
+        $PendingMemberNav = Member::latest()->take(4)->where('status', 0)->get(['name','photo','tea_garden_address','created_at']);
+        $PendingBlogNav = Blog::latest()->take(4)->where('is_published', 0)->get(['title','image','content','created_at']);
         
         return view('admin.dashboard', 
-            compact('TotalMember','PendingMember','chartData',
-            'TotalTreatment','TotalEvent','TotalNotice','TotalBlog') 
+            compact('TotalMember','PendingMember','PendingBlog','chartData',
+            'TotalTreatment','TotalEvent','TotalNotice','TotalBlog',
+            'PendingMemberNav','PendingBlogNav') 
         );
     }
 }

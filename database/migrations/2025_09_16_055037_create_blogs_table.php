@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('content');
             $table->string('image')->nullable(); // stores image path
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // author
-            $table->tinyInteger('is_published')->default('1')->comment('Indicates the current status of the Blog (e.g., 1->published, 0->not published)');
+            $table->tinyInteger('is_published')->default('0')->comment('Indicates the current status of the Blog (e.g., 1->published, 0->not published)');
             $table->timestamps();
         });
     }

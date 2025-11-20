@@ -26,165 +26,233 @@
         </li><!-- End Search Icon-->
 
         @if ( Route::currentRouteName() == 'dashboard' )
-        <li class="nav-item dropdown">
 
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-bell"></i>
-            <span class="badge bg-primary badge-number">{{ $PendingMember }}</span>
-          </a><!-- End Notification Icon -->
+          {{-- <li class="nav-item dropdown">
 
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-            <li class="dropdown-header">
-              You have {{ $PendingMember }} new notifications
-              <a href="{{ route('pendingMemberList') }}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+              <i class="bi bi-bell"></i>
+              <span class="badge bg-primary badge-number">2</span>
+            </a><!-- End Notification Icon -->
 
-            @foreach(App\Models\Member::latest()->take(4)->where('status', 0)->get(['name','photo','tea_garden_address','created_at']) as $user)
-            <!-- html code -->
-                <li class="notification-item">
-                  <i class="bi bi-exclamation-circle text-warning"></i>
-                  <div>
-                    <h4>{{$user->name}}</h4>
-                    <p>{{$user->tea_garden_address}}</p>
-                    <p>{{$user->created_at->diffForHumans()}}</p>
-                  </div>
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+              <li class="dropdown-header">
+                You have 2 new notifications
+                <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+              </li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+          
+              <li class="notification-item">
+                <i class="bi bi-exclamation-circle text-warning"></i>
+                <div>
+                  <h4>Lorem Ipsum</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>30 min. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-x-circle text-danger"></i>
+                <div>
+                  <h4>Atque rerum nesciunt</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>1 hr. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-check-circle text-success"></i>
+                <div>
+                  <h4>Sit rerum fuga</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>2 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+
+              <li class="notification-item">
+                <i class="bi bi-info-circle text-primary"></i>
+                <div>
+                  <h4>Dicta reprehenderit</h4>
+                  <p>Quae dolorem earum veritatis oditseno</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </li>
+
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              
+              <li class="dropdown-footer">
+                <a href="{{ route('pendingMemberList') }}">Show all notifications</a>
+              </li>
+
+            </ul><!-- End Notification Dropdown Items -->
+
+          </li><!-- End Notification Nav --> --}}
+          
+          @if ( auth()->user()->type <=2 )
+            <li class="nav-item dropdown">
+
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-people"  data-bs-toggle="tooltip" data-bs-placement="top" title="Pending Member"></i>
+                <span class="badge bg-success badge-number">{{ $PendingMember }}</span>
+              </a><!-- End member Icon -->
+
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                <li class="dropdown-header">
+                  You have {{ $PendingMember }} new member request
+                  <a href="{{ route('pendingMemberList') }}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                 </li>
-    
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-            @endforeach
-{{-- 
-            <li class="notification-item">
-              <i class="bi bi-exclamation-circle text-warning"></i>
-              <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>30 min. ago</p>
-              </div>
-            </li>
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+                @foreach( $PendingMemberNav as $user)
+                  <li class="message-item">
+                    <a href="#">
+                      <img src="{{ asset('assets/img/Members').'/'.$user->photo }}" alt="" class="rounded-circle">
+                      <div>
+                        <h4>{{$user->name}}</h4>
+                        <p>{{$user->tea_garden_address}}</p>
+                        <p>{{$user->created_at->diffForHumans()}}</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                @endforeach
 
-            <li class="notification-item">
-              <i class="bi bi-x-circle text-danger"></i>
-              <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>1 hr. ago</p>
-              </div>
-            </li>
+                <li class="dropdown-footer">
+                  <a href="{{ route('pendingMemberList') }}">Show all pending request</a>
+                </li>
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+              </ul><!-- End member Dropdown Items -->
 
-            <li class="notification-item">
-              <i class="bi bi-check-circle text-success"></i>
-              <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>2 hrs. ago</p>
-              </div>
-            </li>
+            </li><!-- End member Nav -->
+          @endif
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
 
-            <li class="notification-item">
-              <i class="bi bi-info-circle text-primary"></i>
-              <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
-                <p>4 hrs. ago</p>
-              </div>
-            </li>
+            <li class="nav-item dropdown">
 
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-             --}}
-            <li class="dropdown-footer">
-              <a href="{{ route('pendingMemberList') }}">Show all notifications</a>
-            </li>
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-bell" data-bs-toggle="tooltip" data-bs-placement="top" title="Unpublished Blog"></i>
+                <span class="badge bg-primary badge-number">{{ $PendingBlog }}</span>
+              </a><!-- End Notification Icon -->
 
-          </ul><!-- End Notification Dropdown Items -->
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                <li class="dropdown-header">
+                  You have {{ $PendingBlog }} new unpublished blog
+                  <a href="{{ route('blogList') }}"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
 
-        </li><!-- End Notification Nav -->
+                @foreach( $PendingBlogNav as $blog)
+                  <li class="message-item">
+                    <a href="#">
+                      <img src="{{ asset('assets/img/blog').'/'.$blog->image }}" alt="" class="rounded-circle">
+                      <div>
+                        <h4>{{ Str::limit($blog->title, 10) }}</h4>
+                        <p>{!! Str::limit( strip_tags($blog->content, 50) ) !!}</p>
+                        <p>4 hrs. ago</p>
+                      </div>
+                    </a>
+                  </li>
+                  <li>
+                    <hr class="dropdown-divider">
+                  </li>
+                @endforeach
+
+                <li class="dropdown-footer">
+                  <a href="{{ route('blogList') }}">Show all unpublished blogs</a>
+                </li>
+
+              </ul><!-- End Blog Dropdown Items -->
+
+            </li><!-- End Blog Nav -->
+
+            {{-- <li class="nav-item dropdown">
+
+              <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-chat-left-text"></i>
+                <span class="badge bg-success badge-number">3</span>
+              </a><!-- End Messages Icon -->
+
+              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+                <li class="dropdown-header">
+                  You have 3 new messages
+                  <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="message-item">
+                  <a href="#">
+                    <img src="adminAssets/assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                    <div>
+                      <h4>Maria Hudson</h4>
+                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                      <p>4 hrs. ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="message-item">
+                  <a href="#">
+                    <img src="adminAssets/assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                    <div>
+                      <h4>Anna Nelson</h4>
+                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                      <p>6 hrs. ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="message-item">
+                  <a href="#">
+                    <img src="adminAssets/assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                    <div>
+                      <h4>David Muldon</h4>
+                      <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                      <p>8 hrs. ago</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+
+                <li class="dropdown-footer">
+                  <a href="#">Show all messages</a>
+                </li>
+
+              </ul><!-- End Messages Dropdown Items -->
+
+            </li><!-- End Messages Nav --> --}}
+
         @endif
-        
-
-        {{-- <li class="nav-item dropdown">
-
-          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-            <i class="bi bi-chat-left-text"></i>
-            <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
-
-          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
-            <li class="dropdown-header">
-              You have 3 new messages
-              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="adminAssets/assets/img/messages-1.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>4 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="adminAssets/assets/img/messages-2.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>6 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="message-item">
-              <a href="#">
-                <img src="adminAssets/assets/img/messages-3.jpg" alt="" class="rounded-circle">
-                <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                  <p>8 hrs. ago</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
-
-            <li class="dropdown-footer">
-              <a href="#">Show all messages</a>
-            </li>
-
-          </ul><!-- End Messages Dropdown Items -->
-
-        </li><!-- End Messages Nav --> --}}
 
         <li class="nav-item dropdown pe-3">
 
