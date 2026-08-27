@@ -147,6 +147,12 @@ class UserViewController extends Controller
         return view('memberRegistration');
     }
 
+    public function factoryList()
+    {
+        // dd();result
+        return view('factoryList');
+    }
+
     public function testPage()
     {
         // dd();result

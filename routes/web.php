@@ -37,6 +37,8 @@ Route::get('/eventDetails/{id}', [UserViewController::class, 'eventDetails'])->n
 Route::get('/notice', [UserViewController::class, 'notice'])->name('notice');
 Route::get('/noticeDetails/{id}', [UserViewController::class, 'noticeDetails'])->name('noticeDetails');
 
+Route::get('/factoryList', [UserViewController::class, 'factoryList'])->name('factoryList');
+
 //---cha saba---
 Route::get('/treatment', [UserViewController::class, 'treatment'])->name('treatment');
 

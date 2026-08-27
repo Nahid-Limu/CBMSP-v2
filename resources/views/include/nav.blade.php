@@ -12,6 +12,7 @@
           <li><a class="{{ (Route::currentRouteName() == 'home') ? 'active' : '' }}" href="{{ route('home') }}">Home</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'events') ? 'active' : '' }}" href="{{ route('events') }}">Events</a></li>
           <li><a class="{{ (Route::currentRouteName() == 'notice') || (Route::currentRouteName() == 'noticeDetails') ? 'active' : '' }}" href="{{ route('notice') }}">Notice</a></li>
+          <li><a class="{{ (Route::currentRouteName() == 'factoryList') ? 'active' : '' }}" href="{{ route('factoryList') }}">Factory List</a></li>
           
           <li class="dropdown"><a href="#"><span>Cha Seba</span> <i class="bi bi-chevron-down"></i></a>
             <ul>

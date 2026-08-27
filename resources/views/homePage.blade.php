@@ -77,10 +77,10 @@
 
             <div class="row counters">
 
-            <div class="col-lg-3 col-6 text-center">
+            {{-- <div class="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="{{ $ToatalMember }}" data-purecounter-duration="1" class="purecounter"></span>
                 <p>Member</p>
-            </div>
+            </div> --}}
 
             <div class="col-lg-3 col-6 text-center">
                 <span data-purecounter-start="0" data-purecounter-end="{{ $ToatalTreatment }}" data-purecounter-duration="1" class="purecounter"></span>
@@ -442,7 +442,7 @@
                         </p> --}}
                         <div class="social" style="margin-top: 20px;">
                             <a href=""><i class="bi bi-twitter"></i></a>
-                            <a href="https://www.facebook.com/nazmul.hudabd.54"><i class="bi bi-facebook"></i></a>
+                            <a href="https://www.facebook.com/habiburrahman.habibhrh.92"><i class="bi bi-facebook"></i></a>
                             <a href=""><i class="bi bi-instagram"></i></a>
                             <a href=""><i class="bi bi-linkedin"></i></a>
                         </div>
