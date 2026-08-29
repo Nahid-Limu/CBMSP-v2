@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'testPage')
+@section('title', 'Factory List')
+
+@section('head')
+  <meta property="og:title" content="{{ ucwords("Factory List") }}" />
+  <meta property="og:description" content="{!! Str::limit( strip_tags("Factory List, phone number, tea factory, panchagarh, bangladesh", 150) ) !!}" />
+  <meta property="og:image" content="{{ asset('assets/img/factoryThumbnail.png') }}" />
+  <meta property="og:url" content="{{ url()->current() }}" />
+  <meta property="og:type" content="article" />
+@endsection
 
 @section('css')
 
@@ -78,17 +86,16 @@
     <div class="breadcrumbs">
       <div class="container">
         <h2>Factory List</h2>
-        <p>All Factory Details. </p>
+        <p>All Factory Details In Panchagarh. </p>
       </div>
     </div><!-- End Breadcrumbs -->
 
     <!-- ======= Courses Section ======= -->
     <section id="courses" class="courses">
       <div class="container" data-aos="fade-up">
-
         <div class="row" data-aos="zoom-in" data-aos-delay="100">
 
-          <div class="row g-4">
+            <div class="row g-4">
 
               <!-- 01 -->
               <div class="col-12 col-md-6 col-xl-4">
@@ -248,7 +255,7 @@
 
                               <p class="mb-1">
                                   <span class="info-label">মোবাইল:</span>
-                                  <a href="tel:০১৭১১৫৪৭৫৩৩"> ০১৭১১৫৪৭৫৩৩  <i class="bi bi-telephone-fill"></i> </a>
+                                  <a href="tel:01322846553"> 01322846553  <i class="bi bi-telephone-fill"></i> </a>
                               </p>
 
                               <p class="mb-1 email">
@@ -256,7 +263,7 @@
                                   mintuanwar1086@gmail.com
                               </p>
 
-                              <span class="badge bg-danger status-badge">
+                              <span class="badge bg-success status-badge">
                                   প্রতিষ্ঠাকাল: ২০২৩
                               </span>
                           </div>
@@ -1052,39 +1059,6 @@
                   </div>
               </div>
 
-              <!-- 28 -->
-              <div class="col-12 col-md-6 col-xl-4">
-                  <div class="card factory-card p-3">
-                      <div class="d-flex gap-3">
-                          <div class="factory-number">২৮</div>
-                          <div>
-                              <h5 class="factory-name">ময়নাগুড়ি এগ্রো টি ফ্যাক্টরী লিমিটেড</h5>
-
-                              <p class="mb-2">
-                                  <span class="info-label">ঠিকানা:</span><br>
-                                  <p class="address">
-                                    গ্রাম+ইউনিয়ন-শালবাহান,<br>
-                                    উপজেলা-তেঁতুলিয়া, জেলা-পঞ্চগড়।
-                                  </p>
-                              </p>
-
-                              <p class="mb-1">
-                                  <span class="info-label">মোবাইল:</span>
-                                  <a href="tel:০১৭১২২৯২৯৫৭"> ০১৭১২২৯২৯৫৭  <i class="bi bi-telephone-fill"></i> </a>
-                              </p>
-
-                              <p class="mb-1 email">
-                                  <span class="info-label">ই-মেইল:</span>
-                                  ataursavar@yahoo.com
-                              </p>
-
-                              <span class="badge bg-success status-badge">
-                                  প্রতিষ্ঠাকাল: নির্মাণাধীন
-                              </span>
-                          </div>
-                      </div>
-                  </div>
-              </div>
 
               <!-- 29 -->
               <div class="col-12 col-md-6 col-xl-4">
@@ -1529,10 +1503,22 @@
               </div>
 
 
-          </div>
+            </div>
+
+            
+            <!-- Social Share -->
+            <div id="social-links" class="text-center">
+                {!! 
+                    Share::page(url()->current(), "Factory List")
+                        ->facebook()
+                        ->twitter()
+                        ->linkedin('Extra linkedin summary can be passed here')
+                        ->whatsapp(); 
+                !!}
+                <span >Share This On Social Media</span>
+            </div>
 
         </div>
-
       </div>
     </section><!-- End Courses Section -->
 
