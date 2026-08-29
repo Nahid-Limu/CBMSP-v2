@@ -108,6 +108,7 @@ class MemberController extends Controller
         ], 
         [
 
+                'nid.unique' => 'আপনার এনআইডি (NID) নম্বর থেকে আবেদন করা হয়েছে',
                 'photo.max' => 'The image file is too large. (2 MB Max)',
                 'dob' => 'The Date of Birth field is required',
                 'reference.required' => 'রেফারেন্স কোড - ( সম্মেলন আইডি / ফি প্রদানের বিকাশ নাম্বারের শেষ ৩ সংখ্যা  )',
