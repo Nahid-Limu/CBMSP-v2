@@ -104,6 +104,16 @@
           </li><!-- End Notification Nav --> --}}
           
           @if ( auth()->user()->type <=2 )
+
+          <li class="nav-item dropdown">
+
+            <a class="nav-link nav-icon" href="{{ route('extraEventList') }}">
+              <i class="bi bi-calendar-event"  data-bs-toggle="tooltip" data-bs-placement="top" title="CCS26 Pending Member"></i>
+              <span class="badge bg-warning badge-number">{{ $ccs26PendingReg }}</span>
+            </a><!-- End member Icon -->
+
+          </li><!-- End member Nav -->
+
             <li class="nav-item dropdown">
 
               <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">

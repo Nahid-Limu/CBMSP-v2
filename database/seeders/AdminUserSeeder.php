@@ -39,10 +39,10 @@ class AdminUserSeeder extends Seeder
 
             ],
             [
-                'name'=>'Nazmul',
-                'email'=>'nazmul@cbmspg.com',
-                'username'=>'nazmul_cbms',
-                'password'=>bcrypt('nazmul@cbms'),
+                'name'=>'Siddiqur',
+                'email'=>'Siddiqur@cbmspg.com',
+                'username'=>'Siddiqur_cbms',
+                'password'=>bcrypt('Siddiqur@cbms'),
                 'type'=>'2',
 
             ],

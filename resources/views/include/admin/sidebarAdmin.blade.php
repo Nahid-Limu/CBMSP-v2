@@ -59,6 +59,14 @@
             <span>User</span>
           </a>
         </li><!-- End Settings Page Nav -->
+
+        <li class="nav-heading">CCS-2026</li>
+        <li class="nav-item">
+          <a class="{{ (Route::currentRouteName() == 'extraEventList') ? 'nav-link ' : 'nav-link collapsed' }}" href="{{ route('extraEventList') }}">
+            <i class="bi bi-houses {{ request()->routeIs('extraEventList') ? ' bx-md' : '' }}"></i>
+            <span>CCS-2026</span>
+          </a>
+        </li><!-- End Settings Page Nav -->
       @endif
       <li class="nav-heading">Blog & share</li>
       <li class="nav-item">

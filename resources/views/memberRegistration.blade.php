@@ -132,43 +132,45 @@
               <!-- Tea Garden Info -->
               <div class="card mb-4">
                 <div class="card-header text-primary"><strong>Tea Garden Information</strong></div>
-                <div class="card-body row g-3">
-                  <div class="col-md-6">
-                    <label for="amount" class="form-label text-secondary">Amount of Tea Garden (in acres) ( চা বাগানের পরিমাণ (একর) )</label>
-                    <input type="number" step="0.01" class="form-control" id="amount" name="amount_of_tea_garden">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="tgAddress" class="form-label text-secondary">Tea Garden Address ( চা বাগানের ঠিকানা )</label>
-                    <input type="text" class="form-control" id="tgAddress" name="tea_garden_address">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="dagNo" class="form-label text-secondary">Dag Number ( দাগ নম্বর )</label>
-                    <input type="text" class="form-control" id="dagNo" name="dag_number">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="mouja" class="form-label text-secondary">Mouja Name ( মৌজা নাম )</label>
-                    <input type="text" class="form-control" id="mouja" name="mouja_name">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="tea_board_registration_number" class="form-label text-secondary">Tea Board Registration Number ( চা বোর্ডের নিবন্ধন নম্বর *যদি  থাকে* )</label>
-                    <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
-                  </div>
-                  <div class="col-md-6">
-                    <label for="phone" class="form-label text-secondary">Reference Code (সম্মেলন আইডি / ফি প্রদানের বিকাশ নাম্বারের শেষ ৩ সংখ্যা)</label>
-                    <input type="text" class="form-control" id="reference" name="reference" required>
-                  </div>
-                  
-                  <div class="row justify-content-center">
-                      <div class="col-lg-8">
-                        <h5 class="mt-3 text-center">----রেফারেন্স কোডের বিবরণ----</h5>
-                        <p>১.সদস্য নিবন্ধন ফি ২০০ টাকা ও বাৎসরিক সমিতি ফি ৫০০ টাকা মোট ৭১০ টাকা বিকাশ করুন .</p>
-                        <p>২.বিকাশ নাম্বার 01636150770 .</p>
-                        <p>৩.যে নাম্বার থেকে রেজিস্ট্রেশন ফ্রি বিকাশ করবেন সেই নাম্বারের শেষের তিনটি সংখ্যা রেফারেন্স দিন .</p>
-                        <p>৪.চা চাষী সম্মেলন-২৫ এ অংশগ্রহণ করে থাকলে আপনার আইডি কার্ড নাম্বার রেফারেন্স দিন .</p>
-                      </div>
+
+                  <div class="card-body row g-3">
+                    <div class="col-md-6">
+                      <label for="amount" class="form-label text-secondary">Amount of Tea Garden (in acres) ( চা বাগানের পরিমাণ (একর) )</label>
+                      <input type="number" step="0.01" class="form-control" id="amount" name="amount_of_tea_garden">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="tgAddress" class="form-label text-secondary">Tea Garden Address ( চা বাগানের ঠিকানা )</label>
+                      <input type="text" class="form-control" id="tgAddress" name="tea_garden_address">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="dagNo" class="form-label text-secondary">Dag Number ( দাগ নম্বর )</label>
+                      <input type="text" class="form-control" id="dagNo" name="dag_number">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="mouja" class="form-label text-secondary">Mouja Name ( মৌজা নাম )</label>
+                      <input type="text" class="form-control" id="mouja" name="mouja_name">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="tea_board_registration_number" class="form-label text-secondary">Tea Board Registration Number ( চা বোর্ডের নিবন্ধন নম্বর *যদি  থাকে* )</label>
+                      <input type="text" class="form-control" id="tea_board_registration_number" name="tea_board_registration_number">
+                    </div>
+                    <div class="col-md-6">
+                      <label for="phone" class="form-label text-secondary">Reference Code (সম্মেলন আইডি / ফি প্রদানের বিকাশ নাম্বারের শেষ ৩ সংখ্যা)</label>
+                      <input type="text" class="form-control" id="reference" name="reference" required>
+                    </div>
+                    
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                          <h5 class="mt-3 text-center">----রেফারেন্স কোডের বিবরণ----</h5>
+                          <p>১.সদস্য নিবন্ধন ফি ২০০ টাকা ও বাৎসরিক সমিতি ফি ৫০০ টাকা মোট ৭১০ টাকা বিকাশ করুন .</p>
+                          <p>২.বিকাশ নাম্বার 01636150770 .</p>
+                          <p>৩.যে নাম্বার থেকে রেজিস্ট্রেশন ফি বিকাশ করবেন সেই নাম্বারের শেষের তিনটি সংখ্যা রেফারেন্স দিন .</p>
+                          <p>৪.চা চাষী সম্মেলন-২৫ এ অংশগ্রহণ করে থাকলে আপনার আইডি কার্ড নাম্বার রেফারেন্স দিন .</p>
+                        </div>
                     </div>
 
-                </div>
+                  </div>
+                  
               </div>
           
             </form>

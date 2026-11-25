@@ -10,7 +10,11 @@ use App\Models\Notice;
 use App\Models\InsectAndDisease;
 use App\Models\Blog;
 use App\Models\User;
+use App\Models\EventMember;
 use DB;
+
+use Intervention\Image\Facades\Image as Image;
+use Validator;
 
 class UserViewController extends Controller
 {
@@ -151,6 +155,55 @@ class UserViewController extends Controller
     {
         // dd();result
         return view('factoryList');
+    }
+
+    public function eventRegistration()
+    {
+        return view('eventRegistration');
+    }
+
+    //---Store a newly created Member.
+    public function eventMemberAdd(Request $request)
+    {
+        // dd(121);
+        // dd($request->all());
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'required|string|max:255',
+            'phone' => 'required|string|unique:event_members,phone',
+            'photo' => 'required|image|mimes:jpg,jpeg,png|max:2048',
+            'address' => 'required|nullable|string',
+            'bkash_code' => 'required|string|nullable',
+            'shirt_size' => 'required|string|nullable',
+
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json(['errors' => $validator->errors()->all()]);
+        }
+        //validation [end]
+
+        $data = $request->all();
+        
+        if ($request->hasFile('photo')) {
+            
+            $image = $request->file('photo');
+            
+            $filename = time().'.'.$image->getClientOriginalExtension();
+            // $filename = $request->name.'.'.$image->getClientOriginalExtension();
+            $path = public_path('assets/img/EventMembers/' . $filename);
+            Image::make($image->getRealPath())->resize(300, 300)->save($path);
+
+            $data['photo'] = $filename;
+        }
+        
+        EventMember::create($data);
+       
+        // return redirect()->back()->with('success', 'Member Registration successfully.');
+        return response()->json(['success' => ' নিবন্ধন সফলভাবে সম্পন্ন হয়েছে... ']);
+
+        
     }
 
     public function testPage()

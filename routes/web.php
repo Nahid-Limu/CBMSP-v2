@@ -14,6 +14,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\NoticeController;
 use App\Http\Controllers\InsectAndDiseaseController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\EventMemberController;
 
 
 /*
@@ -61,45 +62,11 @@ Route::get('/contact', [UserViewController::class, 'contact'])->name('contact');
 Route::get('/memberRegistration', [UserViewController::class, 'memberRegistration'])->name('memberRegistration');
 Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
 
-
-
-// Route::get('/',  [UserController::class, 'home'])->name('home');
-// Route::get('/events', [UserController::class, 'events'])->name('events');
-// Route::get('/notice', [UserController::class, 'notice'])->name('notice');
-// Route::get('/noticeDetails/{id}', [UserController::class, 'noticeDetails'])->name('noticeDetails');
-
-// //---cha saba---
-// Route::get('/treatment', [UserController::class, 'treatment'])->name('treatment');
-
-// Route::get('/fertilizer', [UserController::class, 'fertilizer'])->name('fertilizer');
-// Route::get('/foliarSpray', [UserController::class, 'foliarSpray'])->name('foliarSpray');
-// Route::get('/dolomite', [UserController::class, 'dolomite'])->name('dolomite');
-
-// Route::get('/shadeTree', [UserController::class, 'shadeTree'])->name('shadeTree');
-// Route::get('/gardenPruning', [UserController::class, 'gardenPruning'])->name('gardenPruning');
-// Route::get('/matureGardenPruning', [UserController::class, 'matureGardenPruning'])->name('matureGardenPruning');
-// Route::get('/afterPruning', [UserController::class, 'afterPruning'])->name('afterPruning');
-// //---cha saba---
-
-// Route::get('/blog', [UserController::class, 'blog'])->name('blog');
-// Route::get('/blogDetails/{id}', [UserController::class, 'blogDetails'])->name('blogDetails');
-
-// Route::get('/about', [UserController::class, 'about'])->name('about');
-// Route::get('/contact', [UserController::class, 'contact'])->name('contact');
-
-// Route::get('/memberRegistration', [UserController::class, 'memberRegistration'])->name('memberRegistration');
-// Route::post('/memberRegistration', [MemberController::class, 'store'])->name('memberRegistration.store'); 
-
-
-
-
-
-
-
-
-
-
-
+//--CCS-2026 [start]--//
+Route::get('/eventRegistration', [UserViewController::class, 'eventRegistration'])->name('eventRegistration');
+Route::post('/eventMemberAdd', [UserViewController::class, 'eventMemberAdd'])->name('eventMemberAdd');
+Route::get('/SearchData/{phone}', [EventMemberController::class, 'SearchData'])->name('SearchData');
+//--CCS-2026 [end]--//
 
 
 
@@ -164,10 +131,12 @@ Route::group(['middleware'=>'auth'], function () {
     //--User [start]--//
     Route::get('/userList', [UserController::class, 'userList'])->name('userList');
     Route::post('/userAdd', [UserController::class, 'userAdd'])->name('userAdd');
-    // Route::get('/blogEdit/{id}', [BlogController::class, 'blogEdit'])->name('blogEdit');
-    // Route::post('/blogUpdate', [BlogController::class, 'blogUpdate'])->name('blogUpdate');
-    // Route::get('/blogDelete/{id}', [BlogController::class, 'blogDelete'])->name('blogDelete');
     //--User [end]--//
+
+    //--CCS-2026 [start]--//
+    Route::get('/extraEventList', [EventMemberController::class, 'extraEventList'])->name('extraEventList');
+    Route::get('/approveData/{id}', [EventMemberController::class, 'approveData'])->name('approveData');
+    //--CCS-2026 [end]--//
     
     // Route::get('/test', 'SalesController@test')->name('test');
     // pendingMemberList

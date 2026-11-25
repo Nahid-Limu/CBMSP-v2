@@ -27,14 +27,22 @@
         @endif
 
         {{-- advertisement [Start] --}}
-        <marquee class="marq" onmouseout="this.start()" onmouseover="this.stop()" direction="left" loop="">
+        <!-- <marquee class="marq" onmouseout="this.start()" onmouseover="this.stop()" direction="left" loop="">
             <a href="{{ route('memberRegistration') }}" class="btn btn-md btn-outline-success rounded-pill">
             <strong>🌿☕ চা চাষি সম্মেলন ২০২৫ ☕🌿</strong> <i class="bi bi-arrow-right-circle-fill text-danger"></i>
             অংশগ্রহণকারীগণ ফি ছাড়াই সমিতির ওয়েবসাইটে সদস্যপদ নিবন্ধন
             <i class="bi bi-arrow-left-circle-fill text-danger"></i>
             </a>
-        </marquee>
+        </marquee> -->
         {{-- advertisement [END] --}}
+
+        {{-- event registration [Start] --}}
+        <div class="text-center">
+        <a href="{{ route('eventRegistration') }}" class="btn btn-md btn-outline-success rounded-pill">
+            <strong>🌿☕ চা চাষি সম্মেলন ২০২৬ ☕🌿</strong> 
+            </a>
+        </div>
+        {{-- event registration [END] --}}
 
     </div>
 </section>

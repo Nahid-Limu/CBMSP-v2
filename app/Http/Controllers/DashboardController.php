@@ -11,6 +11,8 @@ use App\Models\InsectAndDisease;
 use App\Models\Blog;
 use DB;
 
+use App\Models\EventMember;
+
 class DashboardController extends Controller
 {
     public function dashboard()
@@ -42,11 +44,15 @@ class DashboardController extends Controller
         // navAdmin
         $PendingMemberNav = Member::latest()->take(4)->where('status', 0)->get(['name','photo','tea_garden_address','created_at']);
         $PendingBlogNav = Blog::latest()->take(4)->where('is_published', 0)->get(['title','image','content','created_at']);
+
+        //ccs26
+        $ccs26PendingReg = EventMember::where('status', 0)->Count();
+        //ccs26
         
         return view('admin.dashboard', 
             compact('TotalMember','PendingMember','PendingBlog','chartData',
             'TotalTreatment','TotalEvent','TotalNotice','TotalBlog',
-            'PendingMemberNav','PendingBlogNav') 
+            'PendingMemberNav','PendingBlogNav','ccs26PendingReg') 
         );
     }
 }
